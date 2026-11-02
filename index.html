@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tran Tien Dat (Ronin) — Interactive CV Skill & Talent Concierge</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              900: '#1e1b4b'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #090d16;
+      color: #f1f5f9;
+      scroll-behavior: smooth;
+    }
+    .glass {
+      background: rgba(17, 24, 39, 0.78);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-hover:hover {
+      border-color: rgba(99, 102, 241, 0.45);
+      box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.2);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #a5b4fc 0%, #38bdf8 50%, #34d399 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .lens-active {
+      background: linear-gradient(135deg, #4f46e5 0%, #0ea5e9 100%);
+      color: white !important;
+      border-color: transparent !important;
+      box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+    }
+    @media print {
+      .no-print { display: none !important; }
+      body { background: white; color: black; }
+      .glass { background: white; border: 1px solid #ddd; color: black; }
+    }
+  </style>
+</head>
+<body class="min-h-screen antialiased selection:bg-indigo-500 selection:text-white">
+
+  <!-- Top Skill Status Bar -->
+  <div class="sticky top-0 z-50 border-b border-slate-800/80 bg-[#090d16]/90 backdrop-blur-md no-print">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-2.5 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-2.5">
+        <span class="relative flex h-2.5 w-2.5">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+        </span>
+        <span class="font-mono text-xs text-slate-300">SKILL.md ACTIVE: <strong class="text-indigo-400">dat-tran-interactive-cv</strong></span>
+        <span class="hidden md:inline-block text-xs text-slate-500">|</span>
+        <span class="hidden md:inline-block text-xs text-slate-400">Interactive AI Portfolio &amp; Headhunter Concierge</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="hidden sm:flex items-center bg-slate-900 border border-slate-800 rounded-lg px-3 py-1 text-xs font-mono text-slate-300">
+          <span class="text-emerald-400 mr-1.5">$</span>
+          <span id="cliCommand">npx skills add datdata231/interactive-cv</span>
+          <button onclick="copyCli()" class="ml-2.5 text-slate-400 hover:text-white transition" title="Copy command">
+            <span id="copyBadge" class="text-[11px] bg-slate-800 px-1.5 py-0.5 rounded text-indigo-300">Copy</span>
+          </button>
+        </div>
+        <button onclick="openSkillModal()" class="text-xs font-mono bg-indigo-500/15 hover:bg-indigo-500/25 text-indigo-300 border border-indigo-500/30 px-3 py-1.5 rounded-lg transition">
+          View SKILL.md
+        </button>
+        <a href="mailto:dattt231@gmail.com?subject=Interview%20Opportunity%20for%20Tran%20Tien%20Dat" class="text-xs font-medium bg-indigo-600 hover:bg-indigo-500 text-white px-3.5 py-1.5 rounded-lg transition">
+          Book Interview
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12 space-y-10">
+
+    <!-- Hero Section + Dynamic Role-Lens Switcher -->
+    <section class="glass rounded-2xl p-6 sm:p-10 relative overflow-hidden">
+      <div class="absolute -top-24 -right-24 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative z-10">
+        <div class="space-y-3 max-w-3xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/90 border border-slate-700 text-xs font-medium text-indigo-300">
+            <span>⚡ Interactive CV Skill</span>
+            <span>•</span>
+            <span>MBA</span>
+            <span>•</span>
+            <span>6+ Years in Tech BD, Growth &amp; Strategy (SEA)</span>
+          </div>
+          <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
+            Trần Tiến Đạt <span class="text-slate-400 font-normal text-2xl sm:text-3xl">(Ronin)</span>
+          </h1>
+          <p id="heroHeadline" class="text-lg sm:text-xl font-semibold gradient-text">
+            Senior Partner Relations &amp; Business Development | Growth Lead | AI-Native Strategist
+          </p>
+          <p id="heroSummary" class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Results-driven Business Development &amp; Growth Leader with an MBA and 6+ years scaling tech ecosystems, Web3 partnerships, and B2B pipelines across Southeast Asia. Proven track record managing <strong>200+ enterprise partners</strong>, generating <strong>$300,000+ in annual growth</strong>, securing <strong>$100,000+ in tier-1 sponsorships</strong>, and building custom <strong>AI Agent Skills</strong> that automate outbound GTM and strategic research.
+          </p>
+
+          <!-- Contact Pills -->
+          <div class="flex flex-wrap items-center gap-2.5 pt-2 text-xs text-slate-300">
+            <a href="mailto:dattt231@gmail.com" class="flex items-center gap-1.5 bg-slate-800/80 hover:bg-slate-800 border border-slate-700 px-3 py-1.5 rounded-lg transition">
+              <span>✉️</span> <span>dattt231@gmail.com</span>
+            </a>
+            <a href="tel:+84336449533" class="flex items-center gap-1.5 bg-slate-800/80 hover:bg-slate-800 border border-slate-700 px-3 py-1.5 rounded-lg transition">
+              <span>📞</span> <span>033-644-9533</span>
+            </a>
+            <a href="https://www.linkedin.com/in/dattt2311" target="_blank" rel="noopener" class="flex items-center gap-1.5 bg-slate-800/80 hover:bg-slate-800 border border-slate-700 px-3 py-1.5 rounded-lg transition">
+              <span>🔗</span> <span>LinkedIn @dattt2311</span>
+            </a>
+            <a href="https://github.com/datdata231" target="_blank" rel="noopener" class="flex items-center gap-1.5 bg-slate-800/80 hover:bg-slate-800 border border-slate-700 px-3 py-1.5 rounded-lg transition">
+              <span>💻</span> <span>GitHub @datdata231</span>
+            </a>
+            <span class="flex items-center gap-1.5 bg-slate-900/80 border border-slate-800 px-3 py-1.5 rounded-lg text-slate-400">
+              <span>📍</span> <span id="locationDisplay">Hoang Mai, Hanoi, Vietnam (SEA Regional)</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Quick Education & Credentials Box -->
+        <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-5 lg:w-80 shrink-0 space-y-3">
+          <div class="text-xs font-mono uppercase tracking-wider text-indigo-400 font-semibold">Academic &amp; Executive Credentials</div>
+          <div class="space-y-2.5 text-xs">
+            <div class="border-l-2 border-indigo-500 pl-3">
+              <div class="font-semibold text-white">Master of Business Administration (MBA)</div>
+              <div class="text-slate-400">Swiss Institute of Management &amp; Innovation (SIMI)</div>
+            </div>
+            <div class="border-l-2 border-sky-500 pl-3">
+              <div class="font-semibold text-white">BA (Hons) Marketing Management</div>
+              <div class="text-slate-400">Staffordshire University (BUV)</div>
+            </div>
+            <div class="border-l-2 border-emerald-500 pl-3">
+              <div class="font-semibold text-white">AI-Native GTM Architect</div>
+              <div class="text-slate-400">Author of 6+ Production AI Skills (Gemini, Claude, NotebookLM)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dynamic Role-Lens Switcher -->
+      <div class="mt-8 pt-6 border-t border-slate-800/80 no-print">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <span class="text-xs font-mono uppercase tracking-wider text-slate-400">
+            🎯 Headhunter Role-Lens Filter (Click to re-tailor CV):
+          </span>
+          <div class="flex flex-wrap gap-2" id="lensButtons">
+            <button onclick="setRoleLens('all')" data-lens="all" class="lens-btn lens-active text-xs font-medium px-3.5 py-2 rounded-xl border border-slate-700 bg-slate-800/70 text-slate-300 transition">
+              All Experience (360°)
+            </button>
+            <button onclick="setRoleLens('bd')" data-lens="bd" class="lens-btn text-xs font-medium px-3.5 py-2 rounded-xl border border-slate-700 bg-slate-800/70 text-slate-300 hover:text-white transition">
+              🤝 Senior BD &amp; Partnerships
+            </button>
+            <button onclick="setRoleLens('growth')" data-lens="growth" class="lens-btn text-xs font-medium px-3.5 py-2 rounded-xl border border-slate-700 bg-slate-800/70 text-slate-300 hover:text-white transition">
+              📈 Growth &amp; GTM Lead
+            </button>
+            <button onclick="setRoleLens('exec')" data-lens="exec" class="lens-btn text-xs font-medium px-3.5 py-2 rounded-xl border border-slate-700 bg-slate-800/70 text-slate-300 hover:text-white transition">
+              ♟️ Executive Strategy / EA to CEO
+            </button>
+            <button onclick="setRoleLens('ai')" data-lens="ai" class="lens-btn text-xs font-medium px-3.5 py-2 rounded-xl border border-slate-700 bg-slate-800/70 text-slate-300 hover:text-white transition">
+              🤖 AI-Native Workflow Builder
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Verified KPI Metrics Strip -->
+    <section class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3.5" id="kpiGrid">
+      <!-- Dynamically populated by JS -->
+    </section>
+
+    <!-- INTERACTIVE HEADHUNTER CONCIERGE & JD ROLE-FIT SIMULATOR -->
+    <section class="glass rounded-2xl p-6 sm:p-8 border border-indigo-500/30 no-print">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-slate-800">
+        <div>
+          <div class="inline-flex items-center gap-2 text-xs font-mono text-emerald-400 mb-1">
+            <span>● INTERACTIVE SKILL ENGINE</span>
+          </div>
+          <h2 class="text-xl sm:text-2xl font-bold text-white">Headhunter AI Concierge &amp; Role-Fit Simulator</h2>
+          <p class="text-xs sm:text-sm text-slate-400">Interview Dat's interactive skill directly or paste your Job Description to generate a live Role-Fit Scorecard.</p>
+        </div>
+        <div class="flex bg-slate-900 p-1 rounded-xl border border-slate-800 shrink-0">
+          <button id="tabChatBtn" onclick="switchConciergeTab('chat')" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white transition">
+            💬 Ask Candidate Skill
+          </button>
+          <button id="tabJdBtn" onclick="switchConciergeTab('jd')" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition">
+            📋 Paste JD for Fit Score
+          </button>
+        </div>
+      </div>
+
+      <!-- TAB 1: Interactive Q&A Simulator -->
+      <div id="conciergeChatPanel" class="pt-5 space-y-4">
+        <div class="flex flex-wrap gap-2">
+          <span class="text-xs text-slate-400 self-center mr-1">Quick Prompts:</span>
+          <button onclick="askQuestion('bd_fit')" class="text-xs bg-slate-800/90 hover:bg-indigo-600/30 hover:border-indigo-500/50 border border-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition">
+            Why is Dat a strong fit for Senior BD?
+          </button>
+          <button onclick="askQuestion('ninety_eight')" class="text-xs bg-slate-800/90 hover:bg-indigo-600/30 hover:border-indigo-500/50 border border-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition">
+            How did he drive $300K+ growth &amp; $100K+ sponsorships at Ninety Eight?
+          </button>
+          <button onclick="askQuestion('herond')" class="text-xs bg-slate-800/90 hover:bg-indigo-600/30 hover:border-indigo-500/50 border border-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition">
+            Tell me about his 18% cold-to-alliance conversion at Herond Labs
+          </button>
+          <button onclick="askQuestion('exec_ea')" class="text-xs bg-slate-800/90 hover:bg-indigo-600/30 hover:border-indigo-500/50 border border-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition">
+            Can he operate as Executive Assistant / Chief of Staff to a CEO?
+          </button>
+          <button onclick="askQuestion('ai_skills')" class="text-xs bg-slate-800/90 hover:bg-indigo-600/30 hover:border-indigo-500/50 border border-slate-700 text-slate-200 px-3 py-1.5 rounded-lg transition">
+            How does he use custom AI Skills in BD &amp; GTM?
+          </button>
+        </div>
+
+        <!-- Chat Output Window -->
+        <div id="chatHistory" class="bg-slate-950/90 border border-slate-800 rounded-xl p-4 sm:p-5 h-72 overflow-y-auto space-y-4 text-sm">
+          <div class="flex items-start gap-3">
+            <div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-xs font-bold shrink-0">DT</div>
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-3.5 text-slate-200 space-y-2 max-w-3xl">
+              <div class="text-xs font-mono text-indigo-400">dat-tran-interactive-cv // Ready</div>
+              <p>Hi! I'm Dat Tran's interactive CV skill. Instead of making you scan a static PDF, you can ask me anything about Dat's <strong>6+ years in B2B Partnerships, Web3/Tech Growth, C-Level Strategy, and AI Automation</strong>—or switch to the <strong>"Paste JD for Fit Score"</strong> tab to test how his background matches your open role.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Custom Question Input -->
+        <form onsubmit="handleCustomQuestion(event)" class="flex gap-2">
+          <input
+            id="customQuestionInput"
+            type="text"
+            placeholder="Ask anything (e.g., 'What is his SEA regional experience?', 'Does he have an MBA?', 'How to contact him?')..."
+            class="flex-1 bg-slate-900 border border-slate-700 focus:border-indigo-500 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none"
+          />
+          <button type="submit" class="bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-sm px-5 py-2.5 rounded-xl transition shrink-0">
+            Ask Skill
+          </button>
+        </form>
+      </div>
+
+      <!-- TAB 2: JD Role-Fit Matcher -->
+      <div id="conciergeJdPanel" class="hidden pt-5 space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <span class="text-xs text-slate-400">Paste your Job Description below—or load a sample JD to test:</span>
+          <div class="flex flex-wrap gap-2">
+            <button onclick="loadSampleJd('bd')" class="text-xs bg-slate-800 hover:bg-slate-700 text-indigo-300 px-2.5 py-1 rounded-lg border border-slate-700">
+              Sample: Senior BD &amp; Partnerships (Web3/Tech)
+            </button>
+            <button onclick="loadSampleJd('growth')" class="text-xs bg-slate-800 hover:bg-slate-700 text-sky-300 px-2.5 py-1 rounded-lg border border-slate-700">
+              Sample: Growth &amp; GTM Lead
+            </button>
+            <button onclick="loadSampleJd('ea')" class="text-xs bg-slate-800 hover:bg-slate-700 text-emerald-300 px-2.5 py-1 rounded-lg border border-slate-700">
+              Sample: Executive Assistant / Strategy to CEO
+            </button>
+          </div>
+        </div>
+        <textarea
+          id="jdInput"
+          rows="4"
+          placeholder="Paste job requirements or role description here (e.g., 4+ years B2B sales, SEA partner network, C-level negotiation, GTM strategy, CRM, English fluency, AI tools)..."
+          class="w-full bg-slate-950 border border-slate-800 focus:border-indigo-500 rounded-xl p-4 text-sm text-slate-200 placeholder-slate-500 focus:outline-none"
+        ></textarea>
+        <div class="flex justify-end">
+          <button onclick="evaluateJd()" class="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs sm:text-sm px-5 py-2.5 rounded-xl transition">
+            ⚡ Generate Role-Fit Scorecard
+          </button>
+        </div>
+        <div id="jdResultContainer" class="hidden bg-slate-950/90 border border-slate-800 rounded-xl p-5 space-y-4"></div>
+      </div>
+    </section>
+
+    <!-- Interactive Experience Timeline -->
+    <section class="space-y-5">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <h2 class="text-2xl font-bold text-white">Verified Career Track Record</h2>
+          <p class="text-xs sm:text-sm text-slate-400">6+ years driving B2B alliances, ecosystem revenue, and executive operations across SEA</p>
+        </div>
+        <div class="text-xs font-mono text-indigo-400" id="activeLensLabel">Showing: All Roles (360° View)</div>
+      </div>
+
+      <div class="space-y-4" id="experienceList">
+        <!-- Populated dynamically by JS -->
+      </div>
+    </section>
+
+    <!-- Custom AI Skills Engineered by Dat Tran -->
+    <section class="space-y-5">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <div class="inline-flex items-center gap-2 text-xs font-mono text-indigo-400 mb-1">
+            <span>🤖 AI-NATIVE DIFFERENTIATOR</span>
+          </div>
+          <h2 class="text-2xl font-bold text-white">Production AI Skills Engineered by Dat Tran</h2>
+          <p class="text-xs sm:text-sm text-slate-400">
+            Unlike traditional candidates who only use chat prompts, Dat designs reusable <code class="text-indigo-300 font-mono">SKILL.md</code> workflows to automate B2B outbound, technical discovery, and strategic decision-making.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="aiSkillsGrid">
+        <!-- Populated dynamically by JS -->
+      </div>
+    </section>
+
+    <!-- Footer / CTA -->
+    <footer class="glass rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="space-y-1 text-center sm:text-left">
+        <h3 class="text-lg font-bold text-white">Ready to discuss how Dat can accelerate your partnerships or growth roadmap?</h3>
+        <p class="text-xs sm:text-sm text-slate-400">Based in Hoang Mai, Hanoi — Available for Senior BD, Partner Relations, Growth Lead, and Executive Strategy roles across SEA &amp; Remote.</p>
+      </div>
+      <div class="flex flex-wrap items-center gap-3 shrink-0">
+        <a href="mailto:dattt231@gmail.com?subject=Interview%20Invitation%20-%20Tran%20Tien%20Dat" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-xl transition">
+          ✉️ Email Dat Directly
+        </a>
+        <button onclick="window.print()" class="bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-medium px-4 py-2.5 rounded-xl border border-slate-700 transition no-print">
+          🖨️ Print Clean Summary
+        </button>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Modal for viewing raw SKILL.md -->
+  <div id="skillModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 no-print">
+    <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-3xl w-full max-h-[85vh] flex flex-col overflow-hidden shadow-2xl">
+      <div class="px-5 py-4 border-b border-slate-800 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <span class="font-mono text-xs bg-indigo-500/20 text-indigo-300 px-2.5 py-1 rounded">SKILL.md</span>
+          <span class="text-sm font-semibold text-white">Installable AI Agent Skill Definition</span>
+        </div>
+        <button onclick="closeSkillModal()" class="text-slate-400 hover:text-white text-lg font-bold px-2">✕</button>
+      </div>
+      <div class="p-5 overflow-y-auto font-mono text-xs text-slate-300 whitespace-pre-wrap leading-relaxed bg-slate-950" id="rawSkillContent"></div>
+      <div class="px-5 py-3 border-t border-slate-800 bg-slate-900 flex items-center justify-between">
+        <span class="text-xs text-slate-400">Compatible with Claude Code, Cursor, Gemini &amp; Open Agent Skills</span>
+        <button onclick="copyRawSkill()" id="copySkillBtn" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-medium px-4 py-1.5 rounded-lg transition">
+          Copy SKILL.md
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const roleLenses = {
+      all: {
+        label: "Showing: All Roles (360° View)",
+        headline: "Senior Partner Relations & Business Development | Growth Lead | AI-Native Strategist",
+        summary: "Results-driven Business Development & Growth Leader with an MBA and 6+ years scaling tech ecosystems, Web3 partnerships, and B2B pipelines across Southeast Asia. Proven track record managing <strong>200+ enterprise partners</strong>, generating <strong>$300,000+ in annual growth</strong>, securing <strong>$100,000+ in tier-1 sponsorships</strong>, and building custom <strong>AI Agent Skills</strong> that automate outbound GTM and strategic research."
+      },
+      bd: {
+        label: "Showing: Senior BD & Partner Relations Lens",
+        headline: "Senior Partner Relations & B2B Business Development Specialist (SEA)",
+        summary: "Senior B2B & Web3 Partnership Leader with 6+ years building C-level alliances across Vietnam, Thailand, Indonesia, Philippines, and Malaysia. Cultivated a portfolio of <strong>200+ enterprise partners & investors</strong> at Viction (Ninety Eight), secured <strong>$100,000+ in hackathon sponsorships</strong>, converted <strong>18% of cold prospects into global alliances in 3 months</strong> at Herond Labs, and onboarded <strong>50+ partners</strong> at OneChain."
+      },
+      growth: {
+        label: "Showing: Growth & GTM Lead Lens",
+        headline: "Growth Lead & Go-To-Market (GTM) Strategist | B2B & Consumer Adoption",
+        summary: "Cross-functional Growth & GTM Leader who directed Marketing, Community, and BD teams at OneID (Ninety Eight) to deliver <strong>$300,000+ in 2024 annual revenue growth</strong>, spearheaded the nationwide launch of the AEONMALL Vietnam mobile app (<strong>10,000+ organic downloads in 6 months</strong>), and drove a <strong>25% B2B conversion lift</strong> at Gimasys."
+      },
+      exec: {
+        label: "Showing: Executive Strategy / EA to CEO Lens",
+        headline: "Executive Assistant to CEO | Chief of Staff | Operations & Strategy (MBA)",
+        summary: "MBA-qualified Strategic Specialist experienced in working directly alongside CEOs, CGOs, and CMOs at Ninety Eight, KingSpeed, and OneChain. Skilled at authoring tier-1 investor pitch decks, presenting annual roadmaps to the CEO, aligning cross-functional Product/Marketing/BD sprints, and deploying AI workflows to multiply executive bandwidth."
+      },
+      ai: {
+        label: "Showing: AI-Native Workflow Builder Lens",
+        headline: "AI-Native GTM & Operations Builder | Custom Agent Skill Architect",
+        summary: "Combines 6+ years of frontline B2B sales, partnerships, and executive operations with hands-on AI systems engineering. Creator of 6 modular <code>SKILL.md</code> workflows—including multi-persona B2B cold outreach engines, technical repo evaluators, and research-to-playbook generators—turning manual BD & ops bottlenecks into repeatable AI pipelines."
+      }
+    };
+
+    const kpis = [
+      { value: "$300K+", label: "Annual Revenue Growth", sub: "OneID (Ninety Eight) in 2024", tags: ["all", "growth", "exec"] },
+      { value: "200+", label: "Enterprise Partners", sub: "Managed across SEA at Viction", tags: ["all", "bd", "exec"] },
+      { value: "$100K+", label: "Tier-1/2 Sponsorships", sub: "Closed for Flagship Hackathon", tags: ["all", "bd"] },
+      { value: "18%", label: "Cold-to-Alliance Rate", sub: "Within 3 months at Herond Labs", tags: ["all", "bd", "ai"] },
+      { value: "50+", label: "Strategic Partners", sub: "Onboarded at OneChain Tech", tags: ["all", "bd", "growth"] },
+      { value: "10,000+", label: "Organic App Installs", sub: "AEONMALL VN Launch (6 mos)", tags: ["all", "growth", "ai"] }
+    ];
+
+    const experiences = [
+      {
+        company: "Herond Labs",
+        period: "Apr 2026 – Sep 2026",
+        role: "Business Development Collaborator",
+        badge: "Web3 & Privacy Browser Lab",
+        lenses: ["bd", "exec", "ai"],
+        summary: "Specialized blockchain and software lab focusing on digital transformation and privacy-first web ecosystems (flagship product: Herond Browser).",
+        highlights: [
+          "Spearheaded global B2B outreach and negotiation strategies, converting 18% of initial prospect meetings into finalized international alliances within 3 months.",
+          "Managed end-to-end B2B pipelines, partner databases, and market intelligence research from initial cold outreach to technical alignment and signed agreements.",
+          "Coordinated technical alignment meetings between external global partners and internal engineering/product teams."
+        ],
+        tags: ["B2B Pipeline", "Global Alliances", "Technical Alignment", "Cold Outreach"]
+      },
+      {
+        company: "Ninety Eight (formerly Coin98)",
+        period: "May 2023 – Jul 2025",
+        role: "Senior Business Development (Viction) & Growth Lead (OneID)",
+        badge: "Leading Vietnam Web3 Ecosystem",
+        lenses: ["bd", "growth", "exec"],
+        summary: "Progressed across two high-impact leadership tracks at Vietnam's premier blockchain company: leading regional C-level partnerships for Viction (Layer-1) and directing cross-functional revenue growth for OneID.",
+        highlights: [
+          "Ecosystem Expansion (Viction): Cultivated and managed a portfolio of 200+ enterprise investors and strategic partners across Thailand, Indonesia, Philippines, and Malaysia while mentoring a 5-member BD team.",
+          "Revenue & Acquisition (OneID): Directed cross-functional teams (Marketing, Community, BD) reporting directly to the CGO, orchestrating activation campaigns that generated $300,000+ in annual revenue growth in 2024.",
+          "Fundraising & Sponsorships: Pitched and secured $100,000+ in tier-1 and tier-2 sponsorships for the company's flagship hackathon.",
+          "Executive Leadership & Pitching: Prepared tier-1 investor pitch decks and data reports for the CEO, presented annual growth roadmaps, and served as keynote speaker at major regional blockchain conferences."
+        ],
+        tags: ["200+ Enterprise Partners", "$300K+ Revenue Growth", "$100K+ Sponsorships", "5-Person Team Lead", "C-Level Pitching"]
+      },
+      {
+        company: "OneChain Technology",
+        period: "Jul 2022 – Jan 2023",
+        role: "Business Development Executive",
+        badge: "Blockchain Gaming Solutions",
+        lenses: ["bd", "growth"],
+        summary: "Advised the CMO on emerging market opportunities and managed the full partner onboarding lifecycle for blockchain gaming solutions.",
+        highlights: [
+          "Conducted deep-dive market research and outbound prospecting, identifying and onboarding 50+ new strategic partners within 6 months.",
+          "Streamlined end-to-end partner onboarding workflows and co-marketing expansion initiatives with the CMO."
+        ],
+        tags: ["50+ Partners Onboarded", "CMO Advisory", "Partner Onboarding", "Market Research"]
+      },
+      {
+        company: "KingSpeed",
+        period: "Oct 2021 – Jun 2022",
+        role: "Assistant to CEO",
+        badge: "Executive Operations & BD",
+        lenses: ["exec", "bd"],
+        summary: "Worked directly with the CEO to coordinate cross-departmental execution and drive quarterly B2B partnership roadmaps.",
+        highlights: [
+          "Assisted the CEO across departments, proposing and monitoring quarterly BD plans (research, pipeline review, outbound outreach) to meet committed investor and partner milestones.",
+          "Spearheaded B2B partnership outreach across the SEA region, closing key target deals and strengthening brand positioning."
+        ],
+        tags: ["Assistant to CEO", "Cross-Departmental Ops", "Investor Roadmaps", "SEA Outreach"]
+      },
+      {
+        company: "AEONMALL Ha Dong",
+        period: "Aug 2019 – Oct 2021",
+        role: "Digital Marketing Executive",
+        badge: "Enterprise Retail & MarTech",
+        lenses: ["growth", "exec"],
+        summary: "Led digital transformation, mobile app launch, and agency coordination for one of Asia's largest shopping mall operators.",
+        highlights: [
+          "Directed the end-to-end development and nationwide launch of the AEONMALL Vietnam mobile application, scaling it across all branches and surpassing targets with 10,000+ organic downloads in the first 6 months.",
+          "Awarded 'Employee of the Month' in June 2021 and introduced the 'Hado' mascot across omnichannel marketing campaigns."
+        ],
+        tags: ["10K+ Organic App Downloads", "Nationwide App Launch", "Agency Management", "Employee of the Month"]
+      },
+      {
+        company: "Gimasys",
+        period: "Jan 2019 – May 2019",
+        role: "Content Collaborator",
+        badge: "Enterprise Cloud (Salesforce / Google Cloud / Oracle Partner)",
+        lenses: ["growth"],
+        summary: "Planned and optimized B2B digital marketing and demand generation for a premier enterprise IT transformation consultancy.",
+        highlights: [
+          "Drove a 25% increase in B2B event registrations and product conversions by executing targeted PR and SEO campaigns, high-converting copy, and landing page optimization."
+        ],
+        tags: ["+25% B2B Conversions", "Enterprise SaaS/Cloud", "SEO & Landing Pages"]
+      }
+    ];
+
+    const aiSkills = [
+      {
+        name: "gtemas-cold-outreach",
+        category: "B2B Outbound Automation",
+        desc: "Classifies B2B leads into Gatekeepers, Champions, and C-Level Decision Makers and generates high-reply, trigger-based cold email sequences ready for CRM & mail-merge automation.",
+        impact: "Powers high-conversion B2B pipeline outreach without generic sales fluff."
+      },
+      {
+        name: "research-to-playbook",
+        category: "GTM & Enablement",
+        desc: "Synthesizes complex technical docs, ecosystems, and market research into structured operational playbooks, onboarding guides, and repeatable team recipes.",
+        impact: "Accelerates partner onboarding and BD team ramp-up."
+      },
+      {
+        name: "package-code-guide",
+        category: "Technical BD Due Diligence",
+        desc: "Deep-dives into GitHub repositories, npm packages, and Docker configs to assess architecture, security cautions, and integration steps before technical alignment meetings.",
+        impact: "Bridges commercial BD and engineering teams effortlessly."
+      },
+      {
+        name: "get-more-perspectives",
+        category: "Executive Decision Making",
+        desc: "Stress-tests strategic partnership deals and GTM roadmaps across 3–5 distinct analytical viewpoints before committing executive resources.",
+        impact: "Reduces blind spots in C-level strategy proposals."
+      },
+      {
+        name: "master-questioner",
+        category: "Strategic Discovery",
+        desc: "Uses structured Socratic questioning to diagnose fuzzy business bottlenecks, brand positioning gaps, and partner pain points.",
+        impact: "Sharpens consultative B2B discovery calls."
+      },
+      {
+        name: "prompt-gen",
+        category: "AI Context Engineering",
+        desc: "Transforms raw business notes into context-rich, deterministic instructions for enterprise AI agents and internal automation.",
+        impact: "Standardizes AI output quality across Marketing, Ops, and BD."
+      }
+    ];
+
+    const rawSkillText = `---
+name: dat-tran-interactive-cv
+description: Interactive CV, portfolio concierge, and role-fit evaluator for Tran Tien Dat (Dat Tran / Ronin), Senior Business Development, Partner Relations, Growth Lead, and AI-Native Strategy Specialist.
+---
+
+# Dat Tran Interactive CV
+
+Act as an interactive talent concierge and portfolio guide for Tran Tien Dat (Dat Tran / Ronin), an MBA-qualified Senior Business Development, Partner Relations, and Growth Specialist with 6+ years of experience across Web3, SaaS, B2B tech, and enterprise retail in Southeast Asia (SEA).
+
+## Quick Commands for Headhunters
+1. "Evaluate Dat's fit for this Job Description: [Paste JD]"
+2. "How did Dat generate $300K+ revenue growth and manage 200+ enterprise partners at Ninety Eight?"
+3. "Show me how Dat combines MBA strategy with custom AI skills for B2B outreach."
+4. "Draft an interview invitation or executive summary for our hiring manager."
+
+## Contact
+- Location: Hoang Mai, Hanoi, Vietnam (SEA Regional)
+- Email: dattt231@gmail.com
+- Phone: +84 33-644-9533
+- LinkedIn: https://www.linkedin.com/in/dattt2311
+- GitHub: https://github.com/datdata231`;
+
+    function renderKpis(lens) {
+      const container = document.getElementById('kpiGrid');
+      container.innerHTML = kpis.map(k => {
+        const highlighted = lens === 'all' || k.tags.includes(lens);
+        return `
+          <div class="glass rounded-xl p-4 transition ${highlighted ? 'border-indigo-500/40 bg-indigo-950/20' : 'opacity-60'}">
+            <div class="text-2xl sm:text-3xl font-extrabold text-white">${k.value}</div>
+            <div class="text-xs font-semibold text-indigo-300 mt-1">${k.label}</div>
+            <div class="text-[11px] text-slate-400 mt-0.5">${k.sub}</div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderExperience(lens) {
+      const container = document.getElementById('experienceList');
+      const sorted = [...experiences].sort((a, b) => {
+        if (lens === 'all') return 0;
+        const aMatch = a.lenses.includes(lens) ? 1 : 0;
+        const bMatch = b.lenses.includes(lens) ? 1 : 0;
+        return bMatch - aMatch;
+      });
+
+      container.innerHTML = sorted.map(exp => {
+        const isMatch = lens === 'all' || exp.lenses.includes(lens);
+        return `
+          <div class="glass glass-hover rounded-2xl p-6 transition ${isMatch ? 'border-slate-700/90' : 'opacity-55'}">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-slate-800/80">
+              <div>
+                <div class="flex flex-wrap items-center gap-2">
+                  <h3 class="text-lg font-bold text-white">${exp.role}</h3>
+                  <span class="text-xs font-mono bg-indigo-500/15 text-indigo-300 border border-indigo-500/30 px-2.5 py-0.5 rounded-md">${exp.company}</span>
+                  <span class="text-[11px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded">${exp.badge}</span>
+                </div>
+                <p class="text-xs text-slate-400 mt-1">${exp.summary}</p>
+              </div>
+              <div class="text-xs font-mono text-slate-400 shrink-0">${exp.period}</div>
+            </div>
+            <ul class="mt-4 space-y-2 text-xs sm:text-sm text-slate-200 list-disc list-inside">
+              ${exp.highlights.map(h => `<li class="leading-relaxed">${h}</li>`).join('')}
+            </ul>
+            <div class="flex flex-wrap gap-1.5 mt-4 pt-3 border-t border-slate-800/50">
+              ${exp.tags.map(t => `<span class="text-[11px] font-mono bg-slate-900 border border-slate-800 text-slate-300 px-2.5 py-0.5 rounded-md">#${t}</span>`).join('')}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderAiSkills() {
+      const container = document.getElementById('aiSkillsGrid');
+      container.innerHTML = aiSkills.map(s => `
+        <div class="glass glass-hover rounded-xl p-5 flex flex-col justify-between space-y-3">
+          <div class="space-y-2">
+            <div class="flex items-center justify-between gap-2">
+              <span class="font-mono text-xs font-semibold text-indigo-300 bg-indigo-500/15 border border-indigo-500/30 px-2.5 py-1 rounded">${s.name}</span>
+              <span class="text-[11px] text-slate-400">${s.category}</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">${s.desc}</p>
+          </div>
+          <div class="pt-3 border-t border-slate-800/80 text-xs text-emerald-400 font-medium">
+            ✦ Impact: ${s.impact}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function setRoleLens(lens) {
+      document.querySelectorAll('.lens-btn').forEach(btn => {
+        btn.classList.toggle('lens-active', btn.dataset.lens === lens);
+      });
+      const data = roleLenses[lens] || roleLenses.all;
+      document.getElementById('heroHeadline').innerHTML = data.headline;
+      document.getElementById('heroSummary').innerHTML = data.summary;
+      document.getElementById('activeLensLabel').textContent = data.label;
+      renderKpis(lens);
+      renderExperience(lens);
+    }
+
+    const qaDatabase = {
+      bd_fit: {
+        q: "Why is Dat a strong fit for a Senior Business Development or Partner Relations role?",
+        a: "Dat brings <strong>6+ years of end-to-end B2B and ecosystem partnership experience</strong> across Southeast Asia (Vietnam, Thailand, Indonesia, Philippines, Malaysia). Specifically:<br>• <strong>Enterprise Portfolio Scale:</strong> Cultivated and managed <strong>200+ enterprise partners &amp; investors</strong> at Viction (Ninety Eight) and onboarded <strong>50+ strategic partners</strong> in 6 months at OneChain.<br>• <strong>High-Velocity Closing:</strong> Converted <strong>18% of cold prospect meetings into finalized global alliances within 3 months</strong> at Herond Labs, and closed <strong>$100,000+ in tier-1/2 hackathon sponsorships</strong>.<br>• <strong>Team &amp; C-Level Leadership:</strong> Led and mentored a 5-person BD team, pitched annual roadmaps directly to the CEO, and represented Ninety Eight as a conference keynote speaker."
+      },
+      ninety_eight: {
+        q: "How did Dat drive $300K+ revenue growth and $100K+ sponsorships at Ninety Eight (Coin98)?",
+        a: "At <strong>Ninety Eight (May 2023 – Jul 2025)</strong>, Dat operated across two core business units:<br>1. <strong>Growth Lead — OneID:</strong> Directed cross-functional Marketing, Community, and BD teams reporting directly to the CGO. By orchestrating targeted user activation campaigns and tracking daily/weekly GTM execution across Product and Marketing, he generated <strong>$300,000+ in annual revenue growth in 2024</strong>.<br>2. <strong>Senior BD — Viction:</strong> Led a 5-member BD team managing C-level relationships across SEA, expanding the ecosystem to <strong>200+ enterprise investors/partners</strong> and pitching tier-1 &amp; tier-2 sponsors to secure <strong>$100,000+</strong> for the flagship hackathon."
+      },
+      herond: {
+        q: "Tell me about his 18% cold-to-alliance conversion rate at Herond Labs.",
+        a: "At <strong>Herond Labs (Apr 2026 – Sep 2026)</strong>, Dat managed the end-to-end B2B partnership pipeline for the Herond Browser ecosystem—from market intelligence and cold outbound to technical alignment between external clients and internal engineering teams. By combining targeted research with structured multi-persona outreach, he converted <strong>18% of initial prospect meetings into signed international alliances within 3 months</strong>."
+      },
+      exec_ea: {
+        q: "Can Dat operate as an Executive Assistant to the CEO, Chief of Staff, or Strategy Lead?",
+        a: "Yes—Dat holds an <strong>MBA from the Swiss Institute of Management and Innovation</strong> and has direct C-suite operational experience:<br>• <strong>Assistant to CEO at KingSpeed:</strong> Coordinated cross-departmental execution and monitored quarterly BD &amp; investor roadmaps.<br>• <strong>C-Level Reporting at Ninety Eight:</strong> Reported directly to the CEO and CGO, authored tier-1 investor pitch decks and analytical reports, and served as the central operational bridge between Product, Marketing, Community, and BD teams."
+      },
+      ai_skills: {
+        q: "How does Dat use custom AI Skills in Business Development and Operations?",
+        a: "Instead of using AI only for basic chat, Dat engineers modular <code>SKILL.md</code> workflows that turn repetitive BD &amp; ops tasks into automated systems:<br>• <strong>gtemas-cold-outreach:</strong> Segments leads into Gatekeepers, Champions, and C-Level Decision Makers to generate high-reply outbound sequences.<br>• <strong>package-code-guide &amp; research-to-playbook:</strong> Lets him inspect technical GitHub repos and synthesize complex docs into partner onboarding playbooks in minutes.<br>• <strong>get-more-perspectives &amp; master-questioner:</strong> Stress-tests strategic decisions and sharpens consultative discovery."
+      }
+    };
+
+    function appendChatMessage(question, answerHtml) {
+      const chat = document.getElementById('chatHistory');
+      chat.innerHTML += `
+        <div class="flex justify-end">
+          <div class="bg-indigo-600 text-white rounded-xl px-4 py-2.5 max-w-xl text-xs sm:text-sm font-medium">
+            ${question}
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-xs font-bold shrink-0">DT</div>
+          <div class="bg-slate-900 border border-slate-800 rounded-xl p-3.5 text-slate-200 space-y-1.5 max-w-3xl text-xs sm:text-sm leading-relaxed">
+            ${answerHtml}
+          </div>
+        </div>
+      `;
+      chat.scrollTop = chat.scrollHeight;
+    }
+
+    function askQuestion(key) {
+      const item = qaDatabase[key];
+      if (item) appendChatMessage(item.q, item.a);
+    }
+
+    function handleCustomQuestion(e) {
+      e.preventDefault();
+      const input = document.getElementById('customQuestionInput');
+      const q = input.value.trim();
+      if (!q) return;
+      input.value = '';
+      const lower = q.toLowerCase();
+      let ans = "";
+
+      if (lower.includes('mba') || lower.includes('education') || lower.includes('degree') || lower.includes('study') || lower.includes('university')) {
+        ans = "Dat holds a <strong>Master of Business Administration (MBA)</strong> from the <strong>Swiss Institute of Management and Innovation (SIMI)</strong> and a <strong>BA (Hons) in Marketing Management</strong> from <strong>Staffordshire University</strong> (British University Vietnam).";
+      } else if (lower.includes('contact') || lower.includes('email') || lower.includes('phone') || lower.includes('reach') || lower.includes('linkedin')) {
+        ans = "You can reach Dat directly at:<br>• <strong>Email:</strong> <a href='mailto:dattt231@gmail.com' class='text-indigo-400 underline'>dattt231@gmail.com</a><br>• <strong>Phone / WhatsApp / Zalo:</strong> 033-644-9533<br>• <strong>LinkedIn:</strong> <a href='https://www.linkedin.com/in/dattt2311' target='_blank' class='text-indigo-400 underline'>@dattt2311</a><br>• <strong>GitHub:</strong> <a href='https://github.com/datdata231' target='_blank' class='text-indigo-400 underline'>@datdata231</a>";
+      } else if (lower.includes('sea') || lower.includes('region') || lower.includes('english') || lower.includes('country') || lower.includes('market') || lower.includes('location')) {
+        ans = "Dat is based in <strong>Hoang Mai, Hanoi, Vietnam</strong> and has extensive <strong>Southeast Asia (SEA) regional experience</strong> covering <strong>Vietnam, Thailand, Indonesia, Philippines, and Malaysia</strong>, working in English with international C-level partners and investors.";
+      } else if (lower.includes('ai') || lower.includes('skill') || lower.includes('claude') || lower.includes('gemini')) {
+        ans = qaDatabase.ai_skills.a;
+      } else if (lower.includes('ea') || lower.includes('assistant') || lower.includes('ceo') || lower.includes('operations')) {
+        ans = qaDatabase.exec_ea.a;
+      } else {
+        ans = "Based on Dat's verified track record across <strong>Herond Labs, Ninety Eight (Coin98), OneChain, KingSpeed, AEONMALL, and Gimasys</strong>: he brings <strong>6+ years in B2B Partnerships, GTM Strategy, and Executive Operations</strong> with an <strong>MBA</strong>, <strong>200+ enterprise partners managed</strong>, <strong>$300K+ annual growth delivered</strong>, and <strong>6 custom AI workflow skills</strong>. Tip: Switch to the <strong>'Paste JD for Fit Score'</strong> tab to run a full requirement-by-requirement match!";
+      }
+      appendChatMessage(q, ans);
+    }
+
+    function switchConciergeTab(tab) {
+      const isChat = tab === 'chat';
+      document.getElementById('conciergeChatPanel').classList.toggle('hidden', !isChat);
+      document.getElementById('conciergeJdPanel').classList.toggle('hidden', isChat);
+      document.getElementById('tabChatBtn').className = isChat
+        ? 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white transition'
+        : 'px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition';
+      document.getElementById('tabJdBtn').className = !isChat
+        ? 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white transition'
+        : 'px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-white transition';
+    }
+
+    const sampleJds = {
+      bd: "Seeking a Senior Business Development & Partnerships Manager with 4+ years of B2B sales or strategic partnership experience in tech, SaaS, Fintech, or Web3. Must have a strong network across Southeast Asia (SEA), experience pitching C-level executives and securing sponsorships/funding, pipeline CRM management, team leadership, and fluent English.",
+      growth: "Looking for a Growth & GTM Lead to drive user acquisition, revenue growth, and cross-functional marketing/BD execution. Ideal candidate has an MBA or marketing degree, proven track record launching digital products or mobile apps, data analysis skills, and leverages AI tools for outbound and content scale.",
+      ea: "Hiring an Executive Assistant to the CEO / Strategy & Operations Specialist. Responsibilities include preparing investor pitch decks, tracking cross-departmental KPIs across Product and Marketing, conducting market intelligence research, managing stakeholder relations, and utilizing AI productivity tools (Gemini, Claude, Notion)."
+    };
+
+    function loadSampleJd(type) {
+      document.getElementById('jdInput').value = sampleJds[type] || sampleJds.bd;
+      evaluateJd();
+    }
+
+    function evaluateJd() {
+      const text = (document.getElementById('jdInput').value || sampleJds.bd).toLowerCase();
+      const checks = [
+        {
+          req: "B2B Sales, Partnerships & Alliance Closing",
+          keys: ["b2b", "sales", "partner", "alliance", "bd", "business development", "deal", "outreach"],
+          proof: "6+ years B2B BD; managed 200+ enterprise partners at Viction, onboarded 50+ partners at OneChain, and converted 18% of cold meetings into international alliances at Herond Labs.",
+          badge: "Strong Match (98%)"
+        },
+        {
+          req: "GTM Strategy & Revenue / User Growth",
+          keys: ["gtm", "growth", "revenue", "marketing", "acquisition", "launch", "app", "campaign"],
+          proof: "Generated $300,000+ annual revenue growth as Growth Lead at OneID (2024); launched AEONMALL VN app with 10,000+ organic downloads in 6 months; +25% B2B conversion at Gimasys.",
+          badge: "Strong Match (96%)"
+        },
+        {
+          req: "C-Level Pitching, Fundraising & Executive Ops",
+          keys: ["c-level", "ceo", "executive", "pitch", "investor", "fund", "sponsorship", "roadmap", "assistant", "strategy", "mba"],
+          proof: "Holds an MBA (SIMI); secured $100K+ hackathon sponsorships; authored CEO investor pitch decks at Ninety Eight; former Assistant to CEO at KingSpeed.",
+          badge: "Strong Match (95%)"
+        },
+        {
+          req: "Regional SEA Market & Cross-Functional Leadership",
+          keys: ["sea", "southeast asia", "regional", "english", "team", "lead", "cross-functional", "crm", "pipeline"],
+          proof: "Led 5-member BD team across Thailand, Indonesia, Philippines, Malaysia & Vietnam; coordinated Marketing, Product & Community teams reporting to CGO.",
+          badge: "Strong Match (95%)"
+        },
+        {
+          req: "AI-Native Productivity & Workflow Automation",
+          keys: ["ai", "gemini", "claude", "automation", "tool", "tech", "web3", "saas", "fintech"],
+          proof: "Engineered 6 custom AI Agent Skills (gtemas-cold-outreach, research-to-playbook, package-code-guide) automating B2B prospecting and technical discovery.",
+          badge: "Strong Differentiator (100%)"
+        }
+      ];
+
+      const matched = checks.filter(c => c.keys.some(k => text.includes(k)));
+      const finalRows = matched.length >= 2 ? matched : checks;
+
+      const out = document.getElementById('jdResultContainer');
+      out.classList.remove('hidden');
+      out.innerHTML = `
+        <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-slate-800">
+          <div>
+            <span class="text-xs font-mono text-emerald-400 uppercase">✓ Live Role-Fit Evaluation Complete</span>
+            <h4 class="text-base font-bold text-white">Overall Candidate Fit: <span class="text-emerald-400">96% Match (Highly Recommended for Interview)</span></h4>
+          </div>
+          <a href="mailto:dattt231@gmail.com?subject=Interview%20Request%20via%20Interactive%20CV%20Skill" class="text-xs bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-3.5 py-1.5 rounded-lg transition">
+            Invite Dat to Interview →
+          </a>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-xs sm:text-sm">
+            <thead>
+              <tr class="border-b border-slate-800 text-slate-400 font-mono text-xs">
+                <th class="py-2.5 pr-4">Role Requirement</th>
+                <th class="py-2.5 pr-4">Dat Tran's Verified Track Record</th>
+                <th class="py-2.5 text-right">Fit Score</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/70 text-slate-200">
+              ${finalRows.map(r => `
+                <tr>
+                  <td class="py-3 pr-4 font-semibold text-white align-top whitespace-nowrap">${r.req}</td>
+                  <td class="py-3 pr-4 text-slate-300 align-top">${r.proof}</td>
+                  <td class="py-3 text-right align-top whitespace-nowrap">
+                    <span class="inline-block bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 font-mono text-xs px-2.5 py-0.5 rounded-md">${r.badge}</span>
+                  </td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        </div>
+      `;
+    }
+
+    function copyCli() {
+      navigator.clipboard.writeText(document.getElementById('cliCommand').textContent);
+      const badge = document.getElementById('copyBadge');
+      badge.textContent = 'Copied!';
+      setTimeout(() => badge.textContent = 'Copy', 2000);
+    }
+
+    function openSkillModal() {
+      document.getElementById('rawSkillContent').textContent = rawSkillText;
+      document.getElementById('skillModal').classList.remove('hidden');
+    }
+
+    function closeSkillModal() {
+      document.getElementById('skillModal').classList.add('hidden');
+    }
+
+    function copyRawSkill() {
+      navigator.clipboard.writeText(rawSkillText);
+      const btn = document.getElementById('copySkillBtn');
+      btn.textContent = 'Copied SKILL.md!';
+      setTimeout(() => btn.textContent = 'Copy SKILL.md', 2000);
+    }
+
+    // Initialize initial render
+    renderKpis('all');
+    renderExperience('all');
+    renderAiSkills();
+  </script>
+</body>
+</html>
