@@ -815,41 +815,226 @@ Act as an interactive talent concierge and portfolio guide for Tran Tien Dat (Da
       document.getElementById('canvasViewport').scrollTop = 0;
     }
 
+    function escapeRegExp(string) {
+      return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    function matchesTerm(term, text) {
+      if (!term || !text) return false;
+      const t = term.trim().toLowerCase();
+      if (t.includes(' ')) {
+        return text.includes(t);
+      }
+      const regex = new RegExp('(?:^|[^a-z0-9_])' + escapeRegExp(t) + '(?:[^a-z0-9_]|$)', 'i');
+      return regex.test(text);
+    }
+
+    function cleanString(s) {
+      if (!s) return '';
+      return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    }
+
     const qaDatabase = {
-      bd_fit: {
-        q: "Why hire Dat for Senior BD & Partnerships?",
-        a: "Dat brings <strong>6+ years of B2B and ecosystem partnership execution</strong> across SEA:<br>• <strong>200+ Enterprise Partners:</strong> Cultivated &amp; managed at Viction (Ninety Eight) while leading a 5-person BD team.<br>• <strong>18% Cold-to-Alliance Conversion:</strong> Closed global alliances within 3 months at Herond Labs.<br>• <strong>$100K+ Sponsorships:</strong> Pitched &amp; closed tier-1/2 sponsors for Ninety Eight's flagship hackathon."
+      greeting: {
+        terms: ['hello', 'hi', 'hey', 'chao', 'xin chao', 'good morning', 'good afternoon', 'help', 'start', 'intro'],
+        q: 'Hi there!',
+        a: "Hello! I am Dat Tran's interactive talent concierge. I'm ready to answer any questions about Dat's <strong>6+ years in Tech B2B Partnerships, Growth, Executive Operations (MBA), and AI Workflow Automation</strong> across Southeast Asia.<br><br>What would you like to explore first?",
+        chips: [
+          { text: 'Ninety Eight Track Record', key: 'ninety_eight' },
+          { text: 'Herond Labs 18% Alliances', key: 'herond' },
+          { text: 'MBA & Education', key: 'education_mba' },
+          { text: 'Custom AI Skills', key: 'ai_skills' }
+        ]
       },
       ninety_eight: {
-        q: "How did he drive $300K+ growth & 200+ partners at Ninety Eight?",
-        a: "At <strong>Ninety Eight (May 2023 – Jul 2025)</strong>, Dat led two tracks:<br>1. <strong>Growth Lead (OneID):</strong> Directed Marketing, Community &amp; BD reporting to the CGO, generating <strong>$300,000+ in 2024 annual revenue growth</strong>.<br>2. <strong>Senior BD (Viction):</strong> Managed 200+ enterprise partners/investors across Thailand, Indonesia, Philippines &amp; Malaysia and closed $100K+ in hackathon sponsorships."
+        terms: ['ninety eight', 'coin98', 'coin 98', 'viction', 'oneid', 'one id', 'layer-1', 'layer 1', 'vic', 'c98', 'ninety', 'hackathon', '300k', 'sponsorship', 'sponsorships', 'web3'],
+        tab: 'timeline',
+        roleId: 'ninetyeight',
+        q: 'What did Dat achieve at Ninety Eight (Coin98 / Viction / OneID)?',
+        a: 'At <strong>Ninety Eight (May 2023 – Jul 2025)</strong>, Dat operated across two high-impact leadership tracks:<br>• <strong>Growth Lead — OneID:</strong> Directed cross-functional Marketing, Community, and BD teams reporting directly to the CGO, driving campaigns that generated <strong>$300,000+ in annual revenue growth in 2024</strong>.<br>• <strong>Senior BD — Viction (Layer-1):</strong> Mentored a 5-member BD team managing <strong>200+ enterprise partners & investors</strong> across Thailand, Indonesia, Philippines, and Malaysia.<br>• <strong>Fundraising:</strong> Pitched and closed <strong>$100,000+ in tier-1 & tier-2 hackathon sponsorships</strong>.<br>• <strong>Executive Representation:</strong> Authored investor pitch decks for the CEO and presented annual growth roadmaps.',
+        chips: [
+          { text: 'Herond Labs Pipeline', key: 'herond' },
+          { text: 'Why Hire for Senior BD?', key: 'bd_fit' },
+          { text: 'Executive Strategy / EA', key: 'exec_ea' }
+        ]
       },
       herond: {
-        q: "Tell me about his 18% conversion rate at Herond Labs.",
-        a: "At <strong>Herond Labs (Apr 2026 – Sep 2026)</strong>, Dat owned the full B2B pipeline from cold prospecting and market intelligence to technical alignment with engineering—converting <strong>18% of initial prospect meetings into signed international alliances within 3 months</strong>."
+        terms: ['herond labs', 'herond browser', 'herond', 'privacy browser', '18%', 'cold-to-alliance', 'alliance', 'alliances'],
+        tab: 'timeline',
+        roleId: 'herond',
+        q: "Tell me about Dat's role and achievements at Herond Labs.",
+        a: "At <strong>Herond Labs (Apr 2026 – Sep 2026)</strong>, Dat served as Business Development Collaborator for the privacy-first Web3 ecosystem (Herond Browser):<br>• <strong>High-Velocity Closing:</strong> Converted <strong>18% of initial prospect meetings into finalized international alliances within 3 months</strong>.<br>• <strong>End-to-End Pipeline:</strong> Directed market intelligence research, outbound prospect discovery, and partnership negotiation.<br>• <strong>Technical Alignment:</strong> Acted as the commercial bridge coordinating technical specs between global clients and internal engineering teams.",
+        chips: [
+          { text: 'Ninety Eight Ecosystem', key: 'ninety_eight' },
+          { text: 'SEA Regional Coverage', key: 'sea_geography' }
+        ]
+      },
+      onechain: {
+        terms: ['onechain', 'one chain', 'blockchain gaming', '50+ partners', 'cmo advisory'],
+        tab: 'timeline',
+        roleId: 'onechain',
+        q: "What was Dat's impact at OneChain Technology?",
+        a: "At <strong>OneChain Technology (Jul 2022 – Jan 2023)</strong>, Dat was Business Development Executive for blockchain gaming solutions:<br>• <strong>50+ Strategic Partners:</strong> Researched, prospected, and onboarded over 50 partners within 6 months.<br>• <strong>CMO Advisory:</strong> Advised the CMO on emerging Web3 gaming market expansion and streamlined partner onboarding.",
+        chips: [
+          { text: 'KingSpeed Experience', key: 'kingspeed' },
+          { text: 'BD Track Record', key: 'bd_fit' }
+        ]
+      },
+      kingspeed: {
+        terms: ['kingspeed', 'king speed', 'assistant to ceo', 'tro ly ceo'],
+        tab: 'timeline',
+        roleId: 'kingspeed',
+        q: 'What did Dat do as Assistant to CEO at KingSpeed?',
+        a: "At <strong>KingSpeed (Oct 2021 – Jun 2022)</strong>, Dat worked directly alongside the CEO:<br>• <strong>Executive Operations:</strong> Assisted the CEO in cross-departmental execution across engineering, product, and marketing.<br>• <strong>Investor & Partner Roadmaps:</strong> Monitored quarterly BD plans and outbound outreach to meet committed milestones.<br>• <strong>SEA Regional BD:</strong> Closed target Web3 gaming deals across Southeast Asia.",
+        chips: [
+          { text: 'EA / Strategy Fit', key: 'exec_ea' },
+          { text: 'MBA Credentials', key: 'education_mba' }
+        ]
+      },
+      aeonmall: {
+        terms: ['aeon mall', 'aeonmall', 'aeon', 'ha dong', 'hado', 'shopping mall', '10,000 downloads', '10k downloads'],
+        tab: 'timeline',
+        roleId: 'aeonmall',
+        q: 'What did Dat achieve at AEONMALL Ha Dong?',
+        a: "At <strong>AEONMALL Ha Dong (Aug 2019 – Oct 2021)</strong>, Dat was Digital Marketing Executive for Japan's flagship shopping mall developer:<br>• <strong>Nationwide App Launch:</strong> Directed the development and rollout of the AEONMALL Vietnam mobile app, driving <strong>10,000+ organic downloads in the first 6 months</strong>.<br>• <strong>Employee of the Month:</strong> Awarded in June 2021.<br>• <strong>Omnichannel Branding:</strong> Managed creative agencies and launched the Hado mascot campaign.",
+        chips: [
+          { text: 'Growth & GTM Experience', key: 'growth_gtm' },
+          { text: 'Gimasys Cloud Marketing', key: 'gimasys' }
+        ]
+      },
+      gimasys: {
+        terms: ['gimasys', 'salesforce', 'oracle', 'google cloud', '25% conversion', 'enterprise it'],
+        tab: 'timeline',
+        roleId: 'gimasys',
+        q: "Tell me about Dat's work at Gimasys.",
+        a: 'At <strong>Gimasys (Jan 2019 – May 2019)</strong>, Dat planned B2B content and demand generation for a top enterprise IT consultancy partnered with Salesforce, Oracle, and Google Cloud:<br>• <strong>25% Conversion Lift:</strong> Increased enterprise registrations and conversions through SEO optimization and targeted landing pages.',
+        chips: [
+          { text: 'AEONMALL Marketing', key: 'aeonmall' },
+          { text: 'Growth & GTM Lead', key: 'growth_gtm' }
+        ]
+      },
+      bd_fit: {
+        terms: ['senior bd', 'business development', 'partnerships', 'partner relations', 'sales', 'closing deals', 'pipeline', 'deal size', 'commercial', 'bd', 'outreach', 'outbound', 'closing', 'negotiation', 'kinh doanh', 'hop tac'],
+        q: 'Why hire Dat for Senior BD & Partnerships?',
+        a: 'Dat brings <strong>6+ years of verified B2B and ecosystem partnership execution</strong> across Southeast Asia:<br>• <strong>200+ Enterprise Partners:</strong> Cultivated & managed at Viction (Ninety Eight) while leading a 5-person BD team.<br>• <strong>18% Cold-to-Alliance Conversion:</strong> Closed global alliances within 3 months at Herond Labs.<br>• <strong>$100K+ Sponsorships:</strong> Pitched & closed tier-1/2 sponsors for Ninety Eight's flagship hackathon.<br>• <strong>Regional Network:</strong> Active network across Vietnam, Thailand, Indonesia, Philippines, and Malaysia.',
+        chips: [
+          { text: 'Ninety Eight Track Record', key: 'ninety_eight' },
+          { text: 'Custom AI Outbound Skills', key: 'ai_skills' },
+          { text: 'Contact Dat Directly', key: 'contact_hire' }
+        ]
+      },
+      growth_gtm: {
+        terms: ['growth lead', 'gtm strategy', 'go to market', 'go-to-market', 'user acquisition', 'revenue growth', 'growth', 'gtm', 'acquisition', 'revenue', 'campaigns', 'marketing', 'tang truong'],
+        q: "What is Dat's experience in Growth & Go-To-Market (GTM)?",
+        a: "Dat combines consumer app scaling with enterprise B2B demand generation:<br>• <strong>$300K+ Annual Growth:</strong> Spearheaded user activation and GTM campaigns as Growth Lead for OneID (2024).<br>• <strong>10,000+ App Installs:</strong> Launched the nationwide AEONMALL Vietnam app organic adoption in 6 months.<br>• <strong>Cross-Functional Direction:</strong> Aligns Product, Marketing, Community, and BD teams to hit unified revenue targets.",
+        chips: [
+          { text: 'Senior BD Fit', key: 'bd_fit' },
+          { text: 'Explore Career Timeline', key: 'timeline' }
+        ]
       },
       exec_ea: {
-        q: "How does Dat fit an Executive Assistant / Chief of Staff role?",
-        a: "Dat holds an <strong>MBA (SIMI)</strong>, served as <strong>Assistant to CEO at KingSpeed</strong>, and reported directly to the CEO &amp; CGO at Ninety Eight—preparing tier-1 investor pitch decks, presenting annual roadmaps, and coordinating daily/weekly Product, Marketing, and BD execution."
+        terms: ['executive assistant', 'chief of staff', 'strategy to ceo', 'ea to ceo', 'assistant to ceo', 'ea', 'executive', 'ceo', 'cgo', 'cmo', 'c-level', 'pitch deck', 'strategy', 'operations', 'tro ly', 'chien luoc'],
+        q: 'How does Dat fit an Executive Assistant / Chief of Staff role?',
+        a: "Dat holds an <strong>MBA from SIMI (Switzerland)</strong> and has direct C-suite operational experience:<br>• <strong>KingSpeed:</strong> Served as Assistant to CEO managing cross-department execution and investor roadmaps.<br>• <strong>Ninety Eight:</strong> Reported directly to the CEO & CGO, authored tier-1 investor pitch decks, presented growth roadmaps, and acted as the central operational bridge between Product, Marketing, and BD.",
+        chips: [
+          { text: 'MBA & Education', key: 'education_mba' },
+          { text: 'Senior BD Fit', key: 'bd_fit' }
+        ]
       },
       ai_skills: {
-        q: "What custom AI Skills has Dat built?",
-        a: "Dat engineered 6 reusable <code>SKILL.md</code> systems: <strong>gtemas-cold-outreach</strong> (multi-persona B2B outbound), <strong>research-to-playbook</strong>, <strong>package-code-guide</strong> (technical repo due diligence), <strong>get-more-perspectives</strong>, <strong>master-questioner</strong>, and <strong>prompt-gen</strong>. Click Tab 04 on the right canvas to inspect them!"
+        terms: ['ai skills', 'skill.md', 'custom ai', 'ai agent', 'ai workflow', 'prompt engineering', 'ai', 'skills', 'skill', 'gtemas', 'claude', 'gemini', 'cursor', 'automation', 'npx', 'tri tue nhan tao'],
+        tab: 'skills',
+        q: 'What custom AI Skills has Dat built?',
+        a: 'Dat has engineered <strong>6 production AI Agent Skills</strong> (using the open <code>SKILL.md</code> standard):<br>1. <strong>gtemas-cold-outreach:</strong> Multi-persona B2B outbound engine for Gatekeepers, Champions, and C-Level Execs.<br>2. <strong>research-to-playbook:</strong> Converts technical protocols and market data into actionable GTM playbooks.<br>3. <strong>package-code-guide:</strong> Inspects GitHub repositories and Docker configs for technical BD due diligence.<br>4. <strong>get-more-perspectives:</strong> 5-angle decision stress-testing framework.<br>5. <strong>master-questioner:</strong> Socratic discovery diagnostic.<br>6. <strong>prompt-gen:</strong> High-precision prompt architecture.',
+        chips: [
+          { text: 'Open SKILL.md Inspector', key: 'skills' },
+          { text: 'Senior BD Fit', key: 'bd_fit' }
+        ]
+      },
+      education_mba: {
+        terms: ['mba', 'master of business', 'swiss institute', 'staffordshire', 'buv', 'british university vietnam', 'bang cap', 'hoc van', 'education', 'degree', 'university', 'master', 'bachelor', 'study', 'academic', 'truong'],
+        tab: 'bento',
+        q: "What are Dat's educational and academic credentials?",
+        a: "Dat's credentials include:<br>• <strong>Master of Business Administration (MBA):</strong> Swiss Institute of Management and Innovation (SIMI), Switzerland.<br>• <strong>BA (Hons) Marketing Management:</strong> Staffordshire University (British University Vietnam - BUV).<br>• Combines rigorous international business strategy with frontline tech execution.",
+        chips: [
+          { text: 'EA / Strategy Fit', key: 'exec_ea' },
+          { text: 'Senior BD Fit', key: 'bd_fit' }
+        ]
+      },
+      sea_geography: {
+        terms: ['southeast asia', 'sea region', 'hoang mai', 'hanoi', 'ha noi', 'hcmc', 'ho chi minh', 'sea', 'thailand', 'indonesia', 'philippines', 'malaysia', 'vietnam', 'remote', 'hybrid', 'location', 'located', 'where', 'address', 'relocation', 'english', 'tieng anh'],
+        q: "What is Dat's location and Southeast Asia (SEA) experience?",
+        a: "• <strong>Base Location:</strong> Hoang Mai, Hanoi, Vietnam (open to SEA Regional, Hybrid, and Remote roles).<br>• <strong>Regional Footprint:</strong> Actively executed B2B partnerships and investor relations across <strong>Vietnam, Thailand, Indonesia, Philippines, and Malaysia</strong>.<br>• <strong>Languages:</strong> Native Vietnamese, Fluent Professional English (operating with global C-level founders and tier-1 investors).",
+        chips: [
+          { text: 'Ninety Eight Track Record', key: 'ninety_eight' },
+          { text: 'Contact Dat Directly', key: 'contact_hire' }
+        ]
+      },
+      leadership_team: {
+        terms: ['leadership', 'team management', 'leading teams', 'mentor', 'team', 'lead', 'leader', 'manage', 'manager', 'headcount', '5-member', 'mentored', 'quan ly'],
+        q: "What is Dat's team leadership and management experience?",
+        a: "• <strong>BD Team Lead (Viction):</strong> Led and mentored a 5-member Business Development team to consistently exceed regional partnership KPIs across SEA.<br>• <strong>Cross-Functional Direction (OneID):</strong> Directed squads across Marketing, Community, and BD reporting directly to the CGO.<br>• <strong>Agency Leadership (AEONMALL):</strong> Managed external media and creative agencies for nationwide product campaigns.",
+        chips: [
+          { text: 'Senior BD Fit', key: 'bd_fit' },
+          { text: 'Growth Lead Role', key: 'growth_gtm' }
+        ]
+      },
+      kpis_metrics: {
+        terms: ['kpis', 'achievements', 'track record', 'metrics', 'key numbers', 'kpi', 'metric', 'numbers', 'revenue', 'accomplishments', 'results', 'thanh tich', 'ket qua'],
+        tab: 'bento',
+        q: "What are Dat's headline verified metrics and KPIs?",
+        a: "Here is Dat's headline track record:<br>• <strong>$300,000+</strong> Annual Revenue Growth (OneID, 2024)<br>• <strong>200+</strong> Enterprise Partners & Investors Managed (Viction)<br>• <strong>$100,000+</strong> Tier-1/2 Sponsorships Closed (Ninety Eight Hackathon)<br>• <strong>18%</strong> Cold-to-Alliance Conversion in 3 Months (Herond Labs)<br>• <strong>50+</strong> Strategic Partners Onboarded (OneChain)<br>• <strong>10,000+</strong> Organic App Installs in 6 Months (AEONMALL VN)",
+        chips: [
+          { text: 'View Executive Bento', key: 'bento' },
+          { text: 'Senior BD Fit', key: 'bd_fit' }
+        ]
+      },
+      contact_hire: {
+        terms: ['contact', 'email', 'phone', 'reach', 'interview', 'hire', 'get in touch', 'lien he', 'phong van', 'call', 'number', 'zalo', 'whatsapp', 'linkedin', 'cv', 'resume', 'pdf'],
+        q: 'How can I contact Dat Tran or book an interview?',
+        a: 'You can connect directly with Dat:<br>• <strong>Email:</strong> <a href="mailto:dattt231@gmail.com" class="text-indigo-400 underline font-semibold">dattt231@gmail.com</a><br>• <strong>Phone / WhatsApp / Zalo:</strong> <a href="tel:+84336449533" class="text-indigo-400 font-mono">+84 33-644-9533</a> (033-644-9533)<br>• <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/dattt2311" target="_blank" class="text-indigo-400 underline">linkedin.com/in/dattt2311</a><br>• <strong>GitHub:</strong> <a href="https://github.com/datdata231" target="_blank" class="text-indigo-400 underline">github.com/datdata231</a><br>• <strong>Location:</strong> Hoang Mai, Hanoi, Vietnam',
+        chips: [
+          { text: 'Why Hire for Senior BD?', key: 'bd_fit' },
+          { text: 'Test JD Fit Score', key: 'jd_match' }
+        ]
+      },
+      jd_match: {
+        terms: ['job description', 'jd fit', 'scorecard', 'role match', 'eval jd', 'jd', 'fit', 'score', 'requirements', 'matching', 'eval'],
+        tab: 'jd',
+        q: 'How does Dat match my Job Description?',
+        a: "I've opened the <strong>JD Fit Calculator</strong> on the right canvas. You can paste any Job Description or role requirements to generate an instant requirement-by-requirement score, or test with one of the pre-loaded Senior BD, Growth, or EA presets!",
+        chips: [
+          { text: 'Preset: Senior BD', key: 'bd_fit' },
+          { text: 'Preset: Growth Lead', key: 'growth_gtm' }
+        ]
       }
     };
 
-    function appendChatMessage(question, answerHtml) {
+    function appendChatMessage(question, answerHtml, chips = []) {
       const chat = document.getElementById('chatHistory');
+      let chipsHtml = '';
+      if (chips && chips.length > 0) {
+        chipsHtml = `
+          <div class="flex flex-wrap gap-1.5 pt-2 border-t border-slate-700/30 mt-2">
+            ${chips.map(c => `
+              <button onclick="askQuestion('${c.key}')" class="text-[10px] font-mono px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400 hover:bg-indigo-500/20 border border-indigo-500/25 transition">
+                → ${c.text}
+              </button>
+            `).join('')}
+          </div>
+        `;
+      }
       chat.innerHTML += `
         <div class="flex justify-end">
-          <div class="bg-indigo-600 text-white rounded-xl px-3 py-2 max-w-[85%] text-xs font-medium">
+          <div class="bg-indigo-600 text-white rounded-xl px-3 py-2 max-w-[85%] text-xs font-medium shadow-sm">
             ${question}
           </div>
         </div>
         <div class="flex items-start gap-2.5">
           <div class="w-6 h-6 rounded-md bg-indigo-600 text-white flex items-center justify-center text-[10px] font-bold shrink-0 mt-0.5">AI</div>
-          <div class="card-bg rounded-xl p-3 space-y-1 max-w-[90%] text-xs leading-relaxed">
+          <div class="card-bg rounded-xl p-3 space-y-1.5 max-w-[90%] text-xs leading-relaxed">
             ${answerHtml}
+            ${chipsHtml}
           </div>
         </div>
       `;
@@ -857,33 +1042,70 @@ Act as an interactive talent concierge and portfolio guide for Tran Tien Dat (Da
     }
 
     function askQuestion(key) {
+      if (key === 'timeline' || key === 'bento' || key === 'jd' || key === 'skills') {
+        switchCanvasTab(key);
+        return;
+      }
       const item = qaDatabase[key];
-      if (item) appendChatMessage(item.q, item.a);
+      if (item) {
+        if (item.tab) switchCanvasTab(item.tab);
+        if (item.roleId) {
+          const el = document.getElementById('roleBody-' + item.roleId);
+          if (el && el.classList.contains('hidden')) el.classList.remove('hidden');
+        }
+        appendChatMessage(item.q, item.a, item.chips || []);
+      }
     }
 
     function handleCustomQuestion(e) {
       e.preventDefault();
       const input = document.getElementById('customQuestionInput');
-      const q = input.value.trim();
-      if (!q) return;
+      const rawQ = input.value.trim();
+      if (!rawQ) return;
       input.value = '';
-      const lower = q.toLowerCase();
-      let ans = "";
 
-      if (lower.includes('mba') || lower.includes('education') || lower.includes('degree')) {
-        ans = "Dat holds an <strong>MBA</strong> from the <strong>Swiss Institute of Management and Innovation (SIMI)</strong> and a <strong>BA (Hons) in Marketing Management</strong> from <strong>Staffordshire University (BUV)</strong>.";
-      } else if (lower.includes('contact') || lower.includes('email') || lower.includes('phone') || lower.includes('linkedin')) {
-        ans = "Direct contact:<br>• <strong>Email:</strong> dattt231@gmail.com<br>• <strong>Phone:</strong> 033-644-9533<br>• <strong>LinkedIn:</strong> linkedin.com/in/dattt2311<br>• <strong>Location:</strong> Hoang Mai, Hanoi, Vietnam";
-      } else if (lower.includes('jd') || lower.includes('fit') || lower.includes('score')) {
-        switchCanvasTab('jd');
-        ans = "I've opened the <strong>JD Fit Calculator</strong> on the right canvas for you—paste your job description there to see a full requirement-by-requirement match!";
-      } else if (lower.includes('ai') || lower.includes('skill')) {
-        switchCanvasTab('skills');
-        ans = qaDatabase.ai_skills.a;
-      } else {
-        ans = "Across <strong>Herond Labs, Ninety Eight (Coin98), OneChain, KingSpeed, AEONMALL, and Gimasys</strong>, Dat brings 6+ years in B2B Partnerships, Growth, and Executive Strategy with an MBA, 200+ enterprise partners, and $300K+ annual growth. Use the tabs on the right canvas to explore his timeline or run a JD Fit check!";
+      const cq = cleanString(rawQ);
+      let bestKey = null;
+      let highestScore = 0;
+
+      for (const [key, item] of Object.entries(qaDatabase)) {
+        let score = 0;
+        if (item.terms) {
+          for (const term of item.terms) {
+            const ct = cleanString(term);
+            if (matchesTerm(ct, cq)) {
+              score += (ct.includes(' ') ? 8 : 4);
+            }
+          }
+        }
+        if (score > highestScore) {
+          highestScore = score;
+          bestKey = key;
+        }
       }
-      appendChatMessage(q, ans);
+
+      if (highestScore > 0 && bestKey && qaDatabase[bestKey]) {
+        const item = qaDatabase[bestKey];
+        if (item.tab) switchCanvasTab(item.tab);
+        if (item.roleId) {
+          const el = document.getElementById('roleBody-' + item.roleId);
+          if (el && el.classList.contains('hidden')) el.classList.remove('hidden');
+        }
+        appendChatMessage(rawQ, item.a, item.chips || []);
+      } else {
+        const fallbackAnswer = `
+          I want to make sure I give you the exact details you need! Dat brings <strong>6+ years in Tech BD, Partnerships, and Growth</strong> across SEA. Here are key topics you can ask me:
+        `;
+        const fallbackChips = [
+          { text: 'Ninety Eight Track Record', key: 'ninety_eight' },
+          { text: 'Herond Labs 18% Alliances', key: 'herond' },
+          { text: 'Why Hire for Senior BD?', key: 'bd_fit' },
+          { text: 'MBA & Academic Credentials', key: 'education_mba' },
+          { text: 'Custom AI Agent Skills', key: 'ai_skills' },
+          { text: 'Contact & Interview Booking', key: 'contact_hire' }
+        ];
+        appendChatMessage(rawQ, fallbackAnswer, fallbackChips);
+      }
     }
 
     const sampleJds = {
