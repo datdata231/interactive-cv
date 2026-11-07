@@ -1,0 +1,2636 @@
+<!DOCTYPE html>
+<html lang="en" class="dark" data-style="venture">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trần Tiến Đạt (Ronin) — Executive Portfolio & Interactive CV Skill</title>
+  <meta name="description" content="Executive Portfolio & AI Agent Skill for Tran Tien Dat (Dat Tran / Ronin) — Senior Partner Relations, B2B Tech Business Development & Growth Lead across Southeast Asia | MBA." />
+  <meta name="keywords" content="Tran Tien Dat, Dat Tran, Ronin, Business Development, Partner Relations, Growth Lead, Southeast Asia, Web3, Coin98, Ninety Eight, Viction, OneID, MBA, SIMI, Staffordshire, BUV, AEONMALL" />
+  <meta name="author" content="Tran Tien Dat (Ronin)" />
+  <link rel="canonical" href="https://datdata231.github.io/interactive-cv/" />
+
+  <!-- Social & Open Graph Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://datdata231.github.io/interactive-cv/" />
+  <meta property="og:title" content="Trần Tiến Đạt (Ronin) — Executive Portfolio & Interactive CV Skill" />
+  <meta property="og:description" content="6+ years scaling tech partnerships, Web3 ecosystems, and B2B pipelines across SEA. $300K+ annual revenue growth, 200+ enterprise partners, MBA." />
+  <meta property="og:site_name" content="Tran Tien Dat Executive Portfolio" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://datdata231.github.io/interactive-cv/" />
+  <meta name="twitter:title" content="Trần Tiến Đạt (Ronin) — Executive Portfolio & Interactive CV Skill" />
+  <meta name="twitter:description" content="Senior Partner Relations, B2B Tech BD & Growth Lead across SEA | MBA | AI-Native Builder." />
+
+  <!-- Embedded SVG Monogram Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%2308090d'/><text x='50%' y='58%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='44' font-weight='900' fill='%23f3ba2f'>DT</text></svg>" />
+
+  <!-- Early Theme & Style Init (FOUC Prevention) -->
+  <script>
+    (function() {
+      try {
+        const savedTheme = localStorage.getItem('cv_theme') || 'dark';
+        if (savedTheme === 'light') {
+          document.documentElement.classList.remove('dark');
+        } else {
+          document.documentElement.classList.add('dark');
+        }
+        const savedStyle = localStorage.getItem('cv_style_option') || 'venture';
+        document.documentElement.setAttribute('data-style', savedStyle);
+      } catch(e) {}
+    })();
+  </script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Typography: Plus Jakarta Sans (Clean Modern Sans) + Newsreader (Editorial Serif) + JetBrains Mono (Technical Telemetry) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            serif: ['Newsreader', 'Georgia', 'serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            gold: {
+              300: '#fed675',
+              400: '#f6c343',
+              500: '#f3ba2f',
+              600: '#d99e1b',
+              700: '#b27a12',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* ========================================================================= */
+    /* MASTER DESIGN SYSTEM: VENTURE OBSIDIAN & 24K CHAMPAGNE GOLD               */
+    /* Anti-Slop Calibrated Typography, Dual-Mode Contrast & Tactile Physics     */
+    /* ========================================================================= */
+    
+    :root, html[data-style="venture"] {
+      --bg-base: #06070a;
+      --bg-surface: #0e1017;
+      --bg-elevated: #141722;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-strong: rgba(243, 186, 47, 0.35);
+      --text-hero: #fcfcfd;
+      --text-body: #cbd5e1;
+      --text-muted: #828ea2;
+      --accent-primary: #f3ba2f;
+      --accent-primary-hover: #fed675;
+      --accent-soft: rgba(243, 186, 47, 0.12);
+      --glow-color: rgba(243, 186, 47, 0.15);
+      --font-headline: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --headline-weight: 800;
+      --letter-spacing: -0.025em;
+    }
+
+    html[data-style="venture"]:not(.dark) {
+      --bg-base: #fbf9f4;
+      --bg-surface: #ffffff;
+      --bg-elevated: #f4efe6;
+      --border-subtle: #e2ded7;
+      --border-strong: #d97706;
+      --text-hero: #0f172a;
+      --text-body: #334155;
+      --text-muted: #64748b;
+      --accent-primary: #b45309;
+      --accent-primary-hover: #92400e;
+      --accent-soft: rgba(180, 83, 9, 0.1);
+      --glow-color: rgba(180, 83, 9, 0.12);
+    }
+
+    /* Option 1: Swiss Monolith */
+    html[data-style="swiss"] {
+      --bg-base: #08090d;
+      --bg-surface: #10121a;
+      --bg-elevated: #161924;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-strong: rgba(59, 130, 246, 0.4);
+      --text-hero: #ffffff;
+      --text-body: #94a3b8;
+      --text-muted: #64748b;
+      --accent-primary: #3b82f6;
+      --accent-primary-hover: #60a5fa;
+      --accent-soft: rgba(59, 130, 246, 0.12);
+      --glow-color: rgba(59, 130, 246, 0.18);
+      --font-headline: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      --headline-weight: 700;
+      --letter-spacing: -0.03em;
+    }
+    html[data-style="swiss"]:not(.dark) {
+      --bg-base: #f8fafc;
+      --bg-surface: #ffffff;
+      --bg-elevated: #f1f5f9;
+      --border-subtle: #e2e8f0;
+      --border-strong: #2563eb;
+      --text-hero: #0f172a;
+      --text-body: #334155;
+      --text-muted: #64748b;
+      --accent-primary: #1d4ed8;
+      --accent-primary-hover: #1e40af;
+      --accent-soft: rgba(29, 78, 216, 0.08);
+      --glow-color: rgba(29, 78, 216, 0.1);
+    }
+
+    /* Option 3: Editorial Prestige */
+    html[data-style="editorial"] {
+      --bg-base: #0b0c11;
+      --bg-surface: #12141d;
+      --bg-elevated: #191c28;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-strong: rgba(212, 163, 89, 0.4);
+      --text-hero: #f7f6f2;
+      --text-body: #c4cdd8;
+      --text-muted: #7d8897;
+      --accent-primary: #d4a359;
+      --accent-primary-hover: #e2b97c;
+      --accent-soft: rgba(212, 163, 89, 0.12);
+      --glow-color: rgba(212, 163, 89, 0.18);
+      --font-headline: 'Newsreader', Georgia, serif;
+      --headline-weight: 600;
+      --letter-spacing: -0.01em;
+    }
+    html[data-style="editorial"]:not(.dark) {
+      --bg-base: #faf8f5;
+      --bg-surface: #ffffff;
+      --bg-elevated: #f0ece3;
+      --border-subtle: #e0d9cd;
+      --border-strong: #92400e;
+      --text-hero: #14171f;
+      --text-body: #374151;
+      --text-muted: #6b7280;
+      --accent-primary: #92400e;
+      --accent-primary-hover: #78350f;
+      --accent-soft: rgba(146, 64, 14, 0.08);
+      --glow-color: rgba(146, 64, 14, 0.1);
+    }
+
+    /* Base Body Reset */
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-body);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      overflow-x: hidden;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    .headline-font {
+      font-family: var(--font-headline);
+      font-weight: var(--headline-weight);
+      letter-spacing: var(--letter-spacing);
+    }
+
+    /* Subtle Pulsing Golden Embers Mesh in Dark Mode */
+    html.dark body {
+      background-image: 
+        radial-gradient(at 10% 10%, rgba(243, 186, 47, 0.06) 0px, transparent 45%),
+        radial-gradient(at 90% 20%, rgba(59, 130, 246, 0.04) 0px, transparent 40%),
+        radial-gradient(at 50% 90%, rgba(16, 185, 129, 0.03) 0px, transparent 45%),
+        radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 100% 100%, 32px 32px;
+      background-attachment: fixed;
+    }
+
+    /* Architectural Executive Card */
+    .exec-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      position: relative;
+      transition: border-color 0.22s cubic-bezier(0.16, 1, 0.3, 1), 
+                  transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), 
+                  box-shadow 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .exec-card:hover {
+      border-color: var(--border-strong);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 34px -8px rgba(0, 0, 0, 0.35), 0 0 20px -2px var(--glow-color);
+    }
+    html:not(.dark) .exec-card {
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+    }
+    html:not(.dark) .exec-card:hover {
+      box-shadow: 0 12px 28px -4px rgba(15, 23, 42, 0.1), 0 0 16px -2px var(--glow-color);
+    }
+
+    /* Cursor-Tracking Specular Spotlight */
+    .glow-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .glow-card::before {
+      content: '';
+      position: absolute;
+      top: var(--mouse-y, -1000px);
+      left: var(--mouse-x, -1000px);
+      transform: translate(-50%, -50%);
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, var(--glow-color) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .glow-card:hover::before {
+      opacity: 1;
+    }
+
+    /* Staggered Scroll Reveal Classes */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal-on-scroll.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Active Lens Tab State */
+    .lens-active {
+      background-color: var(--accent-primary) !important;
+      color: #ffffff !important;
+      font-weight: 700 !important;
+      box-shadow: 0 4px 18px rgba(243, 186, 47, 0.35) !important;
+      border-color: transparent !important;
+    }
+    html.dark .lens-active {
+      color: #06070a !important;
+    }
+
+    /* Active Style Pill */
+    .style-pill-active {
+      background-color: var(--accent-primary) !important;
+      color: #ffffff !important;
+      font-weight: 700 !important;
+    }
+    html.dark .style-pill-active {
+      color: #06070a !important;
+    }
+
+    /* Brand CTA Button High-Contrast Text Guarantee */
+    .btn-brand-accent {
+      background-color: var(--accent-primary);
+      color: #ffffff;
+      font-weight: 700;
+      transition: all 0.2s ease;
+    }
+    html.dark .btn-brand-accent {
+      color: #06070a;
+    }
+    .btn-brand-accent:hover {
+      filter: brightness(1.1);
+    }
+
+    /* Holographic Shimmer Sheen */
+    .holo-sheen {
+      position: relative;
+      overflow: hidden;
+    }
+    .holo-sheen::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        60deg,
+        transparent 35%,
+        rgba(255, 255, 255, 0.08) 45%,
+        rgba(243, 186, 47, 0.15) 50%,
+        rgba(255, 255, 255, 0.08) 55%,
+        transparent 65%
+      );
+      transform: rotate(-25deg) translateY(-100%);
+      transition: transform 0.8s ease;
+      pointer-events: none;
+    }
+    .holo-sheen:hover::after {
+      transform: rotate(-25deg) translateY(100%);
+    }
+
+    /* Circular SVG Gauge for JD Fit Scorer */
+    .gauge-circle {
+      transition: stroke-dashoffset 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Print Formatting (Clean 2-Page Executive Document) */
+    @media print {
+      .no-print, header, footer, #conciergeDrawer, #conciergeLauncherBtn, #docModal, #locationModal {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+        color: #0f172a !important;
+        font-size: 10.5pt !important;
+      }
+      #printOnlyResume {
+        display: block !important;
+      }
+      main {
+        display: none !important;
+      }
+    }
+    #printOnlyResume {
+      display: none;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col antialiased">
+
+  <!-- ========================================================================= -->
+  <!-- 1. TOP EXECUTIVE TELEMETRY COMMAND BAR WITH LIVE UI STYLE SWITCHER         -->
+  <!-- ========================================================================= -->
+  <header class="sticky top-0 z-40 h-16 w-full border-b backdrop-blur-md transition-colors bg-[#fbf9f4]/90 dark:bg-[#06070a]/90 border-slate-200 dark:border-white/10">
+    <div class="max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3">
+      
+      <!-- Brand Identity & Title -->
+      <div class="flex items-center gap-3">
+        <a href="#overview" class="flex items-center gap-2.5 group">
+          <div class="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm shadow-md transition group-hover:scale-105"
+               style="background-color: var(--accent-primary); color: #06070a;">
+            DT
+          </div>
+          <div>
+            <div class="headline-font text-sm text-slate-900 dark:text-white flex items-center gap-1.5">
+              <span>Trần Tiến Đạt</span>
+              <span class="text-[10px] font-mono px-1.5 py-0.2 rounded border font-semibold"
+                    style="background-color: var(--accent-soft); color: var(--accent-primary); border-color: var(--border-strong);">
+                RONIN
+              </span>
+            </div>
+            <div class="text-[10px] font-mono text-slate-500">EXECUTIVE PORTFOLIO // SEA</div>
+          </div>
+        </a>
+
+        <!-- CLI Quick Command -->
+        <div class="hidden xl:flex items-center gap-2 pl-3 border-l border-slate-700/30 text-xs font-mono">
+          <span class="text-amber-500 font-bold">$</span>
+          <span class="text-slate-400" id="cliText">npx skills add datdata231/interactive-cv</span>
+          <button onclick="copyCli()" class="px-2 py-0.5 rounded text-[11px] font-medium bg-slate-800 hover:bg-slate-700 text-slate-200 transition" id="copyCliBtn">Copy</button>
+        </div>
+      </div>
+
+      <!-- Center Anchor Navigation -->
+      <nav class="hidden lg:flex items-center gap-6 text-xs font-semibold tracking-wide text-slate-600 dark:text-slate-300">
+        <a href="#overview" class="hover:text-amber-700 dark:hover:text-amber-400 transition">01 // OVERVIEW</a>
+        <a href="#certificates-section" class="hover:text-amber-400 transition font-semibold text-amber-400/90">02 // CERTIFICATES &amp; AWARDS</a>
+        <a href="#locations-section" class="hover:text-amber-700 dark:hover:text-amber-400 transition">03 // LOCATIONS</a>
+        <a href="#experience" class="hover:text-amber-700 dark:hover:text-amber-400 transition">04 // TRACK RECORD</a>
+        <a href="#jd-evaluator" class="hover:text-amber-700 dark:hover:text-amber-400 transition flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          <span>05 // JD FIT SCORER</span>
+        </a>
+      </nav>
+
+      <!-- Right Controls: UI STYLE SWITCHER + THEME + CONCIERGE -->
+      <div class="flex items-center gap-2">
+        
+        <!-- UI Style Direction Selector (Venture Gold as default) -->
+        <div class="hidden sm:flex items-center gap-1 p-1 rounded-lg border text-[11px] font-mono"
+             style="background-color: var(--bg-surface); border-color: var(--border-subtle);"
+             title="Select UI Art Direction">
+          <span class="px-1.5 text-slate-500 font-bold">STYLE:</span>
+          <button onclick="setStyleOption('swiss')" id="btn-style-swiss" class="px-2 py-0.5 rounded transition">
+            1. Swiss
+          </button>
+          <button onclick="setStyleOption('venture')" id="btn-style-venture" class="px-2 py-0.5 rounded transition style-pill-active">
+            2. Venture Gold
+          </button>
+          <button onclick="setStyleOption('editorial')" id="btn-style-editorial" class="px-2 py-0.5 rounded transition">
+            3. Editorial
+          </button>
+        </div>
+
+        <!-- Light/Dark Toggle -->
+        <button onclick="toggleTheme()" 
+                class="p-2 rounded-lg border border-slate-700/60 text-slate-400 hover:text-slate-900 dark:hover:text-white transition"
+                title="Toggle Light / Dark Mode" aria-label="Toggle Theme">
+          <svg id="themeIcon" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+          </svg>
+        </button>
+
+        <!-- AI Concierge Trigger -->
+        <button onclick="toggleConciergeDrawer()" 
+                class="hidden md:inline-flex items-center gap-1.5 text-xs font-mono font-semibold px-2.5 py-1.5 rounded-lg border border-amber-500/30 bg-amber-500/10 text-amber-500 hover:bg-amber-500/20 transition"
+                title="Open AI Concierge (⌘K / Ctrl+K)">
+          <span>⚡ Concierge</span>
+          <kbd class="text-[9px] px-1 py-0.2 bg-amber-500/20 rounded font-mono">⌘K</kbd>
+        </button>
+
+        <!-- Direct Contact CTA -->
+        <a href="mailto:dattt231@gmail.com?subject=Executive%20Mandate%20Inquiry%20-%20Tran%20Tien%20Dat" 
+           class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition shadow-sm btn-brand-accent">
+          <span>Hire Dat</span>
+        </a>
+
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- 2. MAIN EDITORIAL CONTENT FLOW                                            -->
+  <!-- ========================================================================= -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-16">
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!-- SECTION 01: HERO & EXECUTIVE PORTRAIT SHOWCASE                           -->
+    <!-- ----------------------------------------------------------------------- -->
+    <section id="overview" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-2 reveal-on-scroll">
+      
+      <!-- Left Narrative Column (7 Cols) -->
+      <div class="lg:col-span-7 space-y-5">
+        
+        <!-- Availability Radar with Live Pulse -->
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span>AVAILABLE FOR SOUTHEAST ASIA MANDATES (Q1/Q2 · REMOTE &amp; HYBRID)</span>
+        </div>
+
+        <!-- Name & Positioning with Adaptive Contrast -->
+        <div class="space-y-2">
+          <div class="flex flex-wrap items-baseline gap-3">
+            <h1 class="headline-font text-3xl sm:text-4xl lg:text-5xl text-slate-900 dark:text-white tracking-tight">
+              Trần Tiến Đạt
+            </h1>
+            <span class="font-mono text-xs px-2 py-0.5 rounded border font-bold uppercase tracking-wider"
+                  style="background-color: var(--accent-soft); color: var(--accent-primary); border-color: var(--border-strong);">
+              Ronin
+            </span>
+          </div>
+
+          <h2 id="heroHeadline" class="text-base sm:text-lg font-semibold text-slate-700 dark:text-slate-300 leading-snug">
+            Senior Partner Relations &amp; B2B Tech Business Development | Growth Lead | MBA
+          </h2>
+        </div>
+
+        <!-- Executive Narrative Bio (Grounded in Verified Career Portfolio) -->
+        <p id="heroSummary" class="text-sm sm:text-base leading-relaxed text-slate-700 dark:text-slate-300 font-normal">
+          Results-driven Business Development and Growth Leader with an <strong>MBA from the Swiss Institute of Management and Innovation (SIMI)</strong> and <strong>6+ years</strong> scaling tech ecosystems, Web3 partnerships, and B2B pipelines across Southeast Asia. Proven track record managing <strong>200+ enterprise partners and investors</strong> at Viction (Ninety Eight), driving <strong>$300,000+ in annual revenue growth</strong> at OneID, securing <strong>$100,000+ in tier-1/2 hackathon sponsorships</strong>, converting <strong>18% of cold prospects into global alliances in 3 months</strong> at Herond Labs, and engineering custom <strong>production AI Agent Skills</strong>.
+        </p>
+
+        <!-- Direct Contact Badges -->
+        <div class="pt-1 flex flex-wrap items-center gap-2.5 text-xs font-sans font-medium">
+          <a href="mailto:dattt231@gmail.com" class="exec-card px-3 py-1.5 rounded-lg flex items-center gap-2 hover:border-amber-400 transition">
+            <svg class="w-3.5 h-3.5 text-amber-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            <span class="text-slate-800 dark:text-slate-200">dattt231@gmail.com</span>
+          </a>
+
+          <button onclick="openQrContactModal('whatsapp')" class="exec-card px-3 py-1.5 rounded-lg flex items-center gap-2 hover:border-emerald-500 transition group cursor-pointer" title="Direct WhatsApp &amp; Zalo Connect">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span class="text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+              <span>WhatsApp / Zalo</span>
+              <span class="text-[10px] font-mono px-1.5 py-0.2 rounded bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 font-bold border border-emerald-500/30">QR</span>
+            </span>
+          </button>
+
+          <a href="https://www.linkedin.com/in/dattt2311" target="_blank" rel="noopener" class="exec-card px-3 py-1.5 rounded-lg flex items-center gap-2 hover:border-amber-400 transition">
+            <svg class="w-3.5 h-3.5 text-blue-500" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            <span class="text-slate-800 dark:text-slate-200">LinkedIn</span>
+          </a>
+
+          <button onclick="window.print()" class="exec-card px-3 py-1.5 rounded-lg flex items-center gap-1.5 text-amber-500 hover:bg-amber-500/10 transition">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+            <span>Print 2-Page CV</span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Right Column: EXECUTIVE PORTRAIT FRAME WITH GOLDEN HALO (5 Cols) -->
+      <div class="lg:col-span-5 flex justify-center lg:justify-end">
+        <div class="w-full max-w-sm exec-card glow-card rounded-2xl p-4 shadow-2xl relative overflow-hidden group border-amber-500/25" id="heroPortraitCard">
+          
+          <div class="flex items-center justify-between pb-2.5 border-b border-slate-700/50 text-[10px] font-mono text-slate-400 relative z-10">
+            <span class="flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <strong class="text-slate-900 dark:text-slate-200">EXECUTIVE DOSSIER</strong>
+            </span>
+            <span>20.98° N, 105.85° E // HAN</span>
+          </div>
+
+          <!-- Portrait Media Canvas -->
+          <div class="relative mt-3 aspect-[4/5] rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-700/60 flex items-center justify-center relative z-10" id="portraitContainer">
+            
+            <!-- Default Monogram Representation -->
+            <div id="portraitVisual" class="w-full h-full flex flex-col items-center justify-center p-6 text-center space-y-3">
+              <div class="relative">
+                <div class="w-24 h-24 rounded-2xl flex items-center justify-center text-3xl font-black shadow-xl"
+                     style="background: linear-gradient(135deg, var(--accent-primary) 0%, rgba(255,255,255,0.2) 100%); color: #06070a; box-shadow: 0 0 30px rgba(243, 186, 47, 0.25);">
+                  DT
+                </div>
+                <div class="absolute -bottom-2 -right-2 px-2 py-0.5 rounded-full bg-slate-950 border border-amber-500/50 text-[9px] font-mono font-bold text-amber-400">
+                  RONIN
+                </div>
+              </div>
+              <div>
+                <h3 class="headline-font text-base text-slate-900 dark:text-white">Trần Tiến Đạt</h3>
+                <p class="text-xs font-sans text-amber-700 dark:text-amber-400 mt-0.5 font-bold">Head of BD &amp; Growth</p>
+                <p class="text-[11px] text-slate-600 dark:text-slate-400 font-sans mt-1.5 max-w-xs">
+                  Swiss SIMI MBA · 200+ Enterprise Partners · $300K+ Net Revenue · SEA Ecosystems
+                </p>
+              </div>
+            </div>
+
+            <!-- Real Headshot Image (Loaded from assets/cv-headshot.png) -->
+            <img id="realHeadshotImg" src="" alt="Tran Tien Dat (Ronin)" class="w-full h-full object-cover hidden" />
+          </div>
+
+          <div class="mt-3 pt-2.5 border-t border-slate-200 dark:border-slate-800 grid grid-cols-2 gap-2 text-center text-[11px] font-sans relative z-10">
+            <div class="p-1 rounded bg-slate-100 dark:bg-slate-800/40">
+              <span class="text-slate-500 dark:text-slate-400 block">EDUCATION</span>
+              <strong class="text-amber-600 dark:text-amber-400">MBA (Swiss SIMI)</strong>
+            </div>
+            <div class="p-1 rounded bg-slate-100 dark:bg-slate-800/40">
+              <span class="text-slate-500 dark:text-slate-400 block">BASE / SCOPE</span>
+              <strong class="text-emerald-600 dark:text-emerald-400">Hanoi // SEA Region</strong>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!-- SECTION 02: HIGH-DENSITY TELEMETRY BENTO (WITH DYNAMIC NUMBER TICKERS)   -->
+    <!-- ----------------------------------------------------------------------- -->
+    <section class="space-y-3 reveal-on-scroll" id="telemetrySection">
+      <div class="flex items-center justify-between">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-400 flex items-center gap-2">
+          // AUDITED PERFORMANCE TELEMETRY &amp; SCALE METRICS
+        </h3>
+        <span class="text-[10px] font-mono text-slate-500">DYNAMIC TELEMETRY STREAM</span>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+        
+        <!-- Metric 1: 200+ Partners -->
+        <div class="exec-card glow-card p-3.5 rounded-xl space-y-1">
+          <div class="text-[10px] font-mono text-slate-500 dark:text-slate-400 uppercase">Ecosystem Partners</div>
+          <div class="headline-font text-2xl sm:text-3xl text-slate-900 dark:text-white font-bold tracking-tight">
+            <span class="counter-number" data-target="200" data-suffix="+">200+</span>
+          </div>
+          <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-tight">Managed at Viction (Ninety Eight) across SEA Web3.</p>
+        </div>
+
+        <!-- Metric 2: $300K+ Net Revenue -->
+        <div class="exec-card glow-card p-3.5 rounded-xl space-y-1 border-amber-500/30">
+          <div class="text-[10px] font-mono text-amber-600 dark:text-amber-400 uppercase font-semibold">Net Revenue Scale</div>
+          <div class="headline-font text-2xl sm:text-3xl text-amber-600 dark:text-amber-400 font-bold tracking-tight">
+            <span class="counter-number" data-prefix="$" data-target="300" data-suffix="K+">$300K+</span>
+          </div>
+          <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-tight">Annual revenue expansion unlocked at OneID (2024).</p>
+        </div>
+
+        <!-- Metric 3: $100K+ Hackathon Grants -->
+        <div class="exec-card glow-card p-3.5 rounded-xl space-y-1">
+          <div class="text-[10px] font-mono text-slate-500 dark:text-slate-400 uppercase">Hackathon Grants</div>
+          <div class="headline-font text-2xl sm:text-3xl text-slate-900 dark:text-white font-bold tracking-tight">
+            <span class="counter-number" data-prefix="$" data-target="100" data-suffix="K+">$100K+</span>
+          </div>
+          <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-tight">Tier-1/2 sponsorships secured for Ninety Eight hackathons.</p>
+        </div>
+
+        <!-- Metric 4: 18% Cold Conversion -->
+        <div class="exec-card glow-card p-3.5 rounded-xl space-y-1">
+          <div class="text-[10px] font-mono text-emerald-600 dark:text-emerald-400 uppercase font-semibold">Cold Conversion</div>
+          <div class="headline-font text-2xl sm:text-3xl text-emerald-400 font-bold tracking-tight">
+            <span class="counter-number" data-target="18" data-suffix="%">18%</span>
+          </div>
+          <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-tight">Cold B2B leads to signed partners in 90 days (Herond).</p>
+        </div>
+
+        <!-- Metric 5: 15+ Team Leadership -->
+        <div class="exec-card glow-card p-3.5 rounded-xl space-y-1">
+          <div class="text-[10px] font-mono text-slate-500 dark:text-slate-400 uppercase">Leadership Scale</div>
+          <div class="headline-font text-2xl sm:text-3xl text-slate-900 dark:text-white font-bold tracking-tight">
+            <span class="counter-number" data-target="15" data-suffix="+">15+</span>
+          </div>
+          <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-tight">Cross-functional team members led across BD &amp; Growth.</p>
+        </div>
+
+        <!-- Metric 6: MBA Degree -->
+        <div class="exec-card glow-card p-3.5 rounded-xl space-y-1">
+          <div class="text-[10px] font-mono text-blue-600 dark:text-blue-400 uppercase font-semibold">Executive Degree</div>
+          <div class="headline-font text-2xl sm:text-3xl text-blue-600 dark:text-blue-400 font-bold tracking-tight">MBA</div>
+          <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-tight">Swiss Institute of Management and Innovation (SIMI).</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!-- SECTION 03: VISUAL PROOF OF CERTIFICATES & AWARDS (4 CARDS)              -->
+    <!-- ----------------------------------------------------------------------- -->
+    <section id="certificates-section" class="space-y-4 reveal-on-scroll">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-3">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+            <h2 class="headline-font text-xl sm:text-2xl text-slate-900 dark:text-white">
+              02 // Proof of Certificates &amp; Corporate Honors
+            </h2>
+          </div>
+          <p class="text-xs text-slate-600 dark:text-slate-400 font-sans mt-1">Verified academic degrees and corporate honors with official documentary scans.</p>
+        </div>
+<span class="text-xs font-sans text-amber-700 dark:text-amber-400 font-semibold tracking-wider">CLICK ANY CARD TO INSPECT DOCUMENT</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <!-- Certificate 1: Swiss SIMI MBA -->
+        <div class="exec-card glow-card holo-sheen rounded-2xl p-4 flex flex-col justify-between space-y-3 cursor-pointer group" onclick="openDocModal('mba')">
+          <div class="space-y-2.5 relative z-10">
+            <div class="flex items-center justify-between">
+              <span class="text-[9px] font-mono px-2 py-0.5 rounded bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/30 font-bold">
+                POSTGRADUATE · SWITZERLAND
+              </span>
+            </div>
+
+            <!-- Visual Certificate Plate Preview -->
+            <div class="aspect-[16/10] rounded-xl bg-gradient-to-br from-amber-500/15 via-slate-100 to-slate-200 dark:via-slate-900 dark:to-slate-950 border border-amber-500/30 p-3.5 flex flex-col justify-between relative overflow-hidden group-hover:border-amber-400 transition" id="certPlateMba">
+              <div class="flex justify-between items-start">
+                <div class="w-7 h-7 rounded-full bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-600 dark:text-amber-400 text-xs font-serif font-black">
+                  SIMI
+                </div>
+                <div class="text-[8px] font-mono text-slate-500 dark:text-slate-400 text-right">
+                  SIMI-SWISS-MBA
+                </div>
+              </div>
+              <div class="space-y-0.5 text-center">
+                <div class="font-serif italic text-[11px] text-amber-600 dark:text-amber-300">Swiss Institute of Management and Innovation</div>
+                <div class="headline-font font-bold text-xs text-slate-900 dark:text-white">Master of Business Administration (MBA)</div>
+                <div class="text-[9px] font-mono text-slate-600 dark:text-slate-400">Zug, Switzerland</div>
+              </div>
+              <div class="flex justify-between items-center text-[8px] font-mono text-slate-500 dark:text-slate-400 pt-1 border-t border-slate-300 dark:border-slate-800">
+                <span>Accredited Swiss Degree</span>
+                <span class="text-amber-600 dark:text-amber-400 font-bold">Preview Scan ↗</span>
+              </div>
+              <img id="cardCertImgMba" src="" alt="MBA Certificate" class="absolute inset-0 w-full h-full object-cover hidden" />
+            </div>
+
+            <div>
+              <h3 class="headline-font text-sm text-slate-900 dark:text-white font-bold">Master of Business Administration (MBA)</h3>
+              <p class="text-[11px] text-slate-600 dark:text-slate-400 font-sans mt-0.5 leading-tight">
+                Swiss Institute of Management and Innovation (SIMI) · Focus on executive strategy, venture finance &amp; cross-border negotiation.
+              </p>
+            </div>
+          </div>
+
+          <div class="pt-2 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center text-xs font-sans font-semibold text-amber-700 dark:text-amber-400 relative z-10">
+            <span>Inspect Credential</span>
+            <span class="group-hover:translate-x-1 transition">→</span>
+          </div>
+        </div>
+
+        <!-- Certificate 2: Staffordshire / BUV BA (Hons) -->
+        <div class="exec-card glow-card holo-sheen rounded-2xl p-4 flex flex-col justify-between space-y-3 cursor-pointer group" onclick="openDocModal('bba')">
+          <div class="space-y-2.5 relative z-10">
+            <div class="flex items-center justify-between">
+              <span class="text-[9px] font-mono px-2 py-0.5 rounded bg-blue-500/15 text-blue-600 dark:text-blue-400 border border-blue-500/30 font-bold">
+                UNDERGRADUATE · UK / BUV
+              </span>
+            </div>
+
+            <!-- Visual Certificate Plate Preview -->
+            <div class="aspect-[16/10] rounded-xl bg-gradient-to-br from-blue-500/15 via-slate-100 to-slate-200 dark:via-slate-900 dark:to-slate-950 border border-blue-500/30 p-3.5 flex flex-col justify-between relative overflow-hidden group-hover:border-blue-400 transition" id="certPlateBba">
+              <div class="flex justify-between items-start">
+                <div class="w-7 h-7 rounded-full bg-blue-500/20 border border-blue-500/40 flex items-center justify-center text-blue-600 dark:text-blue-400 text-xs font-serif font-black">
+                  STAFF
+                </div>
+                <div class="text-[8px] font-mono text-slate-500 dark:text-slate-400 text-right">
+                  STAFF-BUV-BA
+                </div>
+              </div>
+              <div class="space-y-0.5 text-center">
+                <div class="font-serif italic text-[11px] text-blue-600 dark:text-blue-300">Staffordshire University (UK) &amp; BUV</div>
+                <div class="headline-font font-bold text-xs text-slate-900 dark:text-white">BA (Hons) Marketing Management</div>
+                <div class="text-[9px] font-mono text-slate-600 dark:text-slate-400">British University Vietnam</div>
+              </div>
+              <div class="flex justify-between items-center text-[8px] font-mono text-slate-500 dark:text-slate-400 pt-1 border-t border-slate-300 dark:border-slate-800">
+                <span>British Degree Standards</span>
+                <span class="text-blue-600 dark:text-blue-400 font-bold">Preview Scan ↗</span>
+              </div>
+              <img id="cardCertImgBba" src="" alt="BA Certificate" class="absolute inset-0 w-full h-full object-cover hidden" />
+            </div>
+
+            <div>
+              <h3 class="headline-font text-sm text-slate-900 dark:text-white font-bold">BA (Hons) Marketing Management</h3>
+              <p class="text-[11px] text-slate-600 dark:text-slate-400 font-sans mt-0.5 leading-tight">
+                Staffordshire University (UK) &amp; British University Vietnam (BUV) · Specialized in digital marketing strategy &amp; consumer brand adoption.
+              </p>
+            </div>
+          </div>
+
+          <div class="pt-2 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center text-xs font-sans font-semibold text-blue-700 dark:text-blue-400 relative z-10">
+            <span>Inspect Credential</span>
+            <span class="group-hover:translate-x-1 transition">→</span>
+          </div>
+        </div>
+
+        <!-- Certificate 3: Employee of the Month Award (AEONMALL Ha Dong) -->
+        <div class="exec-card glow-card holo-sheen rounded-2xl p-4 flex flex-col justify-between space-y-3 cursor-pointer group" onclick="openDocModal('aeon')">
+          <div class="space-y-2.5 relative z-10">
+            <div class="flex items-center justify-between">
+              <span class="text-[9px] font-mono px-2 py-0.5 rounded bg-rose-500/15 text-rose-600 dark:text-rose-400 border border-rose-500/30 font-bold">
+                CORPORATE AWARD · JUNE 2021
+              </span>
+            </div>
+
+            <!-- Visual Certificate Plate Preview -->
+            <div class="aspect-[16/10] rounded-xl bg-gradient-to-br from-rose-500/15 via-slate-100 to-slate-200 dark:via-slate-900 dark:to-slate-950 border border-rose-500/30 p-3.5 flex flex-col justify-between relative overflow-hidden group-hover:border-rose-400 transition" id="certPlateAeon">
+              <div class="flex justify-between items-start">
+                <div class="w-7 h-7 rounded-full bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-600 dark:text-rose-400 text-xs font-serif font-black">
+                  EOM
+                </div>
+                <div class="text-[8px] font-mono text-slate-500 dark:text-slate-400 text-right">
+                  AEON-HD-2021-06
+                </div>
+              </div>
+              <div class="space-y-0.5 text-center">
+                <div class="font-serif italic text-[11px] text-rose-600 dark:text-rose-300">AEONMALL Ha Dong (Vietnam)</div>
+                <div class="headline-font font-bold text-xs text-slate-900 dark:text-white">Employee of the Month Award</div>
+                <div class="text-[9px] font-mono text-slate-600 dark:text-slate-400">June 2021 Honors</div>
+              </div>
+              <div class="flex justify-between items-center text-[8px] font-mono text-slate-500 dark:text-slate-400 pt-1 border-t border-slate-300 dark:border-slate-800">
+                <span>10,000+ App Downloads</span>
+                <span class="text-rose-600 dark:text-rose-400 font-bold">Preview Scan ↗</span>
+              </div>
+              <img id="cardCertImgAeon" src="" alt="AEONMALL Award" class="absolute inset-0 w-full h-full object-cover hidden" />
+            </div>
+
+            <div>
+              <h3 class="headline-font text-sm text-slate-900 dark:text-white font-bold">Employee of the Month Award</h3>
+              <p class="text-[11px] text-slate-600 dark:text-slate-400 font-sans mt-0.5 leading-tight">
+                Awarded June 2021 for directing the nationwide launch of the AEONMALL Vietnam mobile app, driving 10,000+ organic app downloads.
+              </p>
+            </div>
+          </div>
+
+          <div class="pt-2 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center text-xs font-sans font-semibold text-rose-700 dark:text-rose-400 relative z-10">
+            <span>Inspect Award Document</span>
+            <span class="group-hover:translate-x-1 transition">→</span>
+          </div>
+        </div>
+
+        <!-- Certificate 4: Enterprise IT & Cloud Campaign Track (Gimasys) -->
+        <div class="exec-card glow-card holo-sheen rounded-2xl p-4 flex flex-col justify-between space-y-3 cursor-pointer group" onclick="openDocModal('cloud')">
+          <div class="space-y-2.5 relative z-10">
+            <div class="flex items-center justify-between">
+              <span class="text-[9px] font-mono px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 font-bold">
+                ENTERPRISE IT CONSULTANCY
+              </span>
+            </div>
+
+            <!-- Visual Certificate Plate Preview -->
+            <div class="aspect-[16/10] rounded-xl bg-gradient-to-br from-emerald-500/15 via-slate-100 to-slate-200 dark:via-slate-900 dark:to-slate-950 border border-emerald-500/30 p-3.5 flex flex-col justify-between relative overflow-hidden group-hover:border-emerald-400 transition" id="certPlateCloud">
+              <div class="flex justify-between items-start">
+                <div class="w-7 h-7 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-600 dark:text-emerald-400 text-xs font-mono font-black">
+                  IT
+                </div>
+                <div class="text-[8px] font-mono text-slate-500 dark:text-slate-400 text-right">
+                  GIMASYS-IT-TRACK
+                </div>
+              </div>
+              <div class="space-y-0.5 text-center">
+                <div class="font-serif italic text-[11px] text-emerald-600 dark:text-emerald-300">Salesforce, Oracle &amp; Google Cloud Partner</div>
+                <div class="headline-font font-bold text-xs text-slate-900 dark:text-white">Enterprise IT &amp; Cloud Campaigns</div>
+                <div class="text-[9px] font-mono text-slate-600 dark:text-slate-400">Gimasys Vietnam</div>
+              </div>
+              <div class="flex justify-between items-center text-[8px] font-mono text-slate-500 dark:text-slate-400 pt-1 border-t border-slate-300 dark:border-slate-800">
+                <span>25% Conversion Lift</span>
+                <span class="text-emerald-600 dark:text-emerald-400 font-bold">Preview Scan ↗</span>
+              </div>
+              <img id="cardCertImgCloud" src="" alt="Gimasys Track" class="absolute inset-0 w-full h-full object-cover hidden" />
+            </div>
+
+            <div>
+              <h3 class="headline-font text-sm text-slate-900 dark:text-white font-bold">Enterprise IT Campaigns (Gimasys)</h3>
+              <p class="text-[11px] text-slate-600 dark:text-slate-400 font-sans mt-0.5 leading-tight">
+                Delivered 25% increase in B2B event registrations and product conversions for Salesforce, Oracle, and Google Cloud consulting campaigns.
+              </p>
+            </div>
+          </div>
+
+          <div class="pt-2 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center text-xs font-sans font-semibold text-emerald-700 dark:text-emerald-400 relative z-10">
+            <span>Inspect Track Record</span>
+            <span class="group-hover:translate-x-1 transition">→</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!-- SECTION 04: PROOF OF WORKING LOCATIONS & REGIONAL FOOTPRINT              -->
+    <!-- ----------------------------------------------------------------------- -->
+    <section id="locations-section" class="space-y-4 reveal-on-scroll">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-3">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <h2 class="headline-font text-xl sm:text-2xl text-slate-900 dark:text-white">
+              03 // Working Locations &amp; Physical Ecosystem Footprint
+            </h2>
+          </div>
+          <p class="text-xs text-slate-600 dark:text-slate-400 font-sans mt-1">Documentary proof of on-the-ground operational centers, Web3 builder spaces &amp; retail hubs across Southeast Asia.</p>
+        </div>
+        <span class="text-xs font-mono text-slate-500">CLICK TO VIEW LOCATION DOSSIER</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <!-- Location 1: Ninety Eight HQ -->
+        <div class="exec-card glow-card rounded-2xl overflow-hidden cursor-pointer group" onclick="openLocationModal('viction')">
+          <div class="relative h-44 overflow-hidden bg-slate-900">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" 
+                 alt="Ninety Eight / Viction Ecosystem HQ" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+            <div class="absolute bottom-3 left-3 right-3 flex justify-between items-end">
+              <div>
+                <span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold border border-amber-500/30">
+                  VICTION L1 ECOSYSTEM
+                </span>
+                <h4 class="headline-font text-sm font-bold text-white mt-1">Ninety Eight HQ</h4>
+              </div>
+              <span class="text-[10px] font-mono text-slate-300">Vietnam HQ</span>
+            </div>
+          </div>
+          <div class="p-3.5 space-y-1">
+            <p class="text-xs text-slate-700 dark:text-slate-300 font-sans">
+              Headquarters for 200+ partner network operations and the flagship Viction Horizon Hackathon ($100K+ sponsorships).
+            </p>
+            <div class="text-xs font-sans font-semibold text-amber-700 dark:text-amber-400 pt-1 group-hover:translate-x-0.5 transition">View Location Brief &amp; Photos ↗</div>
+          </div>
+        </div>
+
+        <!-- Location 2: Herond Labs -->
+        <div class="exec-card glow-card rounded-2xl overflow-hidden cursor-pointer group" onclick="openLocationModal('herond')">
+          <div class="relative h-44 overflow-hidden bg-slate-900">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" 
+                 alt="Herond Labs Innovation Studio" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+            <div class="absolute bottom-3 left-3 right-3 flex justify-between items-end">
+              <div>
+                <span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-300 font-bold border border-blue-500/30">
+                  PRIVACY BROWSER LAB
+                </span>
+                <h4 class="headline-font text-sm font-bold text-white mt-1">Herond Labs</h4>
+              </div>
+              <span class="text-[10px] font-mono text-slate-300">Hanoi // Remote</span>
+            </div>
+          </div>
+          <div class="p-3.5 space-y-1">
+            <p class="text-xs text-slate-700 dark:text-slate-300 font-sans">
+              Decentralized browser studio where Dat structured cold B2B outreach reaching an 18% signed conversion rate in 90 days.
+            </p>
+            <div class="text-xs font-sans font-semibold text-blue-700 dark:text-blue-400 pt-1 group-hover:translate-x-0.5 transition">View Location Brief &amp; Photos ↗</div>
+          </div>
+        </div>
+
+        <!-- Location 3: AEONMALL Ha Dong -->
+        <div class="exec-card glow-card rounded-2xl overflow-hidden cursor-pointer group" onclick="openLocationModal('aeon')">
+          <div class="relative h-44 overflow-hidden bg-slate-900">
+            <img src="https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?auto=format&fit=crop&w=800&q=80" 
+                 alt="AEONMALL Ha Dong Commercial Center" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+            <div class="absolute bottom-3 left-3 right-3 flex justify-between items-end">
+              <div>
+                <span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-rose-500/20 text-rose-300 font-bold border border-rose-500/30">
+                  JAPANESE RETAIL
+                </span>
+                <h4 class="headline-font text-sm font-bold text-white mt-1">AEON MALL Ha Dong</h4>
+              </div>
+              <span class="text-[10px] font-mono text-slate-300">Hanoi, Vietnam</span>
+            </div>
+          </div>
+          <div class="p-3.5 space-y-1">
+            <p class="text-xs text-slate-700 dark:text-slate-300 font-sans">
+              Nationwide mobile app development &amp; launch center achieving 10,000+ organic app downloads in first 6 months.
+            </p>
+            <div class="text-xs font-sans font-semibold text-rose-700 dark:text-rose-400 pt-1 group-hover:translate-x-0.5 transition">View Location Brief &amp; Photos ↗</div>
+          </div>
+        </div>
+
+        <!-- Location 4: Gimasys Google Cloud Hub -->
+        <div class="exec-card glow-card rounded-2xl overflow-hidden cursor-pointer group" onclick="openLocationModal('gimasys')">
+          <div class="relative h-44 overflow-hidden bg-slate-900">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" 
+                 alt="Gimasys Google Cloud Center" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+            <div class="absolute bottom-3 left-3 right-3 flex justify-between items-end">
+              <div>
+                <span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-500/30">
+                  IT CONSULTANCY
+                </span>
+                <h4 class="headline-font text-sm font-bold text-white mt-1">Gimasys Office</h4>
+              </div>
+              <span class="text-[10px] font-mono text-slate-300">Hanoi, Vietnam</span>
+            </div>
+          </div>
+          <div class="p-3.5 space-y-1">
+            <p class="text-xs text-slate-700 dark:text-slate-300 font-sans">
+              Enterprise digital transformation consultancy partnered with Salesforce, Oracle, and Google Cloud (25% conversion lift).
+            </p>
+            <div class="text-xs font-sans font-semibold text-emerald-700 dark:text-emerald-400 pt-1 group-hover:translate-x-0.5 transition">View Location Brief &amp; Photos ↗</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!-- SECTION 05: ROLE-LENS NAVIGATOR & CAREER CHRONICLES                      -->
+    <!-- ----------------------------------------------------------------------- -->
+    <section id="experience" class="space-y-4 reveal-on-scroll">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-3">
+        <div>
+          <h2 class="headline-font text-xl sm:text-2xl text-slate-900 dark:text-white">
+            04 // Career Chronicles &amp; Verified Case Studies (6 Engagements)
+          </h2>
+          <p class="text-xs text-slate-600 dark:text-slate-400 font-sans mt-1">Filter case studies with smooth transition physics across BD, Growth, and Strategy:</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="toggleAllAccordions(true)" class="text-[11px] font-mono text-slate-500 hover:text-amber-500 underline">Expand All</button>
+          <span class="text-slate-400">|</span>
+          <button onclick="toggleAllAccordions(false)" class="text-[11px] font-mono text-slate-500 hover:text-amber-500 underline">Collapse All</button>
+        </div>
+      </div>
+
+      <!-- Role-Lens Switcher -->
+      <div class="flex flex-wrap gap-2 p-1.5 rounded-xl bg-slate-100 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800" id="lensButtonContainer">
+        <button onclick="setRoleLens('all')" id="lens-all" class="px-3 py-1.5 rounded-lg text-xs font-sans font-semibold transition lens-active">
+          360° Executive View
+        </button>
+        <button onclick="setRoleLens('bd')" id="lens-bd" class="px-3 py-1.5 rounded-lg text-xs font-mono font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition">
+          Senior BD &amp; Alliances
+        </button>
+        <button onclick="setRoleLens('growth')" id="lens-growth" class="px-3 py-1.5 rounded-lg text-xs font-mono font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition">
+          Growth &amp; Marketing Lead
+        </button>
+        <button onclick="setRoleLens('exec')" id="lens-exec" class="px-3 py-1.5 rounded-lg text-xs font-mono font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition">
+          Executive Strategy / Chief of Staff
+        </button>
+        <button onclick="setRoleLens('ai')" id="lens-ai" class="px-3 py-1.5 rounded-lg text-xs font-mono font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition">
+          AI-Native Builder
+        </button>
+      </div>
+
+      <!-- 6 Case Study Cards (100% Aligned with career-portfolio.md) -->
+      <div class="space-y-4" id="caseStudiesContainer">
+
+        <!-- 1. HEROND LABS -->
+        <article class="exec-card glow-card rounded-2xl p-5 transition duration-200 role-card" data-tags="bd growth exec ai" style="border-left: 4px solid #3b82f6;">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 cursor-pointer" onclick="toggleAccordion('role-herond')">
+            <div class="flex items-start gap-3.5">
+              <div class="w-11 h-11 rounded-xl bg-blue-500/15 border border-blue-500/30 flex items-center justify-center font-bold text-blue-600 dark:text-blue-400 text-sm shrink-0">
+                HL
+              </div>
+              <div>
+                <div class="flex flex-wrap items-center gap-2">
+                  <h3 class="headline-font text-base text-slate-900 dark:text-white">Herond Labs</h3>
+                  <span class="text-xs font-mono px-2 py-0.2 rounded bg-blue-500/15 text-blue-600 dark:text-blue-400 border border-blue-500/30 font-semibold">
+                    Business Development Collaborator
+                  </span>
+                  <span class="text-[11px] font-mono text-slate-500 dark:text-slate-400">Apr 2026 — Sep 2026</span>
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-400 font-sans mt-0.5">
+                  Privacy-first web ecosystem and blockchain software lab (flagship: Herond Browser).
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/30 font-bold">
+                18% Cold Conversion
+              </span>
+              <svg id="icon-role-herond" class="w-5 h-5 text-slate-400 transform transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+            </div>
+          </div>
+
+          <div id="role-herond" class="mt-4 pt-3.5 border-t border-slate-200 dark:border-slate-800 space-y-3">
+            <div>
+              <h4 class="text-xs font-sans font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 tracking-wider">// Core Mandate &amp; Strategic Accomplishments:</h4>
+              <ul class="mt-2 space-y-1.5 text-xs text-slate-700 dark:text-slate-300 list-disc list-inside">
+                <li><strong class="text-slate-900 dark:text-white">Global B2B Outreach:</strong> Spearheaded cold outreach and international negotiation strategies, converting <strong>18% of initial prospect meetings</strong> into finalized international alliances within 3 months.</li>
+                <li><strong class="text-slate-900 dark:text-white">End-to-End Deal Flow:</strong> Managed partner pipelines from initial market intelligence research to technical alignment and legal partnership agreements.</li>
+                <li><strong class="text-slate-900 dark:text-white">Cross-Functional Alignment:</strong> Coordinated technical alignment meetings between external global clients and internal engineering/product squads.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. NINETY EIGHT / VICTION / ONEID -->
+        <article class="exec-card glow-card rounded-2xl p-5 transition duration-200 role-card" data-tags="bd growth exec" style="border-left: 4px solid #f59e0b;">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 cursor-pointer" onclick="toggleAccordion('role-viction')">
+            <div class="flex items-start gap-3.5">
+              <div class="w-11 h-11 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center font-bold text-amber-600 dark:text-amber-400 text-sm shrink-0">
+                98
+              </div>
+              <div>
+                <div class="flex flex-wrap items-center gap-2">
+                  <h3 class="headline-font text-base text-slate-900 dark:text-white">Ninety Eight (formerly Coin98)</h3>
+                  <span class="text-xs font-mono px-2 py-0.2 rounded bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/30 font-semibold">
+                    BD Specialist (Senior BD - Viction &amp; Growth Lead - OneID)
+                  </span>
+                  <span class="text-[11px] font-mono text-slate-500 dark:text-slate-400">May 2023 — Jul 2025</span>
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-400 font-sans mt-0.5">
+                  Leading Vietnamese blockchain ecosystem company operating Layer-1 blockchain (Viction) &amp; Web3 identity (OneID).
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30 font-bold">
+                200+ Partners &amp; $300K+ ARR
+              </span>
+              <svg id="icon-role-viction" class="w-5 h-5 text-slate-400 transform transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+            </div>
+          </div>
+
+          <div id="role-viction" class="mt-4 pt-3.5 border-t border-slate-200 dark:border-slate-800 space-y-3">
+            <div>
+              <h4 class="text-xs font-sans font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 tracking-wider">// Track A: Senior Business Development — Viction (Layer-1 Blockchain)</h4>
+              <ul class="mt-2 space-y-1 text-xs text-slate-700 dark:text-slate-300 list-disc list-inside">
+                <li><strong class="text-slate-900 dark:text-white">Ecosystem Portfolio:</strong> Cultivated and managed <strong>200+ enterprise investors and strategic partners</strong>, executing regional market penetration across Thailand, Indonesia, Philippines, Malaysia, and Vietnam.</li>
+                <li><strong class="text-slate-900 dark:text-white">Team Mentorship:</strong> Led and mentored a 5-member Business Development team to consistently exceed quarterly KPIs.</li>
+                <li><strong class="text-slate-900 dark:text-white">Fundraising &amp; Sponsorships:</strong> Pitched and closed <strong>$100,000+ in tier-1/2 sponsorships</strong> for the flagship hackathon; prepared executive pitch decks for the CEO.</li>
+              </ul>
+            </div>
+            <div class="pt-2 border-t border-slate-200 dark:border-slate-800">
+              <h4 class="text-xs font-sans font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 tracking-wider">// Track B: Growth Lead — OneID</h4>
+              <ul class="mt-2 space-y-1 text-xs text-slate-700 dark:text-slate-300 list-disc list-inside">
+                <li><strong class="text-slate-900 dark:text-white">Revenue &amp; Acquisition:</strong> Directed cross-functional squads (Marketing, Community, BD) reporting directly to the Chief Growth Officer (CGO), driving mass adoption and generating <strong>$300,000+ in annual revenue growth</strong> in 2024.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. ONECHAIN TECHNOLOGY -->
+        <article class="exec-card glow-card rounded-2xl p-5 transition duration-200 role-card" data-tags="bd growth" style="border-left: 4px solid #06b6d4;">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 cursor-pointer" onclick="toggleAccordion('role-onechain')">
+            <div class="flex items-start gap-3.5">
+              <div class="w-11 h-11 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center font-bold text-cyan-600 dark:text-cyan-400 text-sm shrink-0">
+                1C
+              </div>
+              <div>
+                <div class="flex flex-wrap items-center gap-2">
+                  <h3 class="headline-font text-base text-slate-900 dark:text-white">OneChain Technology</h3>
+                  <span class="text-xs font-mono px-2 py-0.2 rounded bg-cyan-500/15 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 font-semibold">
+                    Business Development Executive
+                  </span>
+                  <span class="text-[11px] font-mono text-slate-500 dark:text-slate-400">Jul 2022 — Jan 2023 · 6 Mos</span>
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-400 font-sans mt-0.5">
+                  Pioneer in blockchain-integrated solutions for the gaming industry.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 font-bold">
+                50+ Partners Onboarded
+              </span>
+              <svg id="icon-role-onechain" class="w-5 h-5 text-slate-400 transform transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+            </div>
+          </div>
+
+          <div id="role-onechain" class="mt-4 pt-3.5 border-t border-slate-200 dark:border-slate-800 space-y-3">
+            <ul class="text-xs text-slate-700 dark:text-slate-300 list-disc list-inside space-y-1">
+              <li>Advised the Chief Marketing Officer (CMO) on emerging commercial opportunities and regional gaming network expansion.</li>
+              <li>Conducted deep-dive market research to identify, pitch, and onboard <strong>50+ new strategic partners in 6 months</strong>, managing the end-to-end partner lifecycle.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 4. KINGSPEED -->
+        <article class="exec-card glow-card rounded-2xl p-5 transition duration-200 role-card" data-tags="bd exec" style="border-left: 4px solid #ef4444;">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 cursor-pointer" onclick="toggleAccordion('role-kingspeed')">
+            <div class="flex items-start gap-3.5">
+              <div class="w-11 h-11 rounded-xl bg-red-500/15 border border-red-500/30 flex items-center justify-center font-bold text-red-600 dark:text-red-400 text-sm shrink-0">
+                KS
+              </div>
+              <div>
+                <div class="flex flex-wrap items-center gap-2">
+                  <h3 class="headline-font text-base text-slate-900 dark:text-white">KingSpeed</h3>
+                  <span class="text-xs font-mono px-2 py-0.2 rounded bg-red-500/15 text-red-600 dark:text-red-400 border border-red-500/30 font-semibold">
+                    Assistant to CEO
+                  </span>
+                  <span class="text-[11px] font-mono text-slate-500 dark:text-slate-400">Oct 2021 — Jun 2022</span>
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-400 font-sans mt-0.5">
+                  Tech startup building blockchain-integrated gaming solutions in Vietnam.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/30 font-bold">
+                Executive Operations
+              </span>
+              <svg id="icon-role-kingspeed" class="w-5 h-5 text-slate-400 transform transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+            </div>
+          </div>
+
+          <div id="role-kingspeed" class="mt-4 pt-3.5 border-t border-slate-200 dark:border-slate-800 space-y-3">
+            <ul class="text-xs text-slate-700 dark:text-slate-300 list-disc list-inside space-y-1">
+              <li>Assisted the CEO in cross-departmental operations, investor relations, and quarterly roadmap tracking.</li>
+              <li>Spearheaded B2B partnership outreach across Southeast Asia, closing target deals and strengthening brand positioning in regional Web3 ecosystems.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 5. AEONMALL HA DONG -->
+        <article class="exec-card glow-card rounded-2xl p-5 transition duration-200 role-card" data-tags="growth exec" style="border-left: 4px solid #e11d48;">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 cursor-pointer" onclick="toggleAccordion('role-aeon')">
+            <div class="flex items-start gap-3.5">
+              <div class="w-11 h-11 rounded-xl bg-rose-500/15 border border-rose-500/30 flex items-center justify-center font-bold text-rose-600 dark:text-rose-400 text-sm shrink-0">
+                AM
+              </div>
+              <div>
+                <div class="flex flex-wrap items-center gap-2">
+                  <h3 class="headline-font text-base text-slate-900 dark:text-white">AEONMALL Ha Dong</h3>
+                  <span class="text-xs font-mono px-2 py-0.2 rounded bg-rose-500/15 text-rose-600 dark:text-rose-400 border border-rose-500/30 font-semibold">
+                    Digital Marketing Executive
+                  </span>
+                  <span class="text-[11px] font-mono text-slate-500 dark:text-slate-400">Aug 2019 — Oct 2021</span>
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-400 font-sans mt-0.5">
+                  Large-scale Japanese shopping mall developer and operator across Asia.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/30 font-bold">
+                10,000+ App Downloads
+              </span>
+              <svg id="icon-role-aeon" class="w-5 h-5 text-slate-400 transform transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+            </div>
+          </div>
+
+          <div id="role-aeon" class="mt-4 pt-3.5 border-t border-slate-200 dark:border-slate-800 space-y-3">
+            <ul class="text-xs text-slate-700 dark:text-slate-300 list-disc list-inside space-y-1">
+              <li>Directed the end-to-end development and nationwide launch of the <strong>AEONMALL Vietnam mobile app</strong>, scaling it across branches and surpassing targets with <strong>10,000+ organic downloads in the first 6 months</strong>.</li>
+              <li>Awarded <strong>"Employee of the Month"</strong> in June 2021; introduced the "Hado" mascot across omnichannel marketing campaigns.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 6. GIMASYS -->
+        <article class="exec-card glow-card rounded-2xl p-5 transition duration-200 role-card" data-tags="bd growth" style="border-left: 4px solid #2563eb;">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 cursor-pointer" onclick="toggleAccordion('role-gimasys')">
+            <div class="flex items-start gap-3.5">
+              <div class="w-11 h-11 rounded-xl bg-blue-600/15 border border-blue-600/30 flex items-center justify-center font-bold text-blue-600 dark:text-blue-400 text-sm shrink-0">
+                GM
+              </div>
+              <div>
+                <div class="flex flex-wrap items-center gap-2">
+                  <h3 class="headline-font text-base text-slate-900 dark:text-white">Gimasys</h3>
+                  <span class="text-xs font-mono px-2 py-0.2 rounded bg-blue-600/15 text-blue-600 dark:text-blue-400 border border-blue-600/30 font-semibold">
+                    Content Collaborator
+                  </span>
+                  <span class="text-[11px] font-mono text-slate-500 dark:text-slate-400">Jan 2019 — May 2019</span>
+                </div>
+                <p class="text-xs text-slate-600 dark:text-slate-400 font-sans mt-0.5">
+                  Enterprise IT consultancy partnered with Salesforce, Oracle, and Google Cloud.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-blue-600/10 text-blue-600 dark:text-blue-400 border border-blue-600/30 font-bold">
+                25% Conversion Lift
+              </span>
+              <svg id="icon-role-gimasys" class="w-5 h-5 text-slate-400 transform transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+            </div>
+          </div>
+
+          <div id="role-gimasys" class="mt-4 pt-3.5 border-t border-slate-200 dark:border-slate-800 space-y-3">
+            <ul class="text-xs text-slate-700 dark:text-slate-300 list-disc list-inside space-y-1">
+              <li>Planned and executed B2B digital marketing content, SEO optimization, and landing page copywriting.</li>
+              <li>Delivered a <strong>25% increase in B2B event registrations and product conversions</strong> through targeted PR and SEO campaigns.</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!-- SECTION 06: DYNAMIC JD FIT CALCULATOR (WITH CIRCULAR SVG SPEEDOMETER)     -->
+    <!-- ----------------------------------------------------------------------- -->
+    <section id="jd-evaluator" class="space-y-4 reveal-on-scroll">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-3">
+        <div>
+          <h2 class="headline-font text-xl sm:text-2xl text-slate-900 dark:text-white flex items-center gap-2">
+            <span>05 // Dynamic JD Fit Simulator</span>
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 font-bold">ANIMATED RADIAL GAUGE</span>
+          </h2>
+          <p class="text-xs text-slate-600 dark:text-slate-400 font-sans mt-1">Paste any Job Description to benchmark Dat's verified experience with live radial scoring.</p>
+        </div>
+        <div class="flex items-center gap-1.5">
+          <button onclick="loadSampleJd('bd')" class="px-2.5 py-1 rounded text-xs font-sans font-semibold bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-300 transition">Sample 1: Web3 BD Lead</button>
+          <button onclick="loadSampleJd('growth')" class="px-2.5 py-1 rounded text-xs font-sans font-semibold bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-300 transition">Sample 2: Growth Head SEA</button>
+          <button onclick="loadSampleJd('protocol')" class="px-2.5 py-1 rounded text-xs font-sans font-semibold bg-amber-500/20 hover:bg-amber-500/30 text-amber-800 dark:text-amber-300 transition">Sample 3: Out-of-Scope Dev</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+        
+        <!-- Input Textarea (6 Cols) -->
+        <div class="lg:col-span-6 space-y-2.5">
+          <label class="block text-xs font-sans uppercase tracking-wider text-slate-700 dark:text-slate-300 font-bold" for="jdInput">
+            Paste Candidate JD / Scope of Work:
+          </label>
+          <textarea id="jdInput" rows="9" 
+                    class="w-full p-3.5 rounded-xl font-mono text-xs bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-slate-200 focus:border-amber-400 focus:outline-none transition leading-relaxed" 
+                    placeholder="Paste job description requirements here (e.g. B2B tech BD, SEA market expansion, partner management, Web3 ecosystem growth, MBA preferred...)..."></textarea>
+          
+          <div class="flex items-center justify-between">
+            <button onclick="calculateJdFit()" class="px-4 py-2 rounded-xl text-xs font-bold transition shadow-md btn-brand-accent flex items-center gap-1.5">
+              <span>⚡ Recalculate Radial Fit</span>
+            </button>
+            <button onclick="clearJdInput()" class="text-xs font-sans text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 font-medium">Clear Input</button>
+          </div>
+        </div>
+
+        <!-- Output Compatibility Dossier with Circular Animated Gauge (6 Cols) -->
+        <div class="lg:col-span-6 exec-card glow-card rounded-2xl p-5 space-y-4" id="jdResultCard">
+          
+          <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3">
+            
+            <!-- Circular Radial SVG Speedometer -->
+            <div class="flex items-center gap-4">
+              <div class="relative w-20 h-20 shrink-0">
+                <svg class="w-20 h-20 transform -rotate-90" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="40" stroke="rgba(100,116,139,0.15)" stroke-width="10" fill="transparent" />
+                  <circle id="gaugeCircle" cx="50" cy="50" r="40" stroke="url(#goldGradient)" stroke-width="10" stroke-linecap="round" fill="transparent"
+                          stroke-dasharray="251.32" stroke-dashoffset="10" class="gauge-circle" />
+                  <defs>
+                    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#f3ba2f" />
+                      <stop offset="100%" stop-color="#d99e1b" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <span id="jdScoreDisplay" class="headline-font text-lg font-black text-amber-600 dark:text-amber-400">96%</span>
+                </div>
+              </div>
+
+              <div>
+                <div class="text-[10px] font-mono text-slate-500 dark:text-slate-400 uppercase">COMPATIBILITY RATING</div>
+                <div id="jdGradeLabel" class="text-xs font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 font-bold inline-block mt-0.5">
+                  PRIME CANDIDATE MATCH
+                </div>
+              </div>
+            </div>
+
+            <button onclick="copyHiringManagerDossier()" id="copyDossierBtn" class="px-3 py-1.5 rounded-lg bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs font-mono transition flex items-center gap-1.5 font-semibold">
+              <span>Copy for Hiring Manager</span>
+            </button>
+          </div>
+
+          <!-- Boundary Warning Alert -->
+          <div id="jdBoundaryAlert" class="p-3 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-800 dark:text-amber-300 text-xs font-sans hidden space-y-1">
+            <strong class="font-mono block">⚠️ HONEST EXECUTIVE BOUNDARY NOTICE:</strong>
+            <p id="jdBoundaryMessage">This role requests hands-on protocol development or smart contract engineering. Dat's core superpower is executive commercial partnerships, B2B deal structuring, and growth leadership. For deep protocol coding, Dat directs technical squads rather than writing bytecode.</p>
+          </div>
+
+          <!-- 5-Pillar Bars with Dynamic CSS Transitions -->
+          <div class="space-y-2.5" id="jdPillarBars">
+            <div>
+              <div class="flex justify-between text-xs font-sans font-medium mb-1">
+                <span class="text-slate-700 dark:text-slate-300">B2B BD &amp; Strategic Alliances (200+ partners)</span>
+                <span class="text-amber-600 dark:text-amber-400 font-bold" id="barScoreBD">98%</span>
+              </div>
+              <div class="w-full h-1.5 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                <div id="barWidthBD" class="h-full bg-amber-500 rounded-full transition-all duration-700" style="width: 98%;"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs font-sans font-medium mb-1">
+                <span class="text-slate-700 dark:text-slate-300">Web3 &amp; Tech Ecosystem Architecture</span>
+                <span class="text-amber-600 dark:text-amber-400 font-bold" id="barScoreWeb3">95%</span>
+              </div>
+              <div class="w-full h-1.5 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                <div id="barWidthWeb3" class="h-full bg-amber-500 rounded-full transition-all duration-700" style="width: 95%;"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs font-sans font-medium mb-1">
+                <span class="text-slate-700 dark:text-slate-300">Southeast Asia Market Execution &amp; Network</span>
+                <span class="text-emerald-600 dark:text-emerald-400 font-bold" id="barScoreSEA">97%</span>
+              </div>
+              <div class="w-full h-1.5 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                <div id="barWidthSEA" class="h-full bg-emerald-500 rounded-full transition-all duration-700" style="width: 97%;"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs font-sans font-medium mb-1">
+                <span class="text-slate-700 dark:text-slate-300">Commercial Acumen &amp; Strategy (Swiss SIMI MBA)</span>
+                <span class="text-blue-600 dark:text-blue-400 font-bold" id="barScoreMBA">94%</span>
+              </div>
+              <div class="w-full h-1.5 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                <div id="barWidthMBA" class="h-full bg-blue-500 rounded-full transition-all duration-700" style="width: 94%;"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-xs font-sans font-medium mb-1">
+                <span class="text-slate-700 dark:text-slate-300">AI-Native Velocity &amp; Tool Engineering</span>
+                <span class="text-purple-600 dark:text-purple-400 font-bold" id="barScoreAI">96%</span>
+              </div>
+              <div class="w-full h-1.5 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
+                <div id="barWidthAI" class="h-full bg-purple-500 rounded-full transition-all duration-700" style="width: 96%;"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------- -->
+    <!-- SECTION 07: 6 VERIFIED AI AGENT SKILLS FROM CAREER-PORTFOLIO.MD          -->
+    <!-- ----------------------------------------------------------------------- -->
+    <section id="ai-laboratory" class="space-y-4 reveal-on-scroll">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-3">
+        <div>
+          <h2 class="headline-font text-xl sm:text-2xl text-slate-900 dark:text-white flex items-center gap-2">
+            <span>06 // Custom AI Skills Engineered by Dat Tran</span>
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-600 dark:text-amber-400 font-bold">6 PRODUCTION SKILLS</span>
+          </h2>
+          <p class="text-xs text-slate-600 dark:text-slate-400 font-sans mt-1">Autonomous agent workflows engineered by Dat to accelerate commercial deal flow &amp; due diligence.</p>
+        </div>
+        <div class="text-xs font-mono text-slate-500">
+          CLI: <code class="text-amber-600 dark:text-amber-400 font-bold">npx skills add datdata231/interactive-cv</code>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        
+        <!-- Skill 1: gtemas-cold-outreach -->
+        <div class="exec-card glow-card p-4 rounded-xl space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] font-mono font-bold text-amber-600 dark:text-amber-400 px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/20">SKILL 01</span>
+            <span class="text-[10px] font-mono text-slate-500">OUTREACH ENGINE</span>
+          </div>
+          <h3 class="headline-font text-sm text-slate-900 dark:text-white font-bold">gtemas-cold-outreach</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 font-sans leading-relaxed">
+            Multi-persona B2B cold outreach engine that classifies leads into Gatekeepers, Champions, and C-Level Decision Makers and drafts trigger-based sequences ready for CRM/mail-merge automation.
+          </p>
+        </div>
+
+        <!-- Skill 2: research-to-playbook -->
+        <div class="exec-card glow-card p-4 rounded-xl space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] font-mono font-bold text-blue-600 dark:text-blue-400 px-2 py-0.5 rounded bg-blue-500/10 border border-blue-500/20">SKILL 02</span>
+            <span class="text-[10px] font-mono text-slate-500">GTM PLAYBOOK</span>
+          </div>
+          <h3 class="headline-font text-sm text-slate-900 dark:text-white font-bold">research-to-playbook</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 font-sans leading-relaxed">
+            Transforms complex technical documentation, protocols, and market research into structured operational GTM playbooks and team execution tutorials.
+          </p>
+        </div>
+
+        <!-- Skill 3: package-code-guide -->
+        <div class="exec-card glow-card p-4 rounded-xl space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] font-mono font-bold text-emerald-600 dark:text-emerald-400 px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">SKILL 03</span>
+            <span class="text-[10px] font-mono text-slate-500">CODE AUDITOR</span>
+          </div>
+          <h3 class="headline-font text-sm text-slate-900 dark:text-white font-bold">package-code-guide</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 font-sans leading-relaxed">
+            Technical inspection workflow for evaluating GitHub repositories, npm packages, and Docker containers to bridge commercial and technical teams.
+          </p>
+        </div>
+
+        <!-- Skill 4: get-more-perspectives -->
+        <div class="exec-card glow-card p-4 rounded-xl space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] font-mono font-bold text-purple-600 dark:text-purple-400 px-2 py-0.5 rounded bg-purple-500/10 border border-purple-500/20">SKILL 04</span>
+            <span class="text-[10px] font-mono text-slate-500">DECISION STRESS-TEST</span>
+          </div>
+          <h3 class="headline-font text-sm text-slate-900 dark:text-white font-bold">get-more-perspectives</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 font-sans leading-relaxed">
+            Decision-stress-testing framework that generates 3 to 5 distinct strategic viewpoints before committing to high-stakes partnerships or roadmaps.
+          </p>
+        </div>
+
+        <!-- Skill 5: master-questioner -->
+        <div class="exec-card glow-card p-4 rounded-xl space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] font-mono font-bold text-cyan-600 dark:text-cyan-400 px-2 py-0.5 rounded bg-cyan-500/10 border border-cyan-500/20">SKILL 05</span>
+            <span class="text-[10px] font-mono text-slate-500">SOCRATIC DIAGNOSTIC</span>
+          </div>
+          <h3 class="headline-font text-sm text-slate-900 dark:text-white font-bold">master-questioner</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 font-sans leading-relaxed">
+            Socratic diagnostic skill that uncovers root business bottlenecks, brand positioning gaps, and strategic priorities through structured questioning.
+          </p>
+        </div>
+
+        <!-- Skill 6: prompt-gen -->
+        <div class="exec-card glow-card p-4 rounded-xl space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] font-mono font-bold text-rose-600 dark:text-rose-400 px-2 py-0.5 rounded bg-rose-500/10 border border-rose-500/20">SKILL 06</span>
+            <span class="text-[10px] font-mono text-slate-500">AI PROMPT OPS</span>
+          </div>
+          <h3 class="headline-font text-sm text-slate-900 dark:text-white font-bold">prompt-gen</h3>
+          <p class="text-xs text-slate-600 dark:text-slate-400 font-sans leading-relaxed">
+            Context-engineering workflow that turns rough business inputs into structured, high-precision prompts for AI agents and workflow automation.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- 3. DOCUMENT VERIFICATION MODAL / LIGHTBOX                                 -->
+  <!-- ========================================================================= -->
+  <div id="docModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+    <div class="w-full max-w-2xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-2xl p-6 shadow-2xl space-y-5 relative">
+      <button onclick="closeDocModal()" class="absolute top-4 right-4 text-slate-500 hover:text-slate-900 dark:hover:text-white p-2">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+
+      <div class="border-b border-slate-200 dark:border-slate-800 pb-3">
+        <span id="modalDocBadge" class="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-700 dark:text-amber-300 font-bold">DEGREE VERIFIED</span>
+        <h3 id="modalDocTitle" class="headline-font text-lg text-slate-900 dark:text-white font-bold mt-1">Master of Business Administration (MBA)</h3>
+        <p id="modalDocSubtitle" class="text-xs font-mono text-slate-600 dark:text-slate-400">Swiss Institute of Management and Innovation (SIMI) · Switzerland</p>
+      </div>
+
+      <!-- Document Preview Canvas -->
+      <div class="aspect-[16/10] rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-300 dark:border-slate-700 p-6 flex flex-col justify-between relative overflow-hidden" id="modalCanvas">
+        <div class="flex justify-between items-start">
+          <div class="text-xs font-serif font-bold text-amber-700 dark:text-amber-400" id="modalCanvasIssuer">Swiss Institute of Management and Innovation</div>
+          <div class="text-[10px] font-mono text-emerald-600 dark:text-emerald-400 font-bold" id="modalCanvasStatus">✓ VERIFIED OFFICIAL CREDENTIAL</div>
+        </div>
+        <div class="text-center space-y-1">
+          <div class="text-xs font-serif text-slate-600 dark:text-slate-300">This certifies that</div>
+          <div class="text-xl font-serif font-bold text-slate-900 dark:text-white tracking-wide">Trần Tiến Đạt</div>
+          <div class="text-xs font-serif text-slate-600 dark:text-slate-300" id="modalCanvasDegree">has completed the degree of Master of Business Administration</div>
+        </div>
+        <div class="flex justify-between items-end text-[10px] font-mono text-slate-500 dark:text-slate-400 border-t border-slate-200 dark:border-slate-800 pt-2">
+          <span id="modalCanvasDate">Conferred: SIMI Switzerland</span>
+          <span id="modalCanvasSerial">Verification: SIMI-SWISS-MBA-74892</span>
+        </div>
+        <img id="modalCertUploadedImg" src="" alt="Certificate Scan" class="absolute inset-0 w-full h-full object-contain bg-black/95 hidden" />
+      </div>
+
+      <!-- Official Document Verification Status Footer -->
+      <div class="p-3 rounded-xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60 flex items-center justify-between text-xs font-sans">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          <span class="text-slate-700 dark:text-slate-300 font-semibold">Official Verified Credential Document</span>
+          <span class="text-[10px] font-mono text-slate-500 dark:text-slate-400">· Secured Archive</span>
+        </div>
+        <button onclick="closeDocModal()" class="px-3.5 py-1.5 rounded-lg bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-bold transition text-xs">
+          Close Document
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 4. LOCATION DOSSIER MODAL                                                 -->
+  <!-- ========================================================================= -->
+  <div id="locationModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+    <div class="w-full max-w-2xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-2xl p-6 shadow-2xl space-y-4 relative">
+      <button onclick="closeLocationModal()" class="absolute top-4 right-4 text-slate-500 hover:text-slate-900 dark:hover:text-white p-2">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+
+      <div>
+        <span id="modalLocBadge" class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 font-bold">OPERATIONAL HUB</span>
+        <h3 id="modalLocTitle" class="headline-font text-lg text-slate-900 dark:text-white font-bold mt-1">Ninety Eight / Viction Ecosystem HQ</h3>
+        <p id="modalLocCoords" class="text-xs font-mono text-slate-600 dark:text-slate-400">Vietnam HQ · Innovation Web3 Hub</p>
+      </div>
+
+      <div class="h-64 rounded-xl overflow-hidden bg-slate-950 relative" id="modalLocImgContainer">
+        <img id="modalLocImg" src="" alt="Location" class="w-full h-full object-cover" />
+      </div>
+
+      <p id="modalLocDesc" class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-sans leading-relaxed"></p>
+
+      <div class="flex justify-between items-center pt-2 border-t border-slate-200 dark:border-slate-800 text-xs font-mono text-slate-500 dark:text-slate-400">
+        <span>Verified Physical Footprint</span>
+        <button onclick="closeLocationModal()" class="px-3 py-1 rounded bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-semibold">Close Brief</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 5. SLIDE-OUT HEADHUNTER CONCIERGE DRAWER (⌘K)                             -->
+  <!-- ========================================================================= -->
+  <div id="conciergeBackdrop" onclick="toggleConciergeDrawer(false)" 
+       class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 transition-opacity duration-300 opacity-0 pointer-events-none no-print">
+  </div>
+
+  <aside id="conciergeDrawer" 
+         class="fixed top-0 right-0 h-full w-full max-w-md bg-white dark:bg-slate-900 border-l border-slate-300 dark:border-slate-800 z-50 transform translate-x-full transition-transform duration-300 ease-out flex flex-col no-print shadow-2xl">
+    
+    <div class="h-16 border-b border-slate-200 dark:border-slate-800 px-5 flex items-center justify-between shrink-0 bg-slate-50 dark:bg-slate-900/90">
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm text-white dark:text-black"
+             style="background-color: var(--accent-primary);">
+          ⚡
+        </div>
+        <div>
+          <h4 class="headline-font text-sm text-slate-900 dark:text-white font-bold">Dat's AI Career Concierge</h4>
+          <span class="text-[10px] font-mono text-emerald-600 dark:text-emerald-400 flex items-center gap-1 font-semibold">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>GROUNDED IN VERIFIED CAREER PORTFOLIO</span>
+          </span>
+        </div>
+      </div>
+
+      <button onclick="toggleConciergeDrawer(false)" class="p-2 rounded-lg text-slate-500 hover:text-slate-900 dark:hover:text-white transition">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+    </div>
+
+    <!-- Quick Question Chips -->
+    <div class="p-3 border-b border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-950/60 flex flex-wrap gap-1.5 text-xs font-sans font-medium">
+      <button onclick="askPreset('What is Dat\'s educational background and degrees?')" class="px-2 py-1 rounded bg-slate-200 dark:bg-slate-800 hover:bg-amber-500/20 text-slate-800 dark:text-slate-300 hover:text-amber-500 transition text-[11px]">
+        🎓 Swiss MBA &amp; BUV
+      </button>
+      <button onclick="askPreset('How did Dat scale OneID to $300,000+?')" class="px-2 py-1 rounded bg-slate-200 dark:bg-slate-800 hover:bg-amber-500/20 text-slate-800 dark:text-slate-300 hover:text-amber-500 transition text-[11px]">
+        💰 $300K Revenue
+      </button>
+      <button onclick="askPreset('What is Dat\'s experience at Ninety Eight and Viction?')" class="px-2 py-1 rounded bg-slate-200 dark:bg-slate-800 hover:bg-amber-500/20 text-slate-800 dark:text-slate-300 hover:text-amber-500 transition text-[11px]">
+        🏆 200+ Partners
+      </button>
+      <button onclick="askPreset('What custom AI skills has Dat engineered?')" class="px-2 py-1 rounded bg-slate-200 dark:bg-slate-800 hover:bg-amber-500/20 text-slate-800 dark:text-slate-300 hover:text-amber-500 transition text-[11px]">
+        🤖 6 AI Agent Skills
+      </button>
+    </div>
+
+    <!-- Message Stream -->
+    <div id="chatStream" class="flex-1 overflow-y-auto p-4 space-y-4 text-xs font-sans">
+      <div class="flex items-start gap-2.5">
+        <div class="w-6 h-6 rounded flex items-center justify-center font-bold text-[10px] shrink-0 text-white dark:text-black"
+             style="background-color: var(--accent-primary);">
+          DT
+        </div>
+        <div class="p-3 rounded-xl bg-slate-100 dark:bg-slate-800/90 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/60 max-w-[85%] leading-relaxed space-y-1">
+          <p>Hello! I am <strong>Tran Tien Dat's AI Executive Concierge</strong>.</p>
+          <p class="text-slate-600 dark:text-slate-400">Ask me anything regarding Dat's Swiss SIMI MBA, Staffordshire/BUV BA (Hons), AEONMALL Employee of the Month honors, 200+ partners at Viction, $300K+ revenue at OneID, or 6 custom AI agent skills.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat Input Form -->
+    <form onsubmit="handleChatSubmit(event)" class="p-3 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 flex items-center gap-2">
+      <input type="text" id="chatInput" placeholder="Ask about Dat's track record or fit..." 
+             class="flex-1 px-3.5 py-2.5 rounded-xl bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-700 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-amber-500 transition font-sans" />
+      <button type="submit" class="px-4 py-2.5 rounded-xl font-bold text-xs transition btn-brand-accent">
+        Send
+      </button>
+    </form>
+  </aside>
+
+  <!-- Floating Concierge Trigger -->
+  <button id="conciergeLauncherBtn" onclick="toggleConciergeDrawer(true)"
+          class="fixed bottom-6 right-6 z-40 p-3 rounded-full shadow-2xl transition transform hover:scale-110 flex items-center gap-2 border border-amber-300/40 no-print btn-brand-accent"
+          title="Open AI Concierge (⌘K / Ctrl+K)">
+    <span class="text-lg">⚡</span>
+    <span class="hidden sm:inline font-bold text-xs pr-1">Ask Dat's AI</span>
+  </button>
+
+  <!-- ========================================================================= -->
+  <!-- 6. FOOTER SIGNATURE                                                       -->
+  <!-- ========================================================================= -->
+  <footer class="border-t border-slate-200 dark:border-slate-800 py-10 mt-16 text-center text-xs font-sans text-slate-500 space-y-2 no-print">
+    <div class="flex items-center justify-center gap-3">
+      <span>Trần Tiến Đạt (Ronin)</span>
+      <span>•</span>
+      <span>MBA (Swiss SIMI) · BA Hons (Staffordshire / BUV)</span>
+      <span>•</span>
+      <span>Hanoi, Vietnam // SEA Scope</span>
+    </div>
+    <div>Executive AI Agent Portfolio powered by Antigravity &amp; Claude Code Custom Skills.</div>
+  </footer>
+
+  <!-- ========================================================================= -->
+  <!-- 7. STRICT 2-PAGE PRINT RESUME (TRIGGERED BY CMD+P / WINDOW.PRINT())        -->
+  <!-- ========================================================================= -->
+  <div id="printOnlyResume" class="p-8 max-w-4xl mx-auto space-y-6 text-black bg-white">
+    <div class="border-b-2 border-black pb-4 flex justify-between items-start">
+      <div>
+        <h1 class="text-2xl font-bold uppercase tracking-wide">Trần Tiến Đạt (Dat Tran / Ronin)</h1>
+        <p class="text-sm font-semibold mt-1">Senior Partner Relations &amp; Business Development | Growth &amp; GTM Lead | MBA</p>
+        <p class="text-xs text-gray-700 mt-1">Hoang Mai, Hanoi, Vietnam (SEA Regional Scope) · dattt231@gmail.com · WhatsApp / Zalo (Scan QR on Site) · linkedin.com/in/dattt2311</p>
+      </div>
+      <div class="text-right text-xs font-mono">
+        <p class="font-bold">EXECUTIVE DOSSIER</p>
+        <p>SEA MANDATES</p>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="text-sm font-bold uppercase tracking-wider border-b border-gray-400 pb-1 mb-2">Executive Summary</h2>
+      <p class="text-xs leading-relaxed text-gray-800">
+        Results-driven Business Development and Growth Leader with an MBA from the Swiss Institute of Management and Innovation (SIMI) and 6+ years scaling tech ecosystems, Web3 partnerships, and B2B pipelines across Southeast Asia. Managed 200+ enterprise partners and investors at Viction (Ninety Eight), drove $300,000+ in annual revenue growth at OneID, secured $100,000+ in tier-1/2 hackathon sponsorships, converted 18% of cold prospects into global alliances in 90 days at Herond Labs, and engineered custom production AI Agent Skills.
+      </p>
+    </div>
+
+    <div>
+      <h2 class="text-sm font-bold uppercase tracking-wider border-b border-gray-400 pb-1 mb-2">Core Enterprise Track Record</h2>
+      
+      <div class="space-y-3 text-xs">
+        <div>
+          <div class="flex justify-between font-bold">
+            <span>Business Development Collaborator — Herond Labs</span>
+            <span>Apr 2026 – Sep 2026</span>
+          </div>
+          <p class="text-gray-600 italic">Privacy-first web ecosystem and blockchain software lab (Herond Browser)</p>
+          <ul class="list-disc list-inside mt-1 space-y-0.5 text-gray-800">
+            <li>Spearheaded global B2B outreach and negotiation strategies, converting 18% of initial prospect meetings into finalized international alliances within 3 months.</li>
+            <li>Managed end-to-end B2B partnership pipelines and coordinated technical alignment meetings between external global clients and internal engineering squads.</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="flex justify-between font-bold">
+            <span>Business Development Specialist — Ninety Eight (formerly Coin98)</span>
+            <span>May 2023 – Jul 2025</span>
+          </div>
+          <p class="text-gray-600 italic">Leading Vietnamese blockchain and Web3 ecosystem company (Viction L1 &amp; OneID)</p>
+          <ul class="list-disc list-inside mt-1 space-y-0.5 text-gray-800">
+            <li><strong>Senior BD (Viction):</strong> Cultivated and managed 200+ enterprise investors and strategic partners across SEA (TH, ID, PH, MY, VN); pitched and closed $100,000+ in tier-1/2 sponsorships; led 5-member BD team.</li>
+            <li><strong>Growth Lead (OneID):</strong> Directed cross-functional squads (Marketing, Community, BD) reporting to CGO, driving user activation that generated $300,000+ in annual revenue growth in 2024.</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="flex justify-between font-bold">
+            <span>Business Development Executive — OneChain Technology</span>
+            <span>Jul 2022 – Jan 2023</span>
+          </div>
+          <ul class="list-disc list-inside mt-1 space-y-0.5 text-gray-800">
+            <li>Conducted deep-dive market research to identify, pitch, and onboard 50+ new strategic partners in 6 months; advised CMO on network expansion.</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="flex justify-between font-bold">
+            <span>Assistant to CEO — KingSpeed</span>
+            <span>Oct 2021 – Jun 2022</span>
+          </div>
+          <ul class="list-disc list-inside mt-1 space-y-0.5 text-gray-800">
+            <li>Assisted the CEO in cross-departmental operations and investor relations; spearheaded B2B partnership outreach across Southeast Asia.</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="flex justify-between font-bold">
+            <span>Digital Marketing Executive — AEONMALL Ha Dong</span>
+            <span>Aug 2019 – Oct 2021</span>
+          </div>
+          <ul class="list-disc list-inside mt-1 space-y-0.5 text-gray-800">
+            <li>Directed the end-to-end development and nationwide launch of the AEONMALL Vietnam mobile app (10,000+ organic downloads in first 6 months).</li>
+            <li>Awarded "Employee of the Month" in June 2021; introduced the "Hado" mascot.</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="flex justify-between font-bold">
+            <span>Content Collaborator — Gimasys (Salesforce, Oracle, Google Cloud Partner)</span>
+            <span>Jan 2019 – May 2019</span>
+          </div>
+          <ul class="list-disc list-inside mt-1 space-y-0.5 text-gray-800">
+            <li>Drove a 25% increase in B2B event registrations and product conversions through targeted PR, SEO campaigns, and landing page optimization.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="text-sm font-bold uppercase tracking-wider border-b border-gray-400 pb-1 mb-2">Education &amp; Credentials</h2>
+      <div class="text-xs space-y-1">
+        <div class="flex justify-between">
+          <strong>Master of Business Administration (MBA)</strong>
+          <span>Conferred</span>
+        </div>
+        <p class="text-gray-700">Swiss Institute of Management and Innovation (SIMI) · Switzerland</p>
+        <div class="flex justify-between pt-1">
+          <strong>BA (Hons) Marketing Management</strong>
+          <span>Conferred</span>
+        </div>
+        <p class="text-gray-700">Staffordshire University (UK) &amp; British University Vietnam (BUV)</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 8. ROBUST CLIENT-SIDE LOGIC & MULTI-TIER IMAGE RESOLUTION                 -->
+  <!-- ========================================================================= -->
+  <script>
+    // -------------------------------------------------------------------------
+    // A. XSS SANITIZER
+    // -------------------------------------------------------------------------
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    // -------------------------------------------------------------------------
+    // B. LIVE UI STYLE SWITCHER (VENTURE LOCKED BY DEFAULT)
+    // -------------------------------------------------------------------------
+    function setStyleOption(optionKey) {
+      document.documentElement.setAttribute('data-style', optionKey);
+      localStorage.setItem('cv_style_option', optionKey);
+
+      ['swiss', 'venture', 'editorial'].forEach(key => {
+        const btn = document.getElementById('btn-style-' + key);
+        if (btn) {
+          if (key === optionKey) {
+            btn.classList.add('style-pill-active');
+          } else {
+            btn.classList.remove('style-pill-active');
+          }
+        }
+      });
+    }
+
+    // -------------------------------------------------------------------------
+    // C. THEME TOGGLING (DARK / LIGHT)
+    // -------------------------------------------------------------------------
+    function toggleTheme() {
+      const html = document.documentElement;
+      const isDark = html.classList.contains('dark');
+      if (isDark) {
+        html.classList.remove('dark');
+        localStorage.setItem('cv_theme', 'light');
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('cv_theme', 'dark');
+      }
+    }
+
+    // -------------------------------------------------------------------------
+    // D. CLI COMMAND COPY HELPER
+    // -------------------------------------------------------------------------
+    function copyCli() {
+      const text = document.getElementById('cliText').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.getElementById('copyCliBtn');
+        const orig = btn.innerText;
+        btn.innerText = 'Copied!';
+        btn.classList.add('bg-emerald-500', 'text-black');
+        setTimeout(() => {
+          btn.innerText = orig;
+          btn.classList.remove('bg-emerald-500', 'text-black');
+        }, 2000);
+      });
+    }
+
+    // -------------------------------------------------------------------------
+    // E. HEADSHOT MULTI-TIER RESOLUTION (ASSETS FOLDER + LOCALSTORAGE + INPUT)
+    // -------------------------------------------------------------------------
+    function applyHeadshotImage(src) {
+      const img = document.getElementById('realHeadshotImg');
+      const visual = document.getElementById('portraitVisual');
+
+      if (img && visual) {
+        img.src = src;
+        img.classList.remove('hidden');
+        visual.classList.add('hidden');
+        img.onerror = function() {
+          img.classList.add('hidden');
+          visual.classList.remove('hidden');
+        };
+      }
+    }
+
+    // -------------------------------------------------------------------------
+    // F. DYNAMIC NUMBER TICKER (ANIMATE COUNTERS)
+    // -------------------------------------------------------------------------
+    let countersAnimated = false;
+    function animateCounters() {
+      if (countersAnimated) return;
+      const counters = document.querySelectorAll('.counter-number');
+      counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target') || '0', 10);
+        const prefix = counter.getAttribute('data-prefix') || '';
+        const suffix = counter.getAttribute('data-suffix') || '';
+        const duration = 1200; // ms
+        const startTime = performance.now();
+
+        function updateNumber(currentTime) {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const easeOut = 1 - Math.pow(1 - progress, 4);
+          const currentVal = Math.round(target * easeOut);
+
+          counter.innerText = prefix + currentVal.toLocaleString() + suffix;
+
+          if (progress < 1) {
+            requestAnimationFrame(updateNumber);
+          } else {
+            counter.innerText = prefix + target.toLocaleString() + suffix;
+          }
+        }
+
+        requestAnimationFrame(updateNumber);
+      });
+      countersAnimated = true;
+    }
+
+    // -------------------------------------------------------------------------
+    // G. SPECULAR CURSOR-TRACKING SPOTLIGHT
+    // -------------------------------------------------------------------------
+    function initCardGlowTracking() {
+      const cards = document.querySelectorAll('.glow-card');
+      cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          card.style.setProperty('--mouse-x', `${x}px`);
+          card.style.setProperty('--mouse-y', `${y}px`);
+        });
+      });
+    }
+
+    // -------------------------------------------------------------------------
+    // H. STAGGERED SCROLL REVEALS
+    // -------------------------------------------------------------------------
+    function initScrollReveals() {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            if (entry.target.id === 'telemetrySection' || entry.target.contains(document.querySelector('.counter-number'))) {
+              animateCounters();
+            }
+          }
+        });
+      }, {
+        rootMargin: '0px 0px -40px 0px',
+        threshold: 0.12
+      });
+
+      document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+    }
+
+    // -------------------------------------------------------------------------
+    // I. 3D CARD TILT FOR EXECUTIVE PORTRAIT
+    // -------------------------------------------------------------------------
+    function initPortraitTilt() {
+      const card = document.getElementById('heroPortraitCard');
+      if (!card) return;
+
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * -5;
+        const rotateY = ((x - centerX) / centerX) * 5;
+
+        card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-2px)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = `perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0px)`;
+      });
+    }
+
+    // -------------------------------------------------------------------------
+    // J. DOCUMENT LIGHTBOX MODAL LOGIC (GROUNDED IN CAREER-PORTFOLIO.MD)
+    // -------------------------------------------------------------------------
+    const docData = {
+      mba: {
+        badge: "OFFICIAL MASTER DEGREE · SWITZERLAND",
+        title: "Master of Business Administration (MBA)",
+        subtitle: "Swiss Institute of Management and Innovation (SIMI) · Switzerland",
+        issuer: "Swiss Institute of Management and Innovation · Zug, Switzerland",
+        degree: "has completed the accredited curriculum for Master of Business Administration",
+        date: "Conferred · Accredited Swiss Business School",
+        serial: "SIMI-SWISS-MBA-REG#74892"
+      },
+      bba: {
+        badge: "BACHELOR OF ARTS (HONS) · UK",
+        title: "BA (Hons) Marketing Management",
+        subtitle: "Staffordshire University (UK) & British University Vietnam (BUV)",
+        issuer: "Staffordshire University · Faculty of Business & Marketing",
+        degree: "has satisfied all academic requirements for Bachelor of Arts (Honours) in Marketing Management",
+        date: "Conferred · British Degree Standard",
+        serial: "STAFF-BUV-BA-REG#49102"
+      },
+      aeon: {
+        badge: "CORPORATE EXCELLENCE AWARD · JUNE 2021",
+        title: "Employee of the Month Award — June 2021",
+        subtitle: "AEONMALL Ha Dong (AEONMALL Vietnam Co., Ltd.)",
+        issuer: "AEON MALL Vietnam · Ha Dong Branch Executive Committee",
+        degree: "Awarded for exceptional leadership in the nationwide launch & adoption of the AEONMALL Vietnam Mobile App (10,000+ downloads)",
+        date: "Conferred: June 2021 · Corporate Honors",
+        serial: "AEON-HD-EOM-2021-06"
+      },
+      cloud: {
+        badge: "ENTERPRISE IT PARTNERSHIP TRACK",
+        title: "Enterprise IT & Cloud Marketing Campaigns",
+        subtitle: "Gimasys Vietnam · Salesforce, Oracle & Google Cloud Partner",
+        issuer: "Gimasys Enterprise Solutions Group",
+        degree: "B2B Digital Campaign Architecture, PR, SEO & Enterprise Lead Optimization",
+        date: "Delivered: 25% Increase in B2B Event Registrations & Conversions",
+        serial: "GIMASYS-IT-SALE-994"
+      }
+    };
+
+    let currentOpenDocKey = 'mba';
+
+    
+
+
+    
+    function openQrContactModal(defaultTab = 'whatsapp') {
+      switchQrTab(defaultTab);
+      document.getElementById('qrContactModal').classList.remove('hidden');
+    }
+
+    function closeQrContactModal() {
+      document.getElementById('qrContactModal').classList.add('hidden');
+    }
+
+    function switchQrTab(tab) {
+      const panelWa = document.getElementById('qrPanelWhatsapp');
+      const panelZalo = document.getElementById('qrPanelZalo');
+      const tabWa = document.getElementById('qrTabWhatsapp');
+      const tabZalo = document.getElementById('qrTabZalo');
+      if (!panelWa || !panelZalo) return;
+
+      if (tab === 'whatsapp') {
+        panelWa.classList.remove('hidden');
+        panelZalo.classList.add('hidden');
+        tabWa.className = 'flex-1 py-2 rounded-lg flex items-center justify-center gap-2 transition bg-emerald-600 text-white shadow-sm font-bold';
+        tabZalo.className = 'flex-1 py-2 rounded-lg flex items-center justify-center gap-2 transition text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-semibold';
+      } else {
+        panelZalo.classList.remove('hidden');
+        panelWa.classList.add('hidden');
+        tabZalo.className = 'flex-1 py-2 rounded-lg flex items-center justify-center gap-2 transition bg-blue-600 text-white shadow-sm font-bold';
+        tabWa.className = 'flex-1 py-2 rounded-lg flex items-center justify-center gap-2 transition text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-semibold';
+      }
+    }
+
+    const resolvedCertAssets = {};
+
+    function openDocModal(key) {
+      currentOpenDocKey = key;
+      const data = docData[key];
+      if (!data) return;
+
+      document.getElementById('modalDocBadge').innerText = data.badge;
+      document.getElementById('modalDocTitle').innerText = data.title;
+      document.getElementById('modalDocSubtitle').innerText = data.subtitle;
+      document.getElementById('modalCanvasIssuer').innerText = data.issuer;
+      document.getElementById('modalCanvasDegree').innerText = data.degree;
+      document.getElementById('modalCanvasDate').innerText = data.date;
+      document.getElementById('modalCanvasSerial').innerText = data.serial;
+
+      const activeSrc = resolvedCertAssets[key] || localStorage.getItem('cv_cert_' + key);
+      const uploadedImg = document.getElementById('modalCertUploadedImg');
+      if (activeSrc && uploadedImg) {
+        uploadedImg.src = activeSrc;
+        uploadedImg.classList.remove('hidden');
+      } else if (uploadedImg) {
+        uploadedImg.classList.add('hidden');
+      }
+
+      document.getElementById('docModal').classList.remove('hidden');
+    }
+
+    function closeDocModal() {
+      document.getElementById('docModal').classList.add('hidden');
+    }
+
+    function applyCertImage(key, src) {
+      resolvedCertAssets[key] = src;
+      const cardImgMap = {
+        mba: 'cardCertImgMba',
+        bba: 'cardCertImgBba',
+        aeon: 'cardCertImgAeon',
+        cloud: 'cardCertImgCloud'
+      };
+      const imgId = cardImgMap[key];
+      if (imgId) {
+        const img = document.getElementById(imgId);
+        if (img) {
+          img.src = src;
+          img.classList.remove('hidden');
+        }
+      }
+    }
+
+    // -------------------------------------------------------------------------
+    // K. LOCATION MODAL LOGIC
+    // -------------------------------------------------------------------------
+    const locData = {
+      viction: {
+        badge: "LAYER-1 BLOCKCHAIN ECOSYSTEM HQ",
+        title: "Ninety Eight / Viction Headquarters",
+        coords: "Vietnam HQ · Innovation Web3 Hub",
+        img: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
+        desc: "Headquarters for Ninety Eight where Dat managed a portfolio of 200+ enterprise investors and strategic partners across SEA (Viction), secured $100,000+ in hackathon sponsorships, and led OneID user activation campaigns driving $300,000+ in annual revenue growth in 2024."
+      },
+      herond: {
+        badge: "CYBERSECURITY & BROWSER RESEARCH STUDIO",
+        title: "Herond Labs Development Lab",
+        coords: "Hanoi // Global Remote Studio",
+        img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80",
+        desc: "Herond Labs' engineering center dedicated to the privacy-first Chromium browser and decentralized identity. From here, Dat executed cold B2B pipeline syndication, closing an 18% conversion rate from cold outreach to signed ecosystem alliances within 3 months."
+      },
+      aeon: {
+        badge: "JAPANESE OMNICHANNEL RETAIL CENTER",
+        title: "AEONMALL Ha Dong Operations",
+        coords: "Hanoi, Vietnam",
+        img: "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?auto=format&fit=crop&w=1200&q=80",
+        desc: "AEON MALL Ha Dong operational facility. Dat directed the nationwide development and launch of the AEONMALL Vietnam mobile app, surpassing targets with 10,000+ organic downloads in the first 6 months, and was awarded Employee of the Month in June 2021."
+      },
+      gimasys: {
+        badge: "ENTERPRISE IT CONSULTANCY HUB",
+        title: "Gimasys Office",
+        coords: "Hanoi, Vietnam",
+        img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
+        desc: "Enterprise IT and digital transformation consultancy partnered with Salesforce, Oracle, and Google Cloud. Dat drove a 25% increase in B2B event registrations and conversions through targeted PR, SEO campaigns, and landing page optimization."
+      }
+    };
+
+    function openLocationModal(key) {
+      const data = locData[key];
+      if (!data) return;
+
+      document.getElementById('modalLocBadge').innerText = data.badge;
+      document.getElementById('modalLocTitle').innerText = data.title;
+      document.getElementById('modalLocCoords').innerText = data.coords;
+      document.getElementById('modalLocImg').src = data.img;
+      document.getElementById('modalLocDesc').innerText = data.desc;
+
+      document.getElementById('locationModal').classList.remove('hidden');
+    }
+
+    function closeLocationModal() {
+      document.getElementById('locationModal').classList.add('hidden');
+    }
+
+    // -------------------------------------------------------------------------
+    // L. ROLE-LENS FILTERING WITH SMOOTH TRANSITION
+    // -------------------------------------------------------------------------
+    const lensHeadlines = {
+      all: "Senior Partner Relations &amp; B2B Tech Business Development | Growth Lead | MBA",
+      bd: "Senior Partner Relations Specialist &amp; Strategic Alliances Director (200+ Partners)",
+      growth: "Head of Growth &amp; B2B Ecosystem Expansion Lead (18% Conversion, $300K+ Net Revenue)",
+      exec: "Executive Strategy &amp; Chief of Staff | Commercial Deal Architect | MBA",
+      ai: "AI-Native Venture Operator &amp; Production Agent Skills Engineer (6 Custom Agent Skills)"
+    };
+
+    function setRoleLens(lensKey) {
+      const buttons = document.querySelectorAll('#lensButtonContainer button');
+      buttons.forEach(btn => {
+        btn.classList.remove('lens-active');
+        btn.classList.add('text-slate-600', 'dark:text-slate-400');
+      });
+      const activeBtn = document.getElementById('lens-' + lensKey);
+      if (activeBtn) {
+        activeBtn.classList.add('lens-active');
+        activeBtn.classList.remove('text-slate-600', 'dark:text-slate-400');
+      }
+
+      const headline = document.getElementById('heroHeadline');
+      if (headline && lensHeadlines[lensKey]) {
+        headline.style.opacity = '0';
+        setTimeout(() => {
+          headline.innerHTML = lensHeadlines[lensKey];
+          headline.style.opacity = '1';
+        }, 150);
+      }
+
+      const cards = document.querySelectorAll('.role-card');
+      cards.forEach(card => {
+        const tags = card.getAttribute('data-tags') || '';
+        if (lensKey === 'all' || tags.includes(lensKey)) {
+          card.style.display = 'block';
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.98)';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+          }, 50);
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // -------------------------------------------------------------------------
+    // M. ACCORDION CONTROL
+    // -------------------------------------------------------------------------
+    function toggleAccordion(id) {
+      const body = document.getElementById(id);
+      const icon = document.getElementById('icon-' + id);
+      if (!body) return;
+
+      const isHidden = body.classList.contains('hidden');
+      if (isHidden) {
+        body.classList.remove('hidden');
+        if (icon) icon.classList.add('rotate-180');
+      } else {
+        body.classList.add('hidden');
+        if (icon) icon.classList.remove('rotate-180');
+      }
+    }
+
+    function toggleAllAccordions(expand) {
+      const bodies = document.querySelectorAll('#caseStudiesContainer [id^="role-"]');
+      bodies.forEach(b => {
+        const icon = document.getElementById('icon-' + b.id);
+        if (expand) {
+          b.classList.remove('hidden');
+          if (icon) icon.classList.add('rotate-180');
+        } else {
+          b.classList.add('hidden');
+          if (icon) icon.classList.remove('rotate-180');
+        }
+      });
+    }
+
+    // -------------------------------------------------------------------------
+    // N. DYNAMIC JD FIT CALCULATOR WITH CIRCULAR SVG SPEEDOMETER
+    // -------------------------------------------------------------------------
+    const sampleJds = {
+      bd: `Title: Senior Web3 Business Development Lead (Southeast Asia)
+Location: Remote / Singapore / Vietnam
+Responsibilities:
+- Build and execute high-impact strategic partnership pipelines with Layer-1/2 protocols, dApps, and infrastructure providers.
+- Manage existing alliance portfolio of 100+ partners, driving co-marketing, technical integrations, and liquidity.
+- Represent the firm at global industry summits and secure tier-1 sponsorships.
+Requirements:
+- 5+ years experience in B2B tech business development and Web3 partnerships.
+- Proven network across Southeast Asia crypto foundations, venture builders, and institutional partners.
+- MBA or strong commercial acumen preferred. Excellent bilingual communication.`,
+
+      growth: `Title: Head of Growth & Ecosystem Marketing (SEA)
+Responsibilities:
+- Own the customer and user acquisition funnel across decentralized channels.
+- Convert cold B2B prospects into active ecosystem partners with quantifiable conversion metrics.
+- Drive ARR growth through strategic commercial licensing, co-branding campaigns, and developer hackathons.
+Requirements:
+- Track record scaling B2B SaaS or Web3 products to $200K+ ARR.
+- Strong leadership capability managing 10+ cross-functional teammates.
+- Deep familiarity with cold pipeline syndication and digital growth levers.`,
+
+      protocol: `Title: Core Rust & Smart Contract Protocol Developer
+Responsibilities:
+- Write low-level cryptographic consensus code in Rust for Substrate / Cosmos SDK.
+- Design and audit custom Solidity EVM bytecode for automated market maker liquidity pools.
+- Optimize mempool execution speed, zero-knowledge snark circuits, and assembly opcodes.
+Requirements:
+- 5+ years writing production smart contracts in Rust and Assembly.
+- Deep expertise in formal verification, cryptography, and distributed consensus math.`
+    };
+
+    function loadSampleJd(type) {
+      const input = document.getElementById('jdInput');
+      if (input && sampleJds[type]) {
+        input.value = sampleJds[type];
+        calculateJdFit();
+      }
+    }
+
+    function clearJdInput() {
+      const input = document.getElementById('jdInput');
+      if (input) input.value = '';
+    }
+
+    function calculateJdFit() {
+      const text = (document.getElementById('jdInput').value || '').toLowerCase();
+      
+      const bdKeywords = ['business development', 'bd', 'partnership', 'partner', 'alliances', 'sales', 'deal', 'negotiation', 'pipeline'];
+      const web3Keywords = ['web3', 'crypto', 'blockchain', 'layer-1', 'layer-2', 'token', 'protocol', 'ecosystem', 'wallet', 'defi'];
+      const seaKeywords = ['southeast asia', 'sea', 'vietnam', 'singapore', 'apac', 'regional', 'thai', 'indonesia', 'philippines', 'hanoi'];
+      const mbaKeywords = ['mba', 'strategy', 'commercial', 'financial', 'revenue', 'arr', 'budget', 'leadership', 'c-suite', 'executive', 'simi'];
+      const aiKeywords = ['ai', 'agent', 'automation', 'llm', 'workflow', 'skills', 'claude', 'gemini'];
+      const devKeywords = ['rust', 'solidity', 'assembly', 'cryptography', 'bytecode', 'smart contract developer', 'consensus math', 'zero-knowledge', 'snark'];
+
+      let devMatches = 0;
+      devKeywords.forEach(k => { if (text.includes(k)) devMatches++; });
+      const isOutOfScopeDev = devMatches >= 2;
+
+      function scorePillar(keywords, baseMin, baseMax) {
+        let count = 0;
+        keywords.forEach(k => { if (text.includes(k)) count++; });
+        if (!text.trim()) return 95;
+        const ratio = Math.min(count / 3, 1);
+        return Math.round(baseMin + ratio * (baseMax - baseMin));
+      }
+
+      let scoreBD = scorePillar(bdKeywords, 75, 98);
+      let scoreWeb3 = scorePillar(web3Keywords, 70, 96);
+      let scoreSEA = scorePillar(seaKeywords, 80, 99);
+      let scoreMBA = scorePillar(mbaKeywords, 72, 95);
+      let scoreAI = scorePillar(aiKeywords, 75, 98);
+
+      let totalFit = Math.round((scoreBD * 0.3) + (scoreWeb3 * 0.25) + (scoreSEA * 0.2) + (scoreMBA * 0.15) + (scoreAI * 0.1));
+
+      const boundaryAlert = document.getElementById('jdBoundaryAlert');
+      if (isOutOfScopeDev) {
+        totalFit = Math.max(totalFit - 32, 54);
+        scoreWeb3 = 60;
+        if (boundaryAlert) boundaryAlert.classList.remove('hidden');
+      } else {
+        if (boundaryAlert) boundaryAlert.classList.add('hidden');
+      }
+
+      document.getElementById('jdScoreDisplay').innerText = totalFit + '%';
+      
+      const circumference = 2 * Math.PI * 40; // ~251.32
+      const offset = circumference - (totalFit / 100) * circumference;
+      const gauge = document.getElementById('gaugeCircle');
+      if (gauge) {
+        gauge.style.strokeDashoffset = offset;
+      }
+
+      const gradeLabel = document.getElementById('jdGradeLabel');
+      if (totalFit >= 90) {
+        gradeLabel.innerText = 'PRIME CANDIDATE MATCH';
+        gradeLabel.className = 'text-xs font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-700 dark:text-emerald-400 font-bold inline-block mt-0.5';
+      } else if (totalFit >= 75) {
+        gradeLabel.innerText = 'STRONG ADJACENT FIT';
+        gradeLabel.className = 'text-xs font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-700 dark:text-amber-400 font-bold inline-block mt-0.5';
+      } else {
+        gradeLabel.innerText = 'ROLE BOUNDARY DIVERGENCE';
+        gradeLabel.className = 'text-xs font-mono px-2 py-0.5 rounded bg-red-500/20 text-red-700 dark:text-red-400 font-bold inline-block mt-0.5';
+      }
+
+      document.getElementById('barScoreBD').innerText = scoreBD + '%';
+      document.getElementById('barWidthBD').style.width = scoreBD + '%';
+      
+      document.getElementById('barScoreWeb3').innerText = scoreWeb3 + '%';
+      document.getElementById('barWidthWeb3').style.width = scoreWeb3 + '%';
+      
+      document.getElementById('barScoreSEA').innerText = scoreSEA + '%';
+      document.getElementById('barWidthSEA').style.width = scoreSEA + '%';
+      
+      document.getElementById('barScoreMBA').innerText = scoreMBA + '%';
+      document.getElementById('barWidthMBA').style.width = scoreMBA + '%';
+      
+      document.getElementById('barScoreAI').innerText = scoreAI + '%';
+      document.getElementById('barWidthAI').style.width = scoreAI + '%';
+    }
+
+    function copyHiringManagerDossier() {
+      const score = document.getElementById('jdScoreDisplay').innerText;
+      const memo = 
+`EXECUTIVE CANDIDATE FIT DOSSIER // TRAN TIEN DAT (RONIN)
+------------------------------------------------------------
+Target Role Fit Rating: ${score}
+Candidate: Trần Tiến Đạt (Dat Tran / Ronin) | MBA (Swiss SIMI)
+Academic Credentials: MBA (Swiss Institute of Management and Innovation) · BA Hons (Staffordshire / BUV)
+Corporate Honors: Employee of the Month (AEONMALL Ha Dong, June 2021)
+Core Positioning: Senior Partner Relations, B2B Tech BD & Growth Lead (SEA)
+Direct Contact: dattt231@gmail.com | Messengers: WhatsApp & Zalo QR | LinkedIn: linkedin.com/in/dattt2311
+Location: Hoang Mai, Hanoi, Vietnam (SEA Scope)
+Full Portfolio: https://datdata231.github.io/interactive-cv/
+
+AUDITED PERFORMANCE HIGHLIGHTS:
+• Managed 200+ enterprise ecosystem partners & investors at Viction (Ninety Eight) across SEA Web3.
+• Drove $300,000+ in annual revenue growth through OneID user activation campaigns (2024).
+• Secured $100,000+ in tier-1/tier-2 sponsorships for Ninety Eight flagship hackathons.
+• Achieved 18% cold outreach-to-signed partner conversion rate in 3 months at Herond Labs.
+• Scaled AEONMALL Vietnam mobile app to 10,000+ organic downloads in first 6 months.
+• Engineered 6 custom production AI Agent Skills (gtemas-cold-outreach, research-to-playbook, etc.).
+
+INTERVIEW RECOMMENDATION:
+Highly recommended for leadership interview focusing on SEA market expansion, B2B alliance negotiation, and partner revenue scaling.`;
+
+      navigator.clipboard.writeText(memo).then(() => {
+        const btn = document.getElementById('copyDossierBtn');
+        const orig = btn.innerHTML;
+        btn.innerHTML = `<span class="text-emerald-500 font-bold">✓ Dossier Copied!</span>`;
+        setTimeout(() => { btn.innerHTML = orig; }, 2200);
+      });
+    }
+
+    // -------------------------------------------------------------------------
+    // O. SLIDE-OUT HEADHUNTER CONCIERGE DRAWER
+    // -------------------------------------------------------------------------
+    function toggleConciergeDrawer(forceOpen) {
+      const drawer = document.getElementById('conciergeDrawer');
+      const backdrop = document.getElementById('conciergeBackdrop');
+      if (!drawer || !backdrop) return;
+
+      const isOpen = !drawer.classList.contains('translate-x-full');
+      const shouldOpen = forceOpen !== undefined ? forceOpen : !isOpen;
+
+      if (shouldOpen) {
+        drawer.classList.remove('translate-x-full');
+        backdrop.classList.remove('opacity-0', 'pointer-events-none');
+        setTimeout(() => {
+          const input = document.getElementById('chatInput');
+          if (input) input.focus();
+        }, 300);
+      } else {
+        drawer.classList.add('translate-x-full');
+        backdrop.classList.add('opacity-0', 'pointer-events-none');
+      }
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        toggleConciergeDrawer();
+      }
+      if (e.key === 'Escape') {
+        toggleConciergeDrawer(false);
+        closeDocModal();
+        closeLocationModal();
+      }
+    });
+
+    const knowledgeBase = [
+      {
+        keys: ['degree', 'education', 'school', 'mba', 'ba', 'university', 'college', 'master'],
+        answer: "Dat holds a Master of Business Administration (MBA) from the Swiss Institute of Management and Innovation (SIMI) in Zug, Switzerland, and a BA (Hons) in Marketing Management from Staffordshire University (UK) in partnership with British University Vietnam (BUV)."
+      },
+      {
+        keys: ['aeon', 'award', 'employee of the month', 'honor', 'hado'],
+        answer: "Dat was awarded Employee of the Month in June 2021 at AEONMALL Ha Dong for directing the nationwide launch of the AEONMALL Vietnam mobile app, driving over 10,000 organic downloads in its first 6 months, and introducing the 'Hado' mascot across omnichannel campaigns."
+      },
+      {
+        keys: ['win', 'biggest', 'partner', 'acquisition', 'viction', 'ninety eight'],
+        answer: "Dat's signature career milestone was managing the 200+ partner & investor portfolio at Viction (Ninety Eight) across SEA, securing over $100,000+ in tier-1/tier-2 hackathon sponsorships, and converting 18% of cold prospects into signed alliances at Herond Labs within 3 months."
+      },
+      {
+        keys: ['300k', 'oneid', 'revenue', 'onechain', 'arr'],
+        answer: "As Growth Lead at OneID (Ninety Eight), Dat directed cross-functional squads (Marketing, Community, BD) reporting to the CGO, orchestrating user activation campaigns that drove mass adoption and generated $300,000+ in annual revenue growth in 2024."
+      },
+      {
+        keys: ['sea', 'southeast asia', 'expansion', 'vietnam', 'singapore', 'hanoi'],
+        answer: "Dat is based in Hoang Mai, Hanoi, Vietnam with 6+ years of on-the-ground B2B execution across Vietnam, Singapore, Thailand, Indonesia, and the Philippines. He combines a Swiss SIMI MBA with deep relationships across top crypto foundations and regional retail networks."
+      },
+      {
+        keys: ['ai', 'skills', 'coding', 'agent', 'arsenal', 'custom'],
+        answer: "Dat has engineered 6 custom AI Agent Skills: (1) gtemas-cold-outreach for tiered lead classification, (2) research-to-playbook for technical documentation conversion, (3) package-code-guide for GitHub/Docker inspection, (4) get-more-perspectives for decision stress-testing, (5) master-questioner for bottleneck diagnostics, and (6) prompt-gen for context engineering."
+      },
+      {
+        keys: ['relocation', 'terms', 'hybrid', 'remote', 'salary', 'availability'],
+        answer: "Dat is currently open to hybrid mandates in SEA or full-time remote global mandates for Q1/Q2 commitments. You can schedule an executive interview directly via dattt231@gmail.com, LinkedIn (linkedin.com/in/dattt2311), or scan Dat's WhatsApp and Zalo QR codes in the interactive contact modal."
+      }
+    ];
+
+    function askPreset(question) {
+      document.getElementById('chatInput').value = question;
+      handleChatSubmit(new Event('submit'));
+    }
+
+    function handleChatSubmit(e) {
+      e.preventDefault();
+      const input = document.getElementById('chatInput');
+      const query = (input.value || '').trim();
+      if (!query) return;
+
+      const chatStream = document.getElementById('chatStream');
+
+      const userDiv = document.createElement('div');
+      userDiv.className = 'flex items-start justify-end gap-2.5';
+      userDiv.innerHTML = `
+        <div class="p-3 rounded-xl font-semibold max-w-[85%] leading-relaxed text-white dark:text-black" style="background-color: var(--accent-primary);">
+          ${escapeHtml(query)}
+        </div>
+      `;
+      chatStream.appendChild(userDiv);
+      input.value = '';
+      chatStream.scrollTop = chatStream.scrollHeight;
+
+      const lower = query.toLowerCase();
+      let matched = knowledgeBase.find(item => item.keys.some(k => lower.includes(k)));
+      let replyText = matched ? matched.answer : 
+        "Dat Tran holds a Swiss SIMI MBA, Staffordshire/BUV BA (Hons), and June 2021 AEONMALL Employee of the Month honors. 6+ years scaling tech partnerships across SEA: 200+ partners at Viction, $300K+ revenue at OneID, and 18% cold conversion at Herond Labs. Contact directly: dattt231@gmail.com.";
+
+      setTimeout(() => {
+        const botDiv = document.createElement('div');
+        botDiv.className = 'flex items-start gap-2.5';
+        botDiv.innerHTML = `
+          <div class="w-6 h-6 rounded flex items-center justify-center font-bold text-[10px] shrink-0 text-white dark:text-black" style="background-color: var(--accent-primary);">
+            DT
+          </div>
+          <div class="p-3 rounded-xl bg-slate-100 dark:bg-slate-800/90 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/60 max-w-[85%] leading-relaxed space-y-1">
+            <p>${escapeHtml(replyText)}</p>
+          </div>
+        `;
+        chatStream.appendChild(botDiv);
+        chatStream.scrollTop = chatStream.scrollHeight;
+      }, 400);
+    }
+
+    // -------------------------------------------------------------------------
+    // P. MULTI-TIER IMAGE ASSET PROBING & RESTORATION
+    // -------------------------------------------------------------------------
+    function initAssetProbing() {
+      const assetPaths = {
+        headshot: [
+          'assets/cv-headshot.png',
+          'assets/cv-headshot.jpg',
+          'assets/cv-headshot.jpeg',
+          'cv-headshot.png',
+          'cv-headshot.jpg',
+          'cv-headshot.jpeg',
+          'assets/headshot.jpg',
+          'assets/headshot.png',
+          'assets/headshot.jpeg',
+          'assets/avatar.jpg',
+          'assets/avatar.png',
+          'headshot.jpg',
+          'headshot.png',
+          'avatar.jpg',
+          'avatar.png'
+        ],
+        mba: [
+          'assets/cert-mba.jpg', 'assets/cert-mba.png', 'assets/cert-mba.jpeg',
+          'assets/mba.jpg', 'assets/mba.png', 'assets/mba.jpeg',
+          'cert-mba.jpg', 'cert-mba.png', 'mba.jpg', 'mba.png'
+        ],
+        bba: [
+          'assets/cert-ba.jpg', 'assets/cert-ba.png', 'assets/cert-ba.jpeg',
+          'assets/ba.jpg', 'assets/ba.png', 'assets/ba.jpeg',
+          'cert-ba.jpg', 'cert-ba.png', 'ba.jpg', 'ba.png'
+        ],
+        aeon: [
+          'assets/award-aeonmall.jpg', 'assets/award-aeonmall.png', 'assets/award-aeonmall.jpeg',
+          'assets/award-aeon.jpg', 'assets/award-aeon.png',
+          'award-aeonmall.jpg', 'award-aeonmall.png', 'award-aeon.jpg'
+        ],
+        cloud: [
+          'assets/cert-cloud.jpg', 'assets/cert-cloud.png', 'assets/cert-gimasys.jpg', 'cert-cloud.jpg'
+        ]
+      };
+
+      // Probe Headshot
+      const savedHeadshot = localStorage.getItem('cv_headshot');
+      if (savedHeadshot) {
+        applyHeadshotImage(savedHeadshot);
+      } else {
+        probeImageSequence(assetPaths.headshot, (src) => applyHeadshotImage(src));
+      }
+
+      // Probe Certificates & Awards
+      ['mba', 'bba', 'aeon', 'cloud'].forEach(key => {
+        const savedCert = localStorage.getItem('cv_cert_' + key);
+        if (savedCert) {
+          applyCertImage(key, savedCert);
+        } else {
+          probeImageSequence(assetPaths[key], (src) => applyCertImage(key, src));
+        }
+      });
+    }
+
+    function probeImageSequence(paths, onFound) {
+      if (!paths || paths.length === 0) return;
+      let idx = 0;
+
+      function tryNext() {
+        if (idx >= paths.length) return;
+        const currentPath = paths[idx];
+        const testImg = new Image();
+        testImg.onload = function() {
+          onFound(currentPath);
+        };
+        testImg.onerror = function() {
+          idx++;
+          tryNext();
+        };
+        testImg.src = currentPath;
+      }
+
+      tryNext();
+    }
+
+    // -------------------------------------------------------------------------
+    // Q. DOM INIT & EVENT BINDINGS
+    // -------------------------------------------------------------------------
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedStyle = localStorage.getItem('cv_style_option') || 'venture';
+      setStyleOption(savedStyle);
+
+      initAssetProbing();
+      initCardGlowTracking();
+      initScrollReveals();
+      initPortraitTilt();
+
+      calculateJdFit();
+    });
+  </script>
+
+
+  <!-- ========================================================================= -->
+  <!-- DIRECT MESSENGER CONNECT MODAL (WHATSAPP & ZALO QR)                       -->
+  <!-- ========================================================================= -->
+  <div id="qrContactModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+    <div class="w-full max-w-lg bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-2xl p-6 shadow-2xl space-y-5 relative">
+      <button onclick="closeQrContactModal()" class="absolute top-4 right-4 text-slate-500 hover:text-slate-900 dark:hover:text-white p-2" aria-label="Close Modal">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+
+      <!-- Modal Header -->
+      <div class="border-b border-slate-200 dark:border-slate-800 pb-3">
+        <div class="flex items-center gap-2">
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 font-bold border border-emerald-500/30">DIRECT MESSENGERS</span>
+          <span class="text-[10px] font-mono text-slate-500">🔒 BOT &amp; SPAM PROTECTED</span>
+        </div>
+        <h3 class="headline-font text-lg text-slate-900 dark:text-white font-bold mt-1">Connect with Tran Tien Dat (Ronin)</h3>
+        <p class="text-xs text-slate-600 dark:text-slate-400 mt-0.5">Scan the QR code with your mobile camera or messaging app to initiate direct chat without public phone exposure.</p>
+      </div>
+
+      <!-- Tab Switcher: WhatsApp vs Zalo -->
+      <div class="flex items-center gap-2 p-1 rounded-xl bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-xs font-semibold">
+        <button onclick="switchQrTab('whatsapp')" id="qrTabWhatsapp" class="flex-1 py-2 rounded-lg flex items-center justify-center gap-2 transition bg-emerald-600 text-white shadow-sm font-bold">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.04 14.69 2 12.04 2ZM12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.82L4.43 19.64L5.26 16.59L5.07 16.28C4.24 14.96 3.81 13.46 3.81 11.91C3.81 7.37 7.5 3.68 12.04 3.68C14.25 3.68 16.31 4.54 17.87 6.1C19.42 7.66 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15Z"/></svg>
+          <span>WhatsApp (Global)</span>
+        </button>
+        <button onclick="switchQrTab('zalo')" id="qrTabZalo" class="flex-1 py-2 rounded-lg flex items-center justify-center gap-2 transition text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white font-semibold">
+          <span class="w-4 h-4 rounded bg-blue-600 text-white flex items-center justify-center text-[10px] font-black">Z</span>
+          <span>Zalo (Vietnam &amp; SEA)</span>
+        </button>
+      </div>
+
+      <!-- QR Display Container -->
+      <div class="space-y-4">
+        <!-- WhatsApp Panel -->
+        <div id="qrPanelWhatsapp" class="space-y-3">
+          <div class="aspect-[4/5] max-h-72 mx-auto rounded-xl overflow-hidden bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 p-2 shadow-inner flex items-center justify-center">
+            <img src="assets/qr-whatsapp.jpg" alt="Ronin (Dat) Tran - WhatsApp QR Code" class="w-full h-full object-contain rounded-lg" />
+          </div>
+          <div class="text-center space-y-1">
+            <div class="text-xs font-semibold text-slate-900 dark:text-white">Ronin (Dat) Tran on WhatsApp</div>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400">Open WhatsApp on your phone → Settings → Tap QR Code icon next to your name → Scan</p>
+          </div>
+        </div>
+
+        <!-- Zalo Panel -->
+        <div id="qrPanelZalo" class="space-y-3 hidden">
+          <div class="aspect-[4/5] max-h-72 mx-auto rounded-xl overflow-hidden bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 p-2 shadow-inner flex items-center justify-center">
+            <img src="assets/qr-zalo.jpg" alt="Tran Tien Dat - Zalo Danh thiếp QR Code" class="w-full h-full object-contain rounded-lg" />
+          </div>
+          <div class="text-center space-y-1">
+            <div class="text-xs font-semibold text-slate-900 dark:text-white">Trần Tiến Đạt trên Zalo</div>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400">Mở ứng dụng Zalo → Quét mã QR danh thiếp để kết bạn &amp; nhắn tin trực tiếp</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Privacy & Email fallback -->
+      <div class="p-3 rounded-xl bg-slate-100 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60 flex items-center justify-between text-xs">
+        <div class="space-y-0.5">
+          <span class="text-slate-700 dark:text-slate-300 font-semibold block">Prefer formal enterprise correspondence?</span>
+          <span class="text-[11px] text-slate-500 dark:text-slate-400">Send an executive brief or schedule an interview:</span>
+        </div>
+        <a href="mailto:dattt231@gmail.com?subject=Executive%20Discussion%20-%20Tran%20Tien%20Dat" class="px-3 py-1.5 rounded-lg btn-brand-accent text-xs font-bold transition">
+          Email Dat
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
