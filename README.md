@@ -12,8 +12,11 @@
 
 ### What you can do inside the HTML version:
 - 🎯 **Switch Role Lenses in 1 Click**: Re-tailor my entire CV dynamically between **Senior BD & Partnerships**, **Growth & GTM Lead**, **Executive Strategy / EA to CEO**, and **AI-Native Workflow Builder**.
+- 🔗 **Deep-Link Directly for Recruiters**: Append parameters to share customized views directly (e.g., `?lens=bd&tab=timeline` or `?lens=growth&tab=jd`).
 - 💬 **Interview My CV Skill**: Click preset headhunter questions or ask custom questions about my KPIs at **Herond Labs**, **Ninety Eight (Coin98 / Viction / OneID)**, **OneChain Technology**, **KingSpeed**, **AEONMALL**, and **Gimasys**.
 - 📋 **Paste Your Job Description (Live Fit Scorecard)**: Paste any JD into the simulator to generate an instant requirement-by-requirement fit table backed by verified metrics.
+- 📤 **1-Click Copy for Hiring Managers**: Export a formatted evaluation summary ready to paste into an email or Slack note to executive decision-makers.
+- 🖨️ **Print-Ready Executive PDF (`Cmd + P`)**: Built-in executive resume layout automatically formats into an elegant 2-page CV when saving to PDF or printing.
 
 ---
 
@@ -48,6 +51,6 @@ Once installed, ask your AI agent:
 ## 📬 Direct Contact
 
 - **Email:** [dattt231@gmail.com](mailto:dattt231@gmail.com)
-- **Phone / WhatsApp / Zalo:** `+84 33-644-9533`
+- **Messengers (WhatsApp / Zalo):** Direct Encrypted QR Code on Interactive CV (Protected from bots)
 - **LinkedIn:** [linkedin.com/in/dattt2311](https://www.linkedin.com/in/dattt2311)
 - **GitHub:** [github.com/datdata231](https://github.com/datdata231)

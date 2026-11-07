@@ -5,9 +5,9 @@
 - **Full Name**: Tran Tien Dat (Alias: Ronin)
 - **Headline**: Senior Partner Relations & Business Development | Growth & GTM Lead | MBA | AI-Native Workflow Builder
 - **Experience**: 6+ years in B2B Tech Partnerships, Web3/Blockchain Ecosystems, Growth Marketing, and Executive Strategy across Southeast Asia (SEA)
-- **Locations**: Hanoi & Ho Chi Minh City, Vietnam (Open to SEA Regional, Hybrid, and Remote roles)
+- **Location**: Hoang Mai, Hanoi, Vietnam (SEA Regional Scope)
 - **Email**: dattt231@gmail.com
-- **Phone**: +84 33-644-9533 (033-644-9533)
+- **Messengers**: WhatsApp & Zalo via Direct QR Code (Privacy Protected) | Email: dattt231@gmail.com
 - **LinkedIn**: https://www.linkedin.com/in/dattt2311 (@dattt2311)
 - **GitHub**: https://github.com/datdata231 (@datdata231)
 
@@ -23,7 +23,7 @@
 
 ## Work Experience
 
-### 1. Herond Labs (Apr 2026 - Present / Sep 2026)
+### 1. Herond Labs (Apr 2026 - Sep 2026)
 
 - **Role**: Business Development Collaborator
 - **Company Profile**: Specialized blockchain and software lab focusing on digital transformation and privacy-first web ecosystems (flagship product: Herond Browser).

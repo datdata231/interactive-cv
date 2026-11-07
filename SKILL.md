@@ -22,7 +22,7 @@ Act as an interactive talent concierge and portfolio guide for Tran Tien Dat (Da
 - **Experience**: 6+ years in B2B Tech Partnerships, Web3/Blockchain Ecosystems, Growth Marketing, and Executive Strategy across Southeast Asia (SEA)
 - **Location**: Hoang Mai, Hanoi, Vietnam (SEA Regional Scope)
 - **Email**: dattt231@gmail.com
-- **Phone**: +84 33-644-9533 (033-644-9533)
+- **Messengers**: WhatsApp & Zalo via Direct QR Code | Email: dattt231@gmail.com
 - **LinkedIn**: https://www.linkedin.com/in/dattt2311 (@dattt2311)
 - **GitHub**: https://github.com/datdata231 (@datdata231)
 
