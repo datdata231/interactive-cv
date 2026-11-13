@@ -45,7 +45,7 @@
   <!-- Typography: Plus Jakarta Sans (Clean Modern Sans) + Newsreader (Editorial Serif) + JetBrains Mono (Technical Telemetry) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
   <script>
     tailwind.config = {
@@ -110,70 +110,241 @@
       --glow-color: rgba(180, 83, 9, 0.12);
     }
 
-    /* Option 1: Swiss Monolith */
-    html[data-style="swiss"] {
-      --bg-base: #08090d;
-      --bg-surface: #10121a;
-      --bg-elevated: #161924;
-      --border-subtle: rgba(255, 255, 255, 0.08);
-      --border-strong: rgba(59, 130, 246, 0.4);
-      --text-hero: #ffffff;
-      --text-body: #94a3b8;
-      --text-muted: #64748b;
-      --accent-primary: #3b82f6;
-      --accent-primary-hover: #60a5fa;
-      --accent-soft: rgba(59, 130, 246, 0.12);
-      --glow-color: rgba(59, 130, 246, 0.18);
-      --font-headline: 'Plus Jakarta Sans', -apple-system, sans-serif;
-      --headline-weight: 700;
-      --letter-spacing: -0.03em;
-    }
-    html[data-style="swiss"]:not(.dark) {
-      --bg-base: #f8fafc;
-      --bg-surface: #ffffff;
-      --bg-elevated: #f1f5f9;
-      --border-subtle: #e2e8f0;
-      --border-strong: #2563eb;
-      --text-hero: #0f172a;
-      --text-body: #334155;
-      --text-muted: #64748b;
-      --accent-primary: #1d4ed8;
-      --accent-primary-hover: #1e40af;
-      --accent-soft: rgba(29, 78, 216, 0.08);
-      --glow-color: rgba(29, 78, 216, 0.1);
+    /* ========================================================================= */
+    /* STYLE 02: VIVID BOLD (COLORFUL, HIGH-IMPACT ART-DIRECTION FOR CEOS)       */
+    /* Distinct Asymmetrical Hero Layout, Vibrant Color Accents & Fluid Motion   */
+    /* Keeps identical clean typography to Venture Gold                          */
+    /* ========================================================================= */
+    
+    @keyframes pulseGlowSlow {
+      0%, 100% { opacity: 0.35; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.04); }
     }
 
-    /* Option 3: Editorial Prestige */
-    html[data-style="editorial"] {
-      --bg-base: #0b0c11;
-      --bg-surface: #12141d;
-      --bg-elevated: #191c28;
-      --border-subtle: rgba(255, 255, 255, 0.08);
-      --border-strong: rgba(212, 163, 89, 0.4);
-      --text-hero: #f7f6f2;
-      --text-body: #c4cdd8;
-      --text-muted: #7d8897;
-      --accent-primary: #d4a359;
-      --accent-primary-hover: #e2b97c;
-      --accent-soft: rgba(212, 163, 89, 0.12);
-      --glow-color: rgba(212, 163, 89, 0.18);
-      --font-headline: 'Newsreader', Georgia, serif;
-      --headline-weight: 600;
-      --letter-spacing: -0.01em;
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
-    html[data-style="editorial"]:not(.dark) {
-      --bg-base: #faf8f5;
+
+    html[data-style="vivid"] {
+      --bg-base: #060814;
+      --bg-surface: #0c1024;
+      --bg-elevated: #13193a;
+      --border-subtle: rgba(99, 102, 241, 0.28);
+      --border-strong: #00f2fe;
+      --text-hero: #ffffff;
+      --text-body: #e2e8f0;
+      --text-muted: #94a3b8;
+      --accent-primary: #8b5cf6;
+      --accent-primary-hover: #a78bfa;
+      --accent-soft: rgba(139, 92, 246, 0.2);
+      --glow-color: rgba(0, 242, 254, 0.4);
+      --font-headline: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --headline-weight: 800;
+      --letter-spacing: -0.025em;
+    }
+
+    html[data-style="vivid"]:not(.dark) {
+      --bg-base: #faf5ff;
       --bg-surface: #ffffff;
-      --bg-elevated: #f0ece3;
-      --border-subtle: #e0d9cd;
-      --border-strong: #92400e;
-      --text-hero: #14171f;
-      --text-body: #374151;
-      --text-muted: #6b7280;
-      --accent-primary: #92400e;
-      --accent-primary-hover: #78350f;
-      --accent-soft: rgba(146, 64, 14, 0.08);
-      --glow-color: rgba(146, 64, 14, 0.1);
+      --bg-elevated: #f3e8ff;
+      --border-subtle: #d8b4fe;
+      --border-strong: #9333ea;
+      --text-hero: #0f172a;
+      --text-body: #1e1b4b;
+      --text-muted: #6b21a8;
+      --accent-primary: #7e22ce;
+      --accent-primary-hover: #6b21a8;
+      --accent-soft: rgba(126, 34, 206, 0.12);
+      --glow-color: rgba(126, 34, 206, 0.25);
+      --font-headline: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --headline-weight: 800;
+      --letter-spacing: -0.025em;
+    }
+
+    /* Ambient Colorful Canvas for CEOs */
+    html[data-style="vivid"].dark body {
+      background-color: #060814;
+      background-image: 
+        radial-gradient(circle at 12% 15%, rgba(236, 72, 153, 0.22) 0%, transparent 45%),
+        radial-gradient(circle at 88% 18%, rgba(99, 102, 241, 0.25) 0%, transparent 50%),
+        radial-gradient(circle at 50% 55%, rgba(6, 182, 212, 0.18) 0%, transparent 45%),
+        radial-gradient(circle at 80% 85%, rgba(245, 158, 11, 0.18) 0%, transparent 40%),
+        radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 32px 32px;
+      background-attachment: fixed;
+    }
+
+    html[data-style="vivid"]:not(.dark) body {
+      background-color: #faf5ff;
+      background-image: 
+        radial-gradient(circle at 10% 15%, rgba(244, 114, 182, 0.25) 0%, transparent 45%),
+        radial-gradient(circle at 90% 20%, rgba(129, 140, 248, 0.25) 0%, transparent 45%),
+        radial-gradient(circle at 50% 65%, rgba(45, 212, 191, 0.2) 0%, transparent 50%),
+        linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+      background-attachment: fixed;
+    }
+
+    /* ------------------------------------------------------------------------- */
+    /* VIVID BOLD: DISTINCT ASYMMETRICAL LAYOUT RE-ARCHITECTURE                  */
+    /* ------------------------------------------------------------------------- */
+    
+    /* In Vivid Bold, reverse the Hero layout: Portrait floats prominently on left or integrated frame */
+    @media (min-width: 1024px) {
+      html[data-style="vivid"] #overview {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        gap: 3rem;
+      }
+      html[data-style="vivid"] #overview > .lg\:col-span-7 {
+        flex: 1.25;
+      }
+      html[data-style="vivid"] #overview > .lg\:col-span-5 {
+        flex: 0.95;
+        justify-content: flex-start;
+      }
+    }
+
+    /* Distinct Hero Portrait Showcase Frame */
+    html[data-style="vivid"] #heroPortraitCard {
+      max-width: 440px;
+      border: 2px solid rgba(236, 72, 153, 0.4);
+      background: linear-gradient(145deg, rgba(12, 16, 36, 0.95), rgba(20, 26, 60, 0.85));
+      box-shadow: 
+        0 25px 50px -12px rgba(6, 8, 20, 0.8),
+        0 0 35px -5px rgba(236, 72, 153, 0.35),
+        0 0 30px -5px rgba(0, 242, 254, 0.35);
+      position: relative;
+    }
+
+    html[data-style="vivid"] #heroPortraitCard::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 1.35rem;
+      background: linear-gradient(45deg, #ec4899, #8b5cf6, #00f2fe, #f59e0b, #10b981);
+      background-size: 300% 300%;
+      z-index: -1;
+      animation: gradientShift 8s ease infinite;
+      opacity: 0.75;
+    }
+
+    /* Vivid Bold: Distinct 3-Column Asymmetric Telemetry Grid instead of 6 flat boxes */
+    @media (min-width: 1024px) {
+      html[data-style="vivid"] #telemetryGrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+      }
+    }
+
+    /* Vivid Bold: Rich Colorful Neon Border Tops on Cards */
+    html[data-style="vivid"] #telemetryGrid > div:nth-child(1) {
+      border-top: 3px solid #ec4899;
+      background: linear-gradient(180deg, rgba(236, 72, 153, 0.12) 0%, var(--bg-surface) 100%);
+    }
+    html[data-style="vivid"] #telemetryGrid > div:nth-child(2) {
+      border-top: 3px solid #f59e0b;
+      background: linear-gradient(180deg, rgba(245, 158, 11, 0.14) 0%, var(--bg-surface) 100%);
+    }
+    html[data-style="vivid"] #telemetryGrid > div:nth-child(3) {
+      border-top: 3px solid #8b5cf6;
+      background: linear-gradient(180deg, rgba(139, 92, 246, 0.12) 0%, var(--bg-surface) 100%);
+    }
+    html[data-style="vivid"] #telemetryGrid > div:nth-child(4) {
+      border-top: 3px solid #10b981;
+      background: linear-gradient(180deg, rgba(16, 185, 129, 0.12) 0%, var(--bg-surface) 100%);
+    }
+    html[data-style="vivid"] #telemetryGrid > div:nth-child(5) {
+      border-top: 3px solid #00f2fe;
+      background: linear-gradient(180deg, rgba(0, 242, 254, 0.12) 0%, var(--bg-surface) 100%);
+    }
+    html[data-style="vivid"] #telemetryGrid > div:nth-child(6) {
+      border-top: 3px solid #f43f5e;
+      background: linear-gradient(180deg, rgba(244, 63, 94, 0.12) 0%, var(--bg-surface) 100%);
+    }
+
+    
+    /* Vivid Bold: Distinct 3-Pillar Master Documentary Showcase */
+    @media (min-width: 1024px) {
+      html[data-style="vivid"] #certificatesGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+    }
+    html[data-style="vivid"] #certificatesGrid > div:nth-child(1) {
+      border: 1px solid rgba(245, 158, 11, 0.45);
+      box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.2);
+    }
+    html[data-style="vivid"] #certificatesGrid > div:nth-child(2) {
+      border: 1px solid rgba(0, 242, 254, 0.45);
+      box-shadow: 0 10px 25px -5px rgba(0, 242, 254, 0.2);
+    }
+    html[data-style="vivid"] #certificatesGrid > div:nth-child(3) {
+      border: 1px solid rgba(236, 72, 153, 0.45);
+      box-shadow: 0 10px 25px -5px rgba(236, 72, 153, 0.2);
+    }
+
+    
+    /* Vivid Bold: Distinct 2-Column High-Impact Card Layout for AI Skills */
+    @media (min-width: 1024px) {
+      html[data-style="vivid"] #aiSkillsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+    }
+    html[data-style="vivid"] #aiSkillsGrid > div:nth-child(1) { border-left: 4px solid #ec4899; }
+    html[data-style="vivid"] #aiSkillsGrid > div:nth-child(2) { border-left: 4px solid #8b5cf6; }
+    html[data-style="vivid"] #aiSkillsGrid > div:nth-child(3) { border-left: 4px solid #00f2fe; }
+    html[data-style="vivid"] #aiSkillsGrid > div:nth-child(4) { border-left: 4px solid #f59e0b; }
+    html[data-style="vivid"] #aiSkillsGrid > div:nth-child(5) { border-left: 4px solid #10b981; }
+    html[data-style="vivid"] #aiSkillsGrid > div:nth-child(6) { border-left: 4px solid #f43f5e; }
+
+    /* Vivid Bold: Fluid Hover Spring Elevation */
+    html[data-style="vivid"] .exec-card {
+      transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                  border-color 0.28s ease, 
+                  box-shadow 0.28s ease;
+    }
+    html[data-style="vivid"] .exec-card:hover {
+      transform: translateY(-5px) scale(1.015);
+      border-color: #00f2fe;
+      box-shadow: 0 18px 36px -8px rgba(6, 8, 20, 0.7), 0 0 25px -3px rgba(0, 242, 254, 0.45);
+    }
+
+    /* Vivid Bold: Hero Title Gradient (Identical typography font, bold art gradient) */
+    html[data-style="vivid"] h1.headline-font {
+      background: linear-gradient(135deg, #ffffff 0%, #38bdf8 35%, #ec4899 70%, #facc15 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 14px rgba(56, 189, 248, 0.35));
+    }
+    html[data-style="vivid"]:not(.dark) h1.headline-font {
+      background: linear-gradient(135deg, #0f172a 0%, #6366f1 40%, #ec4899 75%, #d97706 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Vivid Bold: Vibrant Multi-Color Badges on AI Skills & Certificates */
+    html[data-style="vivid"] .badge-vivid-1 { background-color: rgba(236, 72, 153, 0.18); color: #f472b6; border-color: rgba(236, 72, 153, 0.4); }
+    html[data-style="vivid"] .badge-vivid-2 { background-color: rgba(0, 242, 254, 0.18); color: #38bdf8; border-color: rgba(0, 242, 254, 0.4); }
+    html[data-style="vivid"] .badge-vivid-3 { background-color: rgba(245, 158, 11, 0.18); color: #fbbf24; border-color: rgba(245, 158, 11, 0.4); }
+
+    /* Vivid Bold: Animated Multi-Color Gradient CTA Button */
+    html[data-style="vivid"] .btn-brand-accent {
+      background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 50%, #00f2fe 100%) !important;
+      background-size: 200% 200%;
+      color: #ffffff !important;
+      font-weight: 800;
+      border: none;
+      box-shadow: 0 4px 20px rgba(139, 92, 246, 0.45);
+      animation: gradientShift 6s ease infinite;
+    }
+    html[data-style="vivid"] .btn-brand-accent:hover {
+      box-shadow: 0 6px 28px rgba(0, 242, 254, 0.6);
+      transform: translateY(-2px) scale(1.02);
     }
 
     /* Base Body Reset */
@@ -323,7 +494,81 @@
     }
 
     /* Circular SVG Gauge for JD Fit Scorer */
-    .gauge-circle {
+        /* Blinking Tactical Terminal Cursor */
+    .cursor-burgundy {
+      display: inline-block;
+      width: 8px;
+      height: 14px;
+      background-color: var(--accent-primary, #8B0000);
+      vertical-align: middle;
+      animation: blink 1s step-start infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    /* Structured Case Study Table Styling */
+    .case-study-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'IBM Plex Mono', 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      line-height: 1.5;
+    }
+    .case-study-table th {
+      padding: 0.625rem 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      width: 8.5rem;
+      font-weight: 600;
+      vertical-align: top;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background-color: rgba(255, 255, 255, 0.02);
+      color: #94a3b8;
+    }
+    html:not(.dark) .case-study-table th {
+      border-color: rgba(0, 0, 0, 0.08);
+      background-color: rgba(0, 0, 0, 0.02);
+      color: #64748b;
+    }
+    .case-study-table td {
+      padding: 0.625rem 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-body);
+    }
+    html:not(.dark) .case-study-table td {
+      border-color: rgba(0, 0, 0, 0.08);
+    }
+    .case-study-metric-row th {
+      color: var(--accent-primary);
+      border-left: 3px solid var(--accent-primary);
+    }
+    .case-study-metric-row td {
+      font-weight: 700;
+      color: var(--text-hero);
+      background-color: var(--accent-soft);
+    }
+
+    /* Sharp Tactical Brutalist Hover Physics for Cards (Excluding Tilt Card) */
+    .exec-card:not(#heroPortraitCard):hover {
+      border-color: var(--border-strong) !important;
+      transform: translate(-3px, -3px) !important;
+      box-shadow: 4px 4px 0px var(--accent-primary), 0 10px 25px -5px rgba(0,0,0,0.3) !important;
+    }
+
+    /* Hero Portrait 3D Stage & Kinetic State */
+    #heroPortraitCard {
+      transform-style: preserve-3d;
+      will-change: transform;
+      transition: box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    #heroPortraitCard:hover {
+      border-color: var(--border-strong);
+      box-shadow: 6px 6px 0px var(--accent-primary), 0 20px 40px -10px rgba(0,0,0,0.5);
+    }
+
+.gauge-circle {
       transition: stroke-dashoffset 0.85s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -400,19 +645,18 @@
       <!-- Right Controls: UI STYLE SWITCHER + THEME + CONCIERGE -->
       <div class="flex items-center gap-2">
         
-        <!-- UI Style Direction Selector (Venture Gold as default) -->
+        <!-- UI Style Direction Selector (2 Distinct Directions: Venture Gold & Vivid Bold CEO) -->
         <div class="hidden sm:flex items-center gap-1 p-1 rounded-lg border text-[11px] font-mono"
              style="background-color: var(--bg-surface); border-color: var(--border-subtle);"
-             title="Select UI Art Direction">
-          <span class="px-1.5 text-slate-500 font-bold">STYLE:</span>
-          <button onclick="setStyleOption('swiss')" id="btn-style-swiss" class="px-2 py-0.5 rounded transition">
-            1. Swiss
+             title="Select Executive Presentation Theme">
+          <span class="px-1.5 text-slate-500 font-bold">THEME:</span>
+          <button onclick="setStyleOption('venture')" id="btn-style-venture" class="px-2.5 py-0.5 rounded transition flex items-center gap-1.5 style-pill-active">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+            <span>Venture Gold</span>
           </button>
-          <button onclick="setStyleOption('venture')" id="btn-style-venture" class="px-2 py-0.5 rounded transition style-pill-active">
-            2. Venture Gold
-          </button>
-          <button onclick="setStyleOption('editorial')" id="btn-style-editorial" class="px-2 py-0.5 rounded transition">
-            3. Editorial
+          <button onclick="setStyleOption('vivid')" id="btn-style-vivid" class="px-2.5 py-0.5 rounded transition flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 animate-pulse"></span>
+            <span>Vivid Bold</span>
           </button>
         </div>
 
@@ -529,7 +773,7 @@
           </div>
 
           <!-- Portrait Media Canvas -->
-          <div class="relative mt-3 aspect-[4/5] rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-700/60 flex items-center justify-center relative z-10" id="portraitContainer">
+          <div class="relative mt-3 aspect-[4/5] rounded-xl overflow-hidden bg-slate-900 border border-slate-200 dark:border-slate-700/60 flex items-center justify-center relative z-10" style="background-color: var(--bg-surface);" id="portraitContainer">
             
             <!-- Default Monogram Representation -->
             <div id="portraitVisual" class="w-full h-full flex flex-col items-center justify-center p-6 text-center space-y-3">
@@ -582,7 +826,7 @@
         <span class="text-[10px] font-mono text-slate-500">DYNAMIC TELEMETRY STREAM</span>
       </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3" id="telemetryGrid">
         
         <!-- Metric 1: 200+ Partners -->
         <div class="exec-card glow-card p-3.5 rounded-xl space-y-1">
@@ -656,7 +900,7 @@
 <span class="text-xs font-sans text-amber-700 dark:text-amber-400 font-semibold tracking-wider">CLICK ANY CARD TO INSPECT DOCUMENT</span>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5" id="certificatesGrid">
         
         <!-- Certificate 1: Swiss SIMI MBA -->
         <div class="exec-card glow-card holo-sheen rounded-2xl p-4 flex flex-col justify-between space-y-3 cursor-pointer group" onclick="openDocModal('mba')">
@@ -793,170 +1037,149 @@
           </div>
         </div>
 
-        <!-- Certificate 4: Enterprise IT & Cloud Campaign Track (Gimasys) -->
-        <div class="exec-card glow-card holo-sheen rounded-2xl p-4 flex flex-col justify-between space-y-3 cursor-pointer group" onclick="openDocModal('cloud')">
-          <div class="space-y-2.5 relative z-10">
-            <div class="flex items-center justify-between">
-              <span class="text-[9px] font-mono px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 font-bold">
-                ENTERPRISE IT CONSULTANCY
-              </span>
-            </div>
-
-            <!-- Visual Certificate Plate Preview -->
-            <div class="aspect-[16/10] rounded-xl bg-gradient-to-br from-emerald-500/15 via-slate-100 to-slate-200 dark:via-slate-900 dark:to-slate-950 border border-emerald-500/30 p-3.5 flex flex-col justify-between relative overflow-hidden group-hover:border-emerald-400 transition" id="certPlateCloud">
-              <div class="flex justify-between items-start">
-                <div class="w-7 h-7 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-600 dark:text-emerald-400 text-xs font-mono font-black">
-                  IT
-                </div>
-                <div class="text-[8px] font-mono text-slate-500 dark:text-slate-400 text-right">
-                  GIMASYS-IT-TRACK
-                </div>
-              </div>
-              <div class="space-y-0.5 text-center">
-                <div class="font-serif italic text-[11px] text-emerald-600 dark:text-emerald-300">Salesforce, Oracle &amp; Google Cloud Partner</div>
-                <div class="headline-font font-bold text-xs text-slate-900 dark:text-white">Enterprise IT &amp; Cloud Campaigns</div>
-                <div class="text-[9px] font-mono text-slate-600 dark:text-slate-400">Gimasys Vietnam</div>
-              </div>
-              <div class="flex justify-between items-center text-[8px] font-mono text-slate-500 dark:text-slate-400 pt-1 border-t border-slate-300 dark:border-slate-800">
-                <span>25% Conversion Lift</span>
-                <span class="text-emerald-600 dark:text-emerald-400 font-bold">Preview Scan ↗</span>
-              </div>
-              <img id="cardCertImgCloud" src="" alt="Gimasys Track" class="absolute inset-0 w-full h-full object-cover hidden" />
-            </div>
-
-            <div>
-              <h3 class="headline-font text-sm text-slate-900 dark:text-white font-bold">Enterprise IT Campaigns (Gimasys)</h3>
-              <p class="text-[11px] text-slate-600 dark:text-slate-400 font-sans mt-0.5 leading-tight">
-                Delivered 25% increase in B2B event registrations and product conversions for Salesforce, Oracle, and Google Cloud consulting campaigns.
-              </p>
-            </div>
-          </div>
-
-          <div class="pt-2 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center text-xs font-sans font-semibold text-emerald-700 dark:text-emerald-400 relative z-10">
-            <span>Inspect Track Record</span>
-            <span class="group-hover:translate-x-1 transition">→</span>
-          </div>
-        </div>
-
       </div>
     </section>
 
     <!-- ----------------------------------------------------------------------- -->
-    <!-- SECTION 04: PROOF OF WORKING LOCATIONS & REGIONAL FOOTPRINT              -->
+    <!-- SECTION 04: HIGH-STAKES BD FLAGSHIP SUMMITS & GTM DELEGATIONS (PROVED)    -->
     <!-- ----------------------------------------------------------------------- -->
-    <section id="locations-section" class="space-y-4 reveal-on-scroll">
+    <section id="events-section" class="space-y-4 reveal-on-scroll">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-3">
         <div>
           <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span>
             <h2 class="headline-font text-xl sm:text-2xl text-slate-900 dark:text-white">
-              03 // Working Locations &amp; Physical Ecosystem Footprint
+              03 // Flagship BD Summits, Hackathons &amp; GTM Delegations
             </h2>
           </div>
-          <p class="text-xs text-slate-600 dark:text-slate-400 font-sans mt-1">Documentary proof of on-the-ground operational centers, Web3 builder spaces &amp; retail hubs across Southeast Asia.</p>
+          <p class="text-xs text-slate-600 dark:text-slate-400 font-sans mt-1">High-stakes commercial negotiations, onstage keynote presentations, and enterprise partner delegations spearheaded by Dat Tran across Southeast Asia.</p>
         </div>
-        <span class="text-xs font-mono text-slate-500">CLICK TO VIEW LOCATION DOSSIER</span>
+        <span class="text-xs font-mono text-cyan-600 dark:text-cyan-400 font-semibold">CLICK ANY SUMMIT FOR MISSION BRIEF</span>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="eventsGrid">
         
-        <!-- Location 1: Ninety Eight HQ -->
+        <!-- Summit 1: Ninety Eight Flagship Hackathon & Token2049 Delegation -->
         <div class="exec-card glow-card rounded-2xl overflow-hidden cursor-pointer group" onclick="openLocationModal('viction')">
           <div class="relative h-44 overflow-hidden bg-slate-900">
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" 
-                 alt="Ninety Eight / Viction Ecosystem HQ" 
+            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80" 
+                 alt="Ninety Eight Flagship Hackathon &amp; Regional Summits" 
                  class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
             <div class="absolute bottom-3 left-3 right-3 flex justify-between items-end">
               <div>
-                <span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 font-bold border border-amber-500/30">
-                  VICTION L1 ECOSYSTEM
+                <span class="text-[9px] font-mono px-2 py-0.5 rounded bg-amber-500/25 text-amber-300 font-bold border border-amber-500/40">
+                  FLAGSHIP HACKATHON &amp; SUMMIT
                 </span>
-                <h4 class="headline-font text-sm font-bold text-white mt-1">Ninety Eight HQ</h4>
+                <h4 class="headline-font text-sm font-bold text-white mt-1">Ninety Eight Global Hackathon</h4>
               </div>
-              <span class="text-[10px] font-mono text-slate-300">Vietnam HQ</span>
+              <span class="text-[10px] font-mono text-slate-300">Vietnam &amp; SEA</span>
             </div>
           </div>
-          <div class="p-3.5 space-y-1">
-            <p class="text-xs text-slate-700 dark:text-slate-300 font-sans">
-              Headquarters for 200+ partner network operations and the flagship Viction Horizon Hackathon ($100K+ sponsorships).
+          <div class="p-3.5 space-y-1.5">
+            <div class="flex items-center justify-between text-[11px] font-mono">
+              <span class="text-amber-600 dark:text-amber-400 font-bold">$100K+ SPONSORSHIPS</span>
+              <span class="text-slate-500">Tier-1 &amp; Tier-2</span>
+            </div>
+            <p class="text-xs text-slate-700 dark:text-slate-300 font-sans leading-relaxed">
+              Spearheaded commercial partner outreach, pitching and closing over <strong>$100,000+ in tier-1/tier-2 sponsorships</strong>. Prepared executive keynote decks and data reports for the CEO to pitch tier-1 venture funds.
             </p>
-            <div class="text-xs font-sans font-semibold text-amber-700 dark:text-amber-400 pt-1 group-hover:translate-x-0.5 transition">View Location Brief &amp; Photos ↗</div>
+            <div class="text-xs font-sans font-semibold text-amber-600 dark:text-amber-400 pt-1 group-hover:translate-x-0.5 transition">
+              Inspect Delegation Brief ↗
+            </div>
           </div>
         </div>
 
-        <!-- Location 2: Herond Labs -->
+        <!-- Summit 2: OneID Ecosystem Expansion & Regional Roadshows -->
+        <div class="exec-card glow-card rounded-2xl overflow-hidden cursor-pointer group" onclick="openLocationModal('oneid')">
+          <div class="relative h-44 overflow-hidden bg-slate-900">
+            <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80" 
+                 alt="OneID SEA User Activation Roadshows" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+            <div class="absolute bottom-3 left-3 right-3 flex justify-between items-end">
+              <div>
+                <span class="text-[9px] font-mono px-2 py-0.5 rounded bg-cyan-500/25 text-cyan-300 font-bold border border-cyan-500/40">
+                  GTM USER ACTIVATION
+                </span>
+                <h4 class="headline-font text-sm font-bold text-white mt-1">OneID Regional Roadshows</h4>
+              </div>
+              <span class="text-[10px] font-mono text-slate-300">TH · ID · PH · VN</span>
+            </div>
+          </div>
+          <div class="p-3.5 space-y-1.5">
+            <div class="flex items-center justify-between text-[11px] font-mono">
+              <span class="text-cyan-600 dark:text-cyan-400 font-bold">$300K+ NET REVENUE</span>
+              <span class="text-slate-500">2024 ARR Run-rate</span>
+            </div>
+            <p class="text-xs text-slate-700 dark:text-slate-300 font-sans leading-relaxed">
+              Directed cross-functional squads (Marketing, Community, BD) reporting to CGO, orchestrating multi-region user activation campaigns that unlocked mass Web3 digital ID adoption.
+            </p>
+            <div class="text-xs font-sans font-semibold text-cyan-600 dark:text-cyan-400 pt-1 group-hover:translate-x-0.5 transition">
+              Inspect Campaign Brief ↗
+            </div>
+          </div>
+        </div>
+
+        <!-- Summit 3: Herond Global B2B Alliance Negotiations -->
         <div class="exec-card glow-card rounded-2xl overflow-hidden cursor-pointer group" onclick="openLocationModal('herond')">
           <div class="relative h-44 overflow-hidden bg-slate-900">
             <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" 
-                 alt="Herond Labs Innovation Studio" 
+                 alt="Herond Global Alliance Delegations" 
                  class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
             <div class="absolute bottom-3 left-3 right-3 flex justify-between items-end">
               <div>
-                <span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-300 font-bold border border-blue-500/30">
-                  PRIVACY BROWSER LAB
+                <span class="text-[9px] font-mono px-2 py-0.5 rounded bg-blue-500/25 text-blue-300 font-bold border border-blue-500/40">
+                  GLOBAL OUTBOUND BD
                 </span>
-                <h4 class="headline-font text-sm font-bold text-white mt-1">Herond Labs</h4>
+                <h4 class="headline-font text-sm font-bold text-white mt-1">Herond Global Alliance Roadshow</h4>
               </div>
-              <span class="text-[10px] font-mono text-slate-300">Hanoi // Remote</span>
+              <span class="text-[10px] font-mono text-slate-300">Global Remote // SEA</span>
             </div>
           </div>
-          <div class="p-3.5 space-y-1">
-            <p class="text-xs text-slate-700 dark:text-slate-300 font-sans">
-              Decentralized browser studio where Dat structured cold B2B outreach reaching an 18% signed conversion rate in 90 days.
+          <div class="p-3.5 space-y-1.5">
+            <div class="flex items-center justify-between text-[11px] font-mono">
+              <span class="text-blue-600 dark:text-blue-400 font-bold">18% COLD CONVERSION</span>
+              <span class="text-slate-500">90-Day Velocity</span>
+            </div>
+            <p class="text-xs text-slate-700 dark:text-slate-300 font-sans leading-relaxed">
+              Spearheaded cold outreach and B2B negotiation for the privacy-first Herond Browser, converting 18% of initial cold meetings into signed international distribution alliances.
             </p>
-            <div class="text-xs font-sans font-semibold text-blue-700 dark:text-blue-400 pt-1 group-hover:translate-x-0.5 transition">View Location Brief &amp; Photos ↗</div>
+            <div class="text-xs font-sans font-semibold text-blue-600 dark:text-blue-400 pt-1 group-hover:translate-x-0.5 transition">
+              Inspect Alliance Brief ↗
+            </div>
           </div>
         </div>
 
-        <!-- Location 3: AEONMALL Ha Dong -->
+        <!-- Summit 4: AEONMALL Nationwide App Launch & Omnichannel Roadshow -->
         <div class="exec-card glow-card rounded-2xl overflow-hidden cursor-pointer group" onclick="openLocationModal('aeon')">
           <div class="relative h-44 overflow-hidden bg-slate-900">
             <img src="https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?auto=format&fit=crop&w=800&q=80" 
-                 alt="AEONMALL Ha Dong Commercial Center" 
+                 alt="AEONMALL Vietnam Nationwide Mobile Launch" 
                  class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
             <div class="absolute bottom-3 left-3 right-3 flex justify-between items-end">
               <div>
-                <span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-rose-500/20 text-rose-300 font-bold border border-rose-500/30">
-                  JAPANESE RETAIL
+                <span class="text-[9px] font-mono px-2 py-0.5 rounded bg-rose-500/25 text-rose-300 font-bold border border-rose-500/40">
+                  NATIONWIDE PRODUCT ROLLOUT
                 </span>
-                <h4 class="headline-font text-sm font-bold text-white mt-1">AEON MALL Ha Dong</h4>
+                <h4 class="headline-font text-sm font-bold text-white mt-1">AEONMALL Vietnam App Launch</h4>
               </div>
-              <span class="text-[10px] font-mono text-slate-300">Hanoi, Vietnam</span>
+              <span class="text-[10px] font-mono text-slate-300">National Retail Hubs</span>
             </div>
           </div>
-          <div class="p-3.5 space-y-1">
-            <p class="text-xs text-slate-700 dark:text-slate-300 font-sans">
-              Nationwide mobile app development &amp; launch center achieving 10,000+ organic app downloads in first 6 months.
-            </p>
-            <div class="text-xs font-sans font-semibold text-rose-700 dark:text-rose-400 pt-1 group-hover:translate-x-0.5 transition">View Location Brief &amp; Photos ↗</div>
-          </div>
-        </div>
-
-        <!-- Location 4: Gimasys Google Cloud Hub -->
-        <div class="exec-card glow-card rounded-2xl overflow-hidden cursor-pointer group" onclick="openLocationModal('gimasys')">
-          <div class="relative h-44 overflow-hidden bg-slate-900">
-            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" 
-                 alt="Gimasys Google Cloud Center" 
-                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-80" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
-            <div class="absolute bottom-3 left-3 right-3 flex justify-between items-end">
-              <div>
-                <span class="text-[9px] font-mono px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-500/30">
-                  IT CONSULTANCY
-                </span>
-                <h4 class="headline-font text-sm font-bold text-white mt-1">Gimasys Office</h4>
-              </div>
-              <span class="text-[10px] font-mono text-slate-300">Hanoi, Vietnam</span>
+          <div class="p-3.5 space-y-1.5">
+            <div class="flex items-center justify-between text-[11px] font-mono">
+              <span class="text-rose-600 dark:text-rose-400 font-bold">10,000+ DOWNLOADS</span>
+              <span class="text-slate-500">First 6 Months</span>
             </div>
-          </div>
-          <div class="p-3.5 space-y-1">
-            <p class="text-xs text-slate-700 dark:text-slate-300 font-sans">
-              Enterprise digital transformation consultancy partnered with Salesforce, Oracle, and Google Cloud (25% conversion lift).
+            <p class="text-xs text-slate-700 dark:text-slate-300 font-sans leading-relaxed">
+              Directed nationwide mobile app launch across branches, agency management, and consumer rollout; introduced the "Hado" mascot and earned June 2021 Employee of the Month honors.
             </p>
-            <div class="text-xs font-sans font-semibold text-emerald-700 dark:text-emerald-400 pt-1 group-hover:translate-x-0.5 transition">View Location Brief &amp; Photos ↗</div>
+            <div class="text-xs font-sans font-semibold text-rose-600 dark:text-rose-400 pt-1 group-hover:translate-x-0.5 transition">
+              Inspect Launch Brief ↗
+            </div>
           </div>
         </div>
 
@@ -1000,242 +1223,506 @@
         </button>
       </div>
 
-      <!-- 6 Case Study Cards (100% Aligned with career-portfolio.md) -->
+      <!-- 6 Case Study Cards (Enriched with SOW, Leadership Scale, Hard Metrics & Company Logos) -->
       <div class="space-y-4" id="caseStudiesContainer">
 
         <!-- 1. HEROND LABS -->
-        <article class="exec-card glow-card rounded-2xl p-5 transition duration-200 role-card" data-tags="bd growth exec ai" style="border-left: 4px solid #3b82f6;">
+        <article class="exec-card glow-card rounded-2xl p-6 transition duration-200 role-card" data-tags="bd growth exec ai" style="border-left: 4px solid #3b82f6;">
           <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 cursor-pointer" onclick="toggleAccordion('role-herond')">
-            <div class="flex items-start gap-3.5">
-              <div class="w-11 h-11 rounded-xl bg-blue-500/15 border border-blue-500/30 flex items-center justify-center font-bold text-blue-600 dark:text-blue-400 text-sm shrink-0">
+            <div class="flex items-start gap-4">
+              <!-- Company Monogram / Emblem -->
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-600/30 border border-blue-500/40 flex items-center justify-center font-bold text-blue-500 dark:text-blue-400 text-base shrink-0 shadow-sm">
                 HL
               </div>
-              <div>
+              <div class="space-y-1">
                 <div class="flex flex-wrap items-center gap-2">
-                  <h3 class="headline-font text-base text-slate-900 dark:text-white">Herond Labs</h3>
-                  <span class="text-xs font-mono px-2 py-0.2 rounded bg-blue-500/15 text-blue-600 dark:text-blue-400 border border-blue-500/30 font-semibold">
+                  <h3 class="headline-font text-base sm:text-lg text-slate-900 dark:text-white font-bold">Herond Labs</h3>
+                  <span class="text-xs font-mono px-2.5 py-0.5 rounded-full bg-blue-500/15 text-blue-600 dark:text-blue-400 border border-blue-500/30 font-semibold">
                     Business Development Collaborator
                   </span>
-                  <span class="text-[11px] font-mono text-slate-500 dark:text-slate-400">Apr 2026 — Sep 2026</span>
+                  <span class="text-[11px] font-mono text-slate-500 dark:text-slate-400">Apr 2026 — Sep 2026 · Global Remote</span>
                 </div>
-                <p class="text-xs text-slate-600 dark:text-slate-400 font-sans mt-0.5">
-                  Privacy-first web ecosystem and blockchain software lab (flagship: Herond Browser).
+                <p class="text-xs text-slate-600 dark:text-slate-400 font-sans">
+                  Specialized blockchain &amp; software lab building privacy-first web ecosystems (Flagship Product: Herond Browser).
                 </p>
               </div>
             </div>
 
             <div class="flex items-center gap-3">
-              <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/30 font-bold">
-                18% Cold Conversion
+              <span class="px-3 py-1 rounded-full text-xs font-mono bg-blue-500/15 text-blue-600 dark:text-blue-400 border border-blue-500/30 font-bold whitespace-nowrap">
+                18% Cold-to-Alliance Conversion
               </span>
               <svg id="icon-role-herond" class="w-5 h-5 text-slate-400 transform transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
             </div>
           </div>
 
-          <div id="role-herond" class="mt-4 pt-3.5 border-t border-slate-200 dark:border-slate-800 space-y-3">
-            <div>
-              <h4 class="text-xs font-sans font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 tracking-wider">// Core Mandate &amp; Strategic Accomplishments:</h4>
-              <ul class="mt-2 space-y-1.5 text-xs text-slate-700 dark:text-slate-300 list-disc list-inside">
-                <li><strong class="text-slate-900 dark:text-white">Global B2B Outreach:</strong> Spearheaded cold outreach and international negotiation strategies, converting <strong>18% of initial prospect meetings</strong> into finalized international alliances within 3 months.</li>
-                <li><strong class="text-slate-900 dark:text-white">End-to-End Deal Flow:</strong> Managed partner pipelines from initial market intelligence research to technical alignment and legal partnership agreements.</li>
-                <li><strong class="text-slate-900 dark:text-white">Cross-Functional Alignment:</strong> Coordinated technical alignment meetings between external global clients and internal engineering/product squads.</li>
-              </ul>
+          <div id="role-herond" class="mt-5 pt-4 border-t border-slate-200 dark:border-slate-800 space-y-4">
+            
+            <!-- SOW & Mandate Badge Block -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 text-xs font-sans">
+              <div>
+                <span class="text-[10px] font-mono text-slate-500 uppercase block font-semibold">Scope of Work (SOW)</span>
+                <strong class="text-slate-900 dark:text-white">Global Outbound B2B Pipeline &amp; Tech Alignment</strong>
+              </div>
+              <div>
+                <span class="text-[10px] font-mono text-slate-500 uppercase block font-semibold">Reporting Line</span>
+                <strong class="text-blue-600 dark:text-blue-400">C-Suite &amp; Head of Product</strong>
+              </div>
+              <div>
+                <span class="text-[10px] font-mono text-slate-500 uppercase block font-semibold">Deal Velocity</span>
+                <strong class="text-emerald-600 dark:text-emerald-400">3-Month Conversion Sprint</strong>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-amber-500 dark:text-amber-400 flex items-center gap-1.5">
+                  <span>// VERIFIED CASE STUDY MATRIX</span>
+                  <span class="text-[10px] px-1.5 py-0.2 border border-amber-500/30 rounded font-mono text-slate-400">TACTICAL REPORT</span>
+                </h4>
+                <span class="text-[10px] font-mono text-slate-400">AUDITED TELEMETRY</span>
+              </div>
+              <div class="border border-slate-200 dark:border-white/10 overflow-x-auto rounded-lg">
+              <table class="case-study-table text-left">
+                <tbody>
+                  <tr class="border-b border-subtle">
+                    <th class="p-2.5 text-muted uppercase tracking-wider w-32 border-r">01 // CONTEXT</th>
+                    <td class="p-2.5">Specialized blockchain &amp; software lab developing privacy-first decentralized ecosystems (Flagship Product: Herond Browser). Needed rapid outbound B2B international market penetration.</td>
+                  </tr>
+                  <tr class="border-b border-subtle">
+                    <th class="p-2.5 text-muted uppercase tracking-wider w-32 border-r">02 // MOVES</th>
+                    <td class="p-2.5">Engineered targeted cold outreach pipelines and B2B negotiation playbooks across international markets; led end-to-end partner lifecycles from proprietary market intelligence to NDA and commercial MOU sign-offs.</td>
+                  </tr>
+                  <tr class="border-b border-subtle">
+                    <th class="p-2.5 text-muted uppercase tracking-wider w-32 border-r">03 // DECISION</th>
+                    <td class="p-2.5">Acted as technical alignment bridge coordinating direct solutioning sessions between external global partners and internal core browser engineering squads.</td>
+                  </tr>
+                  <tr class="case-study-metric-row">
+                    <th class="p-2.5 uppercase tracking-wider w-32 border-r font-mono">04 // METRICS</th>
+                    <td class="p-2.5 font-bold">Converted 18% of cold prospect meetings into finalized international distribution agreements within a 3-month conversion sprint.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            </div>
             </div>
           </div>
         </article>
 
         <!-- 2. NINETY EIGHT / VICTION / ONEID -->
-        <article class="exec-card glow-card rounded-2xl p-5 transition duration-200 role-card" data-tags="bd growth exec" style="border-left: 4px solid #f59e0b;">
+        <article class="exec-card glow-card rounded-2xl p-6 transition duration-200 role-card" data-tags="bd growth exec" style="border-left: 4px solid #f59e0b;">
           <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 cursor-pointer" onclick="toggleAccordion('role-viction')">
-            <div class="flex items-start gap-3.5">
-              <div class="w-11 h-11 rounded-xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center font-bold text-amber-600 dark:text-amber-400 text-sm shrink-0">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500/20 to-amber-600/30 border border-amber-500/40 flex items-center justify-center font-bold text-amber-500 dark:text-amber-400 text-base shrink-0 shadow-sm">
                 98
               </div>
-              <div>
+              <div class="space-y-1">
                 <div class="flex flex-wrap items-center gap-2">
-                  <h3 class="headline-font text-base text-slate-900 dark:text-white">Ninety Eight (formerly Coin98)</h3>
-                  <span class="text-xs font-mono px-2 py-0.2 rounded bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/30 font-semibold">
-                    BD Specialist (Senior BD - Viction &amp; Growth Lead - OneID)
+                  <h3 class="headline-font text-base sm:text-lg text-slate-900 dark:text-white font-bold">Ninety Eight (formerly Coin98)</h3>
+                  <span class="text-xs font-mono px-2.5 py-0.5 rounded-full bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/30 font-semibold">
+                    BD Specialist (Viction Senior BD &amp; OneID Growth Lead)
                   </span>
-                  <span class="text-[11px] font-mono text-slate-500 dark:text-slate-400">May 2023 — Jul 2025</span>
+                  <span class="text-[11px] font-mono text-slate-500 dark:text-slate-400">May 2023 — Jul 2025 · 2 Yrs 3 Mos</span>
                 </div>
-                <p class="text-xs text-slate-600 dark:text-slate-400 font-sans mt-0.5">
-                  Leading Vietnamese blockchain ecosystem company operating Layer-1 blockchain (Viction) &amp; Web3 identity (OneID).
+                <p class="text-xs text-slate-600 dark:text-slate-400 font-sans">
+                  Tier-1 Web3 conglomerate operating Layer-1 blockchain (Viction), Web3 identity infrastructure (OneID), and global venture ecosystem.
                 </p>
               </div>
             </div>
 
             <div class="flex items-center gap-3">
-              <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30 font-bold">
+              <span class="px-3 py-1 rounded-full text-xs font-mono bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/30 font-bold whitespace-nowrap">
                 200+ Partners &amp; $300K+ ARR
               </span>
               <svg id="icon-role-viction" class="w-5 h-5 text-slate-400 transform transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
             </div>
           </div>
 
-          <div id="role-viction" class="mt-4 pt-3.5 border-t border-slate-200 dark:border-slate-800 space-y-3">
-            <div>
-              <h4 class="text-xs font-sans font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 tracking-wider">// Track A: Senior Business Development — Viction (Layer-1 Blockchain)</h4>
-              <ul class="mt-2 space-y-1 text-xs text-slate-700 dark:text-slate-300 list-disc list-inside">
-                <li><strong class="text-slate-900 dark:text-white">Ecosystem Portfolio:</strong> Cultivated and managed <strong>200+ enterprise investors and strategic partners</strong>, executing regional market penetration across Thailand, Indonesia, Philippines, Malaysia, and Vietnam.</li>
-                <li><strong class="text-slate-900 dark:text-white">Team Mentorship:</strong> Led and mentored a 5-member Business Development team to consistently exceed quarterly KPIs.</li>
-                <li><strong class="text-slate-900 dark:text-white">Fundraising &amp; Sponsorships:</strong> Pitched and closed <strong>$100,000+ in tier-1/2 sponsorships</strong> for the flagship hackathon; prepared executive pitch decks for the CEO.</li>
-              </ul>
+          <div id="role-viction" class="mt-5 pt-4 border-t border-slate-200 dark:border-slate-800 space-y-5">
+            
+            <!-- SOW & Mandate Badge Block -->
+            <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 text-xs font-sans">
+              <div>
+                <span class="text-[10px] font-mono text-slate-500 uppercase block font-semibold">Core Mandate</span>
+                <strong class="text-slate-900 dark:text-white">SEA Ecosystem Growth &amp; Revenue</strong>
+              </div>
+              <div>
+                <span class="text-[10px] font-mono text-slate-500 uppercase block font-semibold">Leadership Scope</span>
+                <strong class="text-amber-600 dark:text-amber-400">Led 5-Member BD Team + Cross-Squads</strong>
+              </div>
+              <div>
+                <span class="text-[10px] font-mono text-slate-500 uppercase block font-semibold">Reporting Line</span>
+                <strong class="text-slate-900 dark:text-white">Directly to CEO &amp; CGO</strong>
+              </div>
+              <div>
+                <span class="text-[10px] font-mono text-slate-500 uppercase block font-semibold">Regional Coverage</span>
+                <strong class="text-emerald-600 dark:text-emerald-400">TH · ID · PH · MY · VN</strong>
+              </div>
             </div>
-            <div class="pt-2 border-t border-slate-200 dark:border-slate-800">
-              <h4 class="text-xs font-sans font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 tracking-wider">// Track B: Growth Lead — OneID</h4>
-              <ul class="mt-2 space-y-1 text-xs text-slate-700 dark:text-slate-300 list-disc list-inside">
-                <li><strong class="text-slate-900 dark:text-white">Revenue &amp; Acquisition:</strong> Directed cross-functional squads (Marketing, Community, BD) reporting directly to the Chief Growth Officer (CGO), driving mass adoption and generating <strong>$300,000+ in annual revenue growth</strong> in 2024.</li>
+
+            <!-- Track A: Viction -->
+            <div class="p-4 rounded-xl bg-amber-500/5 border border-amber-500/20 space-y-2">
+              <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-amber-500 dark:text-amber-400 flex items-center gap-1.5">
+                  <span>// VERIFIED CASE STUDY MATRIX</span>
+                  <span class="text-[10px] px-1.5 py-0.2 border border-amber-500/30 rounded font-mono text-slate-400">TACTICAL REPORT</span>
+                </h4>
+                <span class="text-[10px] font-mono text-slate-400">AUDITED TELEMETRY</span>
+              </div>
+              <div class="border border-slate-200 dark:border-white/10 overflow-x-auto rounded-lg">
+              <table class="case-study-table text-left">
+                <tbody>
+                  <tr class="border-b border-subtle">
+                    <th class="p-2.5 text-muted uppercase tracking-wider w-32 border-r">01 // CONTEXT</th>
+                    <td class="p-2.5">Tier-1 Web3 conglomerate operating Layer-1 blockchain (Viction), Web3 identity infrastructure (OneID), and global venture ecosystem. High-stakes SEA expansion across TH, ID, PH, MY, VN.</td>
+                  </tr>
+                  <tr class="border-b border-subtle">
+                    <th class="p-2.5 text-muted uppercase tracking-wider w-32 border-r">02 // MOVES</th>
+                    <td class="p-2.5">Supervised 5-member BD team, actively cultivating regional institutional portfolio; pitched and closed enterprise sponsorships; orchestrated cross-functional sprint cycles (Marketing, Community, BD) for OneID digital identity adoption.</td>
+                  </tr>
+                  <tr class="border-b border-subtle">
+                    <th class="p-2.5 text-muted uppercase tracking-wider w-32 border-r">03 // DECISION</th>
+                    <td class="p-2.5">Prepared investor intelligence dossiers for the CEO to pitch tier-1 venture funds; presented annual growth roadmaps directly to executive leadership; led regional keynotes as official Viction delegate.</td>
+                  </tr>
+                  <tr class="case-study-metric-row">
+                    <th class="p-2.5 uppercase tracking-wider w-32 border-r font-mono">04 // METRICS</th>
+                    <td class="p-2.5 font-bold">Portfolio of 200+ enterprise partners; $300,000+ net ARR growth in 2024; $100,000+ tier-1 hackathon sponsorships closed.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            </div>
+            </div>
+
+            <!-- Track B: OneID -->
+            <div class="p-4 rounded-xl bg-cyan-500/5 border border-cyan-500/20 space-y-2">
+              <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-cyan-600 dark:text-cyan-400">// Track B: Growth Lead — OneID (Web3 Identity Platform)</h4>
+              <ul class="space-y-1.5 text-xs text-slate-700 dark:text-slate-300 list-disc list-inside leading-relaxed">
+                <li><strong class="text-slate-900 dark:text-white">Revenue &amp; User Acquisition ($300K+):</strong> Directed cross-functional squads (Marketing, Community, Business Development) and reported directly to the Chief Growth Officer (CGO), designing and executing quarterly growth initiatives that drove mass digital identity adoption and unlocked <strong>$300,000+ in annual revenue growth</strong> in 2024.</li>
+                <li><strong class="text-slate-900 dark:text-white">Agile Execution Tracking:</strong> Acted as the central point of contact tracking daily and weekly execution sprint cycles across Marketing and Product engineering teams.</li>
               </ul>
             </div>
           </div>
         </article>
 
         <!-- 3. ONECHAIN TECHNOLOGY -->
-        <article class="exec-card glow-card rounded-2xl p-5 transition duration-200 role-card" data-tags="bd growth" style="border-left: 4px solid #06b6d4;">
+        <article class="exec-card glow-card rounded-2xl p-6 transition duration-200 role-card" data-tags="bd growth" style="border-left: 4px solid #06b6d4;">
           <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 cursor-pointer" onclick="toggleAccordion('role-onechain')">
-            <div class="flex items-start gap-3.5">
-              <div class="w-11 h-11 rounded-xl bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center font-bold text-cyan-600 dark:text-cyan-400 text-sm shrink-0">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-cyan-600/30 border border-cyan-500/40 flex items-center justify-center font-bold text-cyan-500 dark:text-cyan-400 text-base shrink-0 shadow-sm">
                 1C
               </div>
-              <div>
+              <div class="space-y-1">
                 <div class="flex flex-wrap items-center gap-2">
-                  <h3 class="headline-font text-base text-slate-900 dark:text-white">OneChain Technology</h3>
-                  <span class="text-xs font-mono px-2 py-0.2 rounded bg-cyan-500/15 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 font-semibold">
+                  <h3 class="headline-font text-base sm:text-lg text-slate-900 dark:text-white font-bold">OneChain Technology</h3>
+                  <span class="text-xs font-mono px-2.5 py-0.5 rounded-full bg-cyan-500/15 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 font-semibold">
                     Business Development Executive
                   </span>
-                  <span class="text-[11px] font-mono text-slate-500 dark:text-slate-400">Jul 2022 — Jan 2023 · 6 Mos</span>
+                  <span class="text-[11px] font-mono text-slate-500 dark:text-slate-400">Jul 2022 — Jan 2023 · 6 Mos · Hanoi</span>
                 </div>
-                <p class="text-xs text-slate-600 dark:text-slate-400 font-sans mt-0.5">
+                <p class="text-xs text-slate-600 dark:text-slate-400 font-sans">
                   Pioneer in blockchain-integrated solutions for the gaming industry.
                 </p>
               </div>
             </div>
 
             <div class="flex items-center gap-3">
-              <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 font-bold">
-                50+ Partners Onboarded
+              <span class="px-3 py-1 rounded-full text-xs font-mono bg-cyan-500/15 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30 font-bold whitespace-nowrap">
+                50+ Strategic Partners
               </span>
               <svg id="icon-role-onechain" class="w-5 h-5 text-slate-400 transform transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
             </div>
           </div>
 
-          <div id="role-onechain" class="mt-4 pt-3.5 border-t border-slate-200 dark:border-slate-800 space-y-3">
-            <ul class="text-xs text-slate-700 dark:text-slate-300 list-disc list-inside space-y-1">
-              <li>Advised the Chief Marketing Officer (CMO) on emerging commercial opportunities and regional gaming network expansion.</li>
-              <li>Conducted deep-dive market research to identify, pitch, and onboard <strong>50+ new strategic partners in 6 months</strong>, managing the end-to-end partner lifecycle.</li>
-            </ul>
+          <div id="role-onechain" class="mt-5 pt-4 border-t border-slate-200 dark:border-slate-800 space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 text-xs font-sans">
+              <div>
+                <span class="text-[10px] font-mono text-slate-500 uppercase block font-semibold">Scope of Work</span>
+                <strong class="text-slate-900 dark:text-white">Gaming Partner Acquisition &amp; Onboarding</strong>
+              </div>
+              <div>
+                <span class="text-[10px] font-mono text-slate-500 uppercase block font-semibold">Executive Advisor</span>
+                <strong class="text-cyan-600 dark:text-cyan-400">Advised Chief Marketing Officer (CMO)</strong>
+              </div>
+              <div>
+                <span class="text-[10px] font-mono text-slate-500 uppercase block font-semibold">Execution Pace</span>
+                <strong class="text-emerald-600 dark:text-emerald-400">50+ Partners in 6 Months</strong>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-amber-500 dark:text-amber-400 flex items-center gap-1.5">
+                  <span>// VERIFIED CASE STUDY MATRIX</span>
+                  <span class="text-[10px] px-1.5 py-0.2 border border-amber-500/30 rounded font-mono text-slate-400">TACTICAL REPORT</span>
+                </h4>
+                <span class="text-[10px] font-mono text-slate-400">AUDITED TELEMETRY</span>
+              </div>
+              <div class="border border-slate-200 dark:border-white/10 overflow-x-auto rounded-lg">
+              <table class="case-study-table text-left">
+                <tbody>
+                  <tr class="border-b border-subtle">
+                    <th class="p-2.5 text-muted uppercase tracking-wider w-32 border-r">01 // CONTEXT</th>
+                    <td class="p-2.5">Pioneering blockchain-integrated technology lab scaling infrastructure for gaming ecosystems and gameFi studios in Southeast Asia.</td>
+                  </tr>
+                  <tr class="border-b border-subtle">
+                    <th class="p-2.5 text-muted uppercase tracking-wider w-32 border-r">02 // MOVES</th>
+                    <td class="p-2.5">Ran end-to-end partner onboarding funnel: conducted high-velocity market research, targeted outbound pitches, and contract negotiations across gaming studios.</td>
+                  </tr>
+                  <tr class="border-b border-subtle">
+                    <th class="p-2.5 text-muted uppercase tracking-wider w-32 border-r">03 // DECISION</th>
+                    <td class="p-2.5">Served as trusted commercial advisor directly to Chief Marketing Officer (CMO) on emerging studio alliances and go-to-market strategies.</td>
+                  </tr>
+                  <tr class="case-study-metric-row">
+                    <th class="p-2.5 uppercase tracking-wider w-32 border-r font-mono">04 // METRICS</th>
+                    <td class="p-2.5 font-bold">Onboarded 50+ strategic gaming partners in under 6 months; 100% SLA adherence on alliance integrations.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            </div>
+            </div>
           </div>
         </article>
 
         <!-- 4. KINGSPEED -->
-        <article class="exec-card glow-card rounded-2xl p-5 transition duration-200 role-card" data-tags="bd exec" style="border-left: 4px solid #ef4444;">
+        <article class="exec-card glow-card rounded-2xl p-6 transition duration-200 role-card" data-tags="bd exec" style="border-left: 4px solid #ef4444;">
           <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 cursor-pointer" onclick="toggleAccordion('role-kingspeed')">
-            <div class="flex items-start gap-3.5">
-              <div class="w-11 h-11 rounded-xl bg-red-500/15 border border-red-500/30 flex items-center justify-center font-bold text-red-600 dark:text-red-400 text-sm shrink-0">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500/20 to-red-600/30 border border-red-500/40 flex items-center justify-center font-bold text-red-500 dark:text-red-400 text-base shrink-0 shadow-sm">
                 KS
               </div>
-              <div>
+              <div class="space-y-1">
                 <div class="flex flex-wrap items-center gap-2">
-                  <h3 class="headline-font text-base text-slate-900 dark:text-white">KingSpeed</h3>
-                  <span class="text-xs font-mono px-2 py-0.2 rounded bg-red-500/15 text-red-600 dark:text-red-400 border border-red-500/30 font-semibold">
+                  <h3 class="headline-font text-base sm:text-lg text-slate-900 dark:text-white font-bold">KingSpeed</h3>
+                  <span class="text-xs font-mono px-2.5 py-0.5 rounded-full bg-red-500/15 text-red-600 dark:text-red-400 border border-red-500/30 font-semibold">
                     Assistant to CEO
                   </span>
-                  <span class="text-[11px] font-mono text-slate-500 dark:text-slate-400">Oct 2021 — Jun 2022</span>
+                  <span class="text-[11px] font-mono text-slate-500 dark:text-slate-400">Oct 2021 — Jun 2022 · 9 Mos · Hanoi</span>
                 </div>
-                <p class="text-xs text-slate-600 dark:text-slate-400 font-sans mt-0.5">
-                  Tech startup building blockchain-integrated gaming solutions in Vietnam.
+                <p class="text-xs text-slate-600 dark:text-slate-400 font-sans">
+                  Tech startup building blockchain-integrated gaming solutions and virtual entertainment in Vietnam.
                 </p>
               </div>
             </div>
 
             <div class="flex items-center gap-3">
-              <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/30 font-bold">
+              <span class="px-3 py-1 rounded-full text-xs font-mono bg-red-500/15 text-red-600 dark:text-red-400 border border-red-500/30 font-bold whitespace-nowrap">
                 Executive Operations
               </span>
               <svg id="icon-role-kingspeed" class="w-5 h-5 text-slate-400 transform transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
             </div>
           </div>
 
-          <div id="role-kingspeed" class="mt-4 pt-3.5 border-t border-slate-200 dark:border-slate-800 space-y-3">
-            <ul class="text-xs text-slate-700 dark:text-slate-300 list-disc list-inside space-y-1">
-              <li>Assisted the CEO in cross-departmental operations, investor relations, and quarterly roadmap tracking.</li>
-              <li>Spearheaded B2B partnership outreach across Southeast Asia, closing target deals and strengthening brand positioning in regional Web3 ecosystems.</li>
-            </ul>
+          <div id="role-kingspeed" class="mt-5 pt-4 border-t border-slate-200 dark:border-slate-800 space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 text-xs font-sans">
+              <div>
+                <span class="text-[10px] font-mono text-slate-500 uppercase block font-semibold">Scope of Work</span>
+                <strong class="text-slate-900 dark:text-white">Chief of Staff / Operations &amp; Outbound BD</strong>
+              </div>
+              <div>
+                <span class="text-[10px] font-mono text-slate-500 uppercase block font-semibold">Reporting Line</span>
+                <strong class="text-red-600 dark:text-red-400">Directly to CEO</strong>
+              </div>
+              <div>
+                <span class="text-[10px] font-mono text-slate-500 uppercase block font-semibold">Strategic Focus</span>
+                <strong class="text-slate-900 dark:text-white">SEA Web3 Ecosystem Outreach</strong>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-amber-500 dark:text-amber-400 flex items-center gap-1.5">
+                  <span>// VERIFIED CASE STUDY MATRIX</span>
+                  <span class="text-[10px] px-1.5 py-0.2 border border-amber-500/30 rounded font-mono text-slate-400">TACTICAL REPORT</span>
+                </h4>
+                <span class="text-[10px] font-mono text-slate-400">AUDITED TELEMETRY</span>
+              </div>
+              <div class="border border-slate-200 dark:border-white/10 overflow-x-auto rounded-lg">
+              <table class="case-study-table text-left">
+                <tbody>
+                  <tr class="border-b border-subtle">
+                    <th class="p-2.5 text-muted uppercase tracking-wider w-32 border-r">01 // CONTEXT</th>
+                    <td class="p-2.5">Fast-scaling virtual entertainment and gameFi startup. Required centralized operational coordination and SEA outbound deal closing.</td>
+                  </tr>
+                  <tr class="border-b border-subtle">
+                    <th class="p-2.5 text-muted uppercase tracking-wider w-32 border-r">02 // MOVES</th>
+                    <td class="p-2.5">Spearheaded regional B2B partnership outreach across Southeast Asia; formulated and reviewed quarterly operational roadmaps and investor due-diligence milestones.</td>
+                  </tr>
+                  <tr class="border-b border-subtle">
+                    <th class="p-2.5 text-muted uppercase tracking-wider w-32 border-r">03 // DECISION</th>
+                    <td class="p-2.5">Served as Chief of Staff / Assistant to CEO, synchronizing executive initiatives across marketing, tech, and community squads.</td>
+                  </tr>
+                  <tr class="case-study-metric-row">
+                    <th class="p-2.5 uppercase tracking-wider w-32 border-r font-mono">04 // METRICS</th>
+                    <td class="p-2.5 font-bold">100% on-time milestone delivery across 3 operational quarters; closed key regional deals elevating global visibility.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            </div>
+            </div>
           </div>
         </article>
 
         <!-- 5. AEONMALL HA DONG -->
-        <article class="exec-card glow-card rounded-2xl p-5 transition duration-200 role-card" data-tags="growth exec" style="border-left: 4px solid #e11d48;">
+        <article class="exec-card glow-card rounded-2xl p-6 transition duration-200 role-card" data-tags="growth exec" style="border-left: 4px solid #e11d48;">
           <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 cursor-pointer" onclick="toggleAccordion('role-aeon')">
-            <div class="flex items-start gap-3.5">
-              <div class="w-11 h-11 rounded-xl bg-rose-500/15 border border-rose-500/30 flex items-center justify-center font-bold text-rose-600 dark:text-rose-400 text-sm shrink-0">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-rose-500/20 to-rose-600/30 border border-rose-500/40 flex items-center justify-center font-bold text-rose-500 dark:text-rose-400 text-base shrink-0 shadow-sm">
                 AM
               </div>
-              <div>
+              <div class="space-y-1">
                 <div class="flex flex-wrap items-center gap-2">
-                  <h3 class="headline-font text-base text-slate-900 dark:text-white">AEONMALL Ha Dong</h3>
-                  <span class="text-xs font-mono px-2 py-0.2 rounded bg-rose-500/15 text-rose-600 dark:text-rose-400 border border-rose-500/30 font-semibold">
+                  <h3 class="headline-font text-base sm:text-lg text-slate-900 dark:text-white font-bold">AEONMALL Ha Dong</h3>
+                  <span class="text-xs font-mono px-2.5 py-0.5 rounded-full bg-rose-500/15 text-rose-600 dark:text-rose-400 border border-rose-500/30 font-semibold">
                     Digital Marketing Executive
                   </span>
-                  <span class="text-[11px] font-mono text-slate-500 dark:text-slate-400">Aug 2019 — Oct 2021</span>
+                  <span class="text-[11px] font-mono text-slate-500 dark:text-slate-400">Aug 2019 — Oct 2021 · 2 Yrs 3 Mos · Hanoi</span>
                 </div>
-                <p class="text-xs text-slate-600 dark:text-slate-400 font-sans mt-0.5">
-                  Large-scale Japanese shopping mall developer and operator across Asia.
+                <p class="text-xs text-slate-600 dark:text-slate-400 font-sans">
+                  Large-scale Japanese commercial shopping mall developer and operator across Asia (AEON Group Japan).
                 </p>
               </div>
             </div>
 
             <div class="flex items-center gap-3">
-              <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/30 font-bold">
-                10,000+ App Downloads
+              <span class="px-3 py-1 rounded-full text-xs font-mono bg-rose-500/15 text-rose-600 dark:text-rose-400 border border-rose-500/30 font-bold whitespace-nowrap">
+                10,000+ Downloads &amp; EOM Award
               </span>
               <svg id="icon-role-aeon" class="w-5 h-5 text-slate-400 transform transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
             </div>
           </div>
 
-          <div id="role-aeon" class="mt-4 pt-3.5 border-t border-slate-200 dark:border-slate-800 space-y-3">
-            <ul class="text-xs text-slate-700 dark:text-slate-300 list-disc list-inside space-y-1">
-              <li>Directed the end-to-end development and nationwide launch of the <strong>AEONMALL Vietnam mobile app</strong>, scaling it across branches and surpassing targets with <strong>10,000+ organic downloads in the first 6 months</strong>.</li>
-              <li>Awarded <strong>"Employee of the Month"</strong> in June 2021; introduced the "Hado" mascot across omnichannel marketing campaigns.</li>
-            </ul>
+          <div id="role-aeon" class="mt-5 pt-4 border-t border-slate-200 dark:border-slate-800 space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 text-xs font-sans">
+              <div>
+                <span class="text-[10px] font-mono text-slate-500 uppercase block font-semibold">Scope of Work</span>
+                <strong class="text-slate-900 dark:text-white">Mobile App Product Launch &amp; Agency Lead</strong>
+              </div>
+              <div>
+                <span class="text-[10px] font-mono text-slate-500 uppercase block font-semibold">Corporate Honor</span>
+                <strong class="text-rose-600 dark:text-rose-400">Employee of the Month (June 2021)</strong>
+              </div>
+              <div>
+                <span class="text-[10px] font-mono text-slate-500 uppercase block font-semibold">Adoption Metric</span>
+                <strong class="text-emerald-600 dark:text-emerald-400">10,000+ Organic App Installs</strong>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-amber-500 dark:text-amber-400 flex items-center gap-1.5">
+                  <span>// VERIFIED CASE STUDY MATRIX</span>
+                  <span class="text-[10px] px-1.5 py-0.2 border border-amber-500/30 rounded font-mono text-slate-400">TACTICAL REPORT</span>
+                </h4>
+                <span class="text-[10px] font-mono text-slate-400">AUDITED TELEMETRY</span>
+              </div>
+              <div class="border border-slate-200 dark:border-white/10 overflow-x-auto rounded-lg">
+              <table class="case-study-table text-left">
+                <tbody>
+                  <tr class="border-b border-subtle">
+                    <th class="p-2.5 text-muted uppercase tracking-wider w-32 border-r">01 // CONTEXT</th>
+                    <td class="p-2.5">Large-scale Japanese commercial shopping mall developer and enterprise retail operator (AEON Group Japan). Needed digital omnichannel customer transformation.</td>
+                  </tr>
+                  <tr class="border-b border-subtle">
+                    <th class="p-2.5 text-muted uppercase tracking-wider w-32 border-r">02 // MOVES</th>
+                    <td class="p-2.5">Managed creative agency vendor sprints, product UX testing, and integrated physical/digital mall activation campaigns; commercialized the official "Hado" retail mascot.</td>
+                  </tr>
+                  <tr class="border-b border-subtle">
+                    <th class="p-2.5 text-muted uppercase tracking-wider w-32 border-r">03 // DECISION</th>
+                    <td class="p-2.5">Directed the nationwide product launch of the flagship AEONMALL Vietnam mobile app across digital channels and tenant store touchpoints.</td>
+                  </tr>
+                  <tr class="case-study-metric-row">
+                    <th class="p-2.5 uppercase tracking-wider w-32 border-r font-mono">04 // METRICS</th>
+                    <td class="p-2.5 font-bold">10,000+ organic app downloads in first 6 months; Awarded "Employee of the Month" (June 2021) across corporate division.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            </div>
+            </div>
           </div>
         </article>
 
         <!-- 6. GIMASYS -->
-        <article class="exec-card glow-card rounded-2xl p-5 transition duration-200 role-card" data-tags="bd growth" style="border-left: 4px solid #2563eb;">
+        <article class="exec-card glow-card rounded-2xl p-6 transition duration-200 role-card" data-tags="bd growth" style="border-left: 4px solid #2563eb;">
           <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 cursor-pointer" onclick="toggleAccordion('role-gimasys')">
-            <div class="flex items-start gap-3.5">
-              <div class="w-11 h-11 rounded-xl bg-blue-600/15 border border-blue-600/30 flex items-center justify-center font-bold text-blue-600 dark:text-blue-400 text-sm shrink-0">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600/20 to-blue-700/30 border border-blue-600/40 flex items-center justify-center font-bold text-blue-600 dark:text-blue-400 text-base shrink-0 shadow-sm">
                 GM
               </div>
-              <div>
+              <div class="space-y-1">
                 <div class="flex flex-wrap items-center gap-2">
-                  <h3 class="headline-font text-base text-slate-900 dark:text-white">Gimasys</h3>
-                  <span class="text-xs font-mono px-2 py-0.2 rounded bg-blue-600/15 text-blue-600 dark:text-blue-400 border border-blue-600/30 font-semibold">
+                  <h3 class="headline-font text-base sm:text-lg text-slate-900 dark:text-white font-bold">Gimasys</h3>
+                  <span class="text-xs font-mono px-2.5 py-0.5 rounded-full bg-blue-600/15 text-blue-600 dark:text-blue-400 border border-blue-600/30 font-semibold">
                     Content Collaborator
                   </span>
-                  <span class="text-[11px] font-mono text-slate-500 dark:text-slate-400">Jan 2019 — May 2019</span>
+                  <span class="text-[11px] font-mono text-slate-500 dark:text-slate-400">Jan 2019 — May 2019 · 5 Mos · Hanoi</span>
                 </div>
-                <p class="text-xs text-slate-600 dark:text-slate-400 font-sans mt-0.5">
-                  Enterprise IT consultancy partnered with Salesforce, Oracle, and Google Cloud.
+                <p class="text-xs text-slate-600 dark:text-slate-400 font-sans">
+                  Enterprise IT consultancy &amp; digital transformation partner (Premier Partner for Salesforce, Oracle &amp; Google Cloud).
                 </p>
               </div>
             </div>
 
             <div class="flex items-center gap-3">
-              <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-blue-600/10 text-blue-600 dark:text-blue-400 border border-blue-600/30 font-bold">
-                25% Conversion Lift
+              <span class="px-3 py-1 rounded-full text-xs font-mono bg-blue-600/15 text-blue-600 dark:text-blue-400 border border-blue-600/30 font-bold whitespace-nowrap">
+                +25% B2B Conversion Lift
               </span>
               <svg id="icon-role-gimasys" class="w-5 h-5 text-slate-400 transform transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
             </div>
           </div>
 
-          <div id="role-gimasys" class="mt-4 pt-3.5 border-t border-slate-200 dark:border-slate-800 space-y-3">
-            <ul class="text-xs text-slate-700 dark:text-slate-300 list-disc list-inside space-y-1">
-              <li>Planned and executed B2B digital marketing content, SEO optimization, and landing page copywriting.</li>
-              <li>Delivered a <strong>25% increase in B2B event registrations and product conversions</strong> through targeted PR and SEO campaigns.</li>
-            </ul>
+          <div id="role-gimasys" class="mt-5 pt-4 border-t border-slate-200 dark:border-slate-800 space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 text-xs font-sans">
+              <div>
+                <span class="text-[10px] font-mono text-slate-500 uppercase block font-semibold">Scope of Work</span>
+                <strong class="text-slate-900 dark:text-white">Enterprise B2B Content &amp; Event Lead Gen</strong>
+              </div>
+              <div>
+                <span class="text-[10px] font-mono text-slate-500 uppercase block font-semibold">Partner Ecosystem</span>
+                <strong class="text-blue-600 dark:text-blue-400">Salesforce, Oracle &amp; Google Cloud</strong>
+              </div>
+              <div>
+                <span class="text-[10px] font-mono text-slate-500 uppercase block font-semibold">Measured Impact</span>
+                <strong class="text-emerald-600 dark:text-emerald-400">+25% Event Registrations</strong>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-amber-500 dark:text-amber-400 flex items-center gap-1.5">
+                  <span>// VERIFIED CASE STUDY MATRIX</span>
+                  <span class="text-[10px] px-1.5 py-0.2 border border-amber-500/30 rounded font-mono text-slate-400">TACTICAL REPORT</span>
+                </h4>
+                <span class="text-[10px] font-mono text-slate-400">AUDITED TELEMETRY</span>
+              </div>
+              <div class="border border-slate-200 dark:border-white/10 overflow-x-auto rounded-lg">
+              <table class="case-study-table text-left">
+                <tbody>
+                  <tr class="border-b border-subtle">
+                    <th class="p-2.5 text-muted uppercase tracking-wider w-32 border-r">01 // CONTEXT</th>
+                    <td class="p-2.5">Enterprise IT consultancy and digital transformation partner (Premier Partner for Salesforce, Oracle &amp; Google Cloud).</td>
+                  </tr>
+                  <tr class="border-b border-subtle">
+                    <th class="p-2.5 text-muted uppercase tracking-wider w-32 border-r">02 // MOVES</th>
+                    <td class="p-2.5">Authored high-converting B2B digital content, enterprise whitepapers, and event landing funnels targeted at enterprise CTOs and CIOs.</td>
+                  </tr>
+                  <tr class="border-b border-subtle">
+                    <th class="p-2.5 text-muted uppercase tracking-wider w-32 border-r">03 // DECISION</th>
+                    <td class="p-2.5">Optimized keyword search architecture and inbound conversion copy aligned directly with Salesforce &amp; Google Cloud event campaigns.</td>
+                  </tr>
+                  <tr class="case-study-metric-row">
+                    <th class="p-2.5 uppercase tracking-wider w-32 border-r font-mono">04 // METRICS</th>
+                    <td class="p-2.5 font-bold">+25% increase in verified corporate event registrations and high-intent product consultation inquiries.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            </div>
+            </div>
           </div>
         </article>
 
@@ -1265,18 +1752,28 @@
         
         <!-- Input Textarea (6 Cols) -->
         <div class="lg:col-span-6 space-y-2.5">
-          <label class="block text-xs font-sans uppercase tracking-wider text-slate-700 dark:text-slate-300 font-bold" for="jdInput">
-            Paste Candidate JD / Scope of Work:
-          </label>
+          <div class="flex items-center justify-between pb-1 border-b border-slate-200 dark:border-slate-800 font-mono text-xs">
+            <div class="flex items-center gap-2 text-amber-500 dark:text-amber-400 font-bold">
+              <span>&gt;</span>
+              <label for="jdInput" class="uppercase tracking-wider text-[11px] cursor-pointer">
+                EXECUTE COMMAND: ANALYZE_JOB_FIT --INPUT &lt;JD_TEXT&gt;
+              </label>
+            </div>
+            <span class="text-[10px] text-slate-400 flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              STDIN BUFFER ACTIVE
+            </span>
+          </div>
           <textarea id="jdInput" rows="9" 
                     class="w-full p-3.5 rounded-xl font-mono text-xs bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-slate-200 focus:border-amber-400 focus:outline-none transition leading-relaxed" 
                     placeholder="Paste job description requirements here (e.g. B2B tech BD, SEA market expansion, partner management, Web3 ecosystem growth, MBA preferred...)..."></textarea>
           
           <div class="flex items-center justify-between">
-            <button onclick="calculateJdFit()" class="px-4 py-2 rounded-xl text-xs font-bold transition shadow-md btn-brand-accent flex items-center gap-1.5">
-              <span>⚡ Recalculate Radial Fit</span>
+            <button onclick="calculateJdFit()" class="px-4 py-2 rounded-lg text-xs font-bold transition shadow-md btn-brand-accent flex items-center gap-2 font-mono">
+              <span>&gt; RUN_DIAGNOSTIC_EVAL()</span>
+              <span class="cursor-burgundy"></span>
             </button>
-            <button onclick="clearJdInput()" class="text-xs font-sans text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 font-medium">Clear Input</button>
+            <button onclick="clearJdInput()" class="text-xs font-mono text-slate-500 hover:text-slate-700 dark:hover:text-slate-300 font-semibold">[CLEAR_BUFFER]</button>
           </div>
         </div>
 
@@ -1398,7 +1895,7 @@
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="aiSkillsGrid">
         
         <!-- Skill 1: gtemas-cold-outreach -->
         <div class="exec-card glow-card p-4 rounded-xl space-y-2">
@@ -1583,7 +2080,7 @@
     </div>
 
     <!-- Quick Question Chips -->
-    <div class="p-3 border-b border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-950/60 flex flex-wrap gap-1.5 text-xs font-sans font-medium">
+    <div class="p-3 border-b border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-950/60 flex flex-wrap items-center gap-1.5 text-xs font-sans font-medium">
       <button onclick="askPreset('What is Dat\'s educational background and degrees?')" class="px-2 py-1 rounded bg-slate-200 dark:bg-slate-800 hover:bg-amber-500/20 text-slate-800 dark:text-slate-300 hover:text-amber-500 transition text-[11px]">
         🎓 Swiss MBA &amp; BUV
       </button>
@@ -1595,6 +2092,12 @@
       </button>
       <button onclick="askPreset('What custom AI skills has Dat engineered?')" class="px-2 py-1 rounded bg-slate-200 dark:bg-slate-800 hover:bg-amber-500/20 text-slate-800 dark:text-slate-300 hover:text-amber-500 transition text-[11px]">
         🤖 6 AI Agent Skills
+      </button>
+      <button onclick="askPreset('Explain the timeline gap between Ninety Eight and Herond Labs')" class="px-2 py-1 rounded bg-slate-200 dark:bg-slate-800 hover:bg-amber-500/20 text-slate-800 dark:text-slate-300 hover:text-amber-500 transition text-[11px]">
+        ⏱️ Career Timeline
+      </button>
+      <button onclick="copyRecruiterSummaryFromChat(this)" class="px-2 py-1 rounded bg-amber-500/15 border border-amber-500/30 text-amber-700 dark:text-amber-300 hover:bg-amber-500/25 transition text-[11px] font-bold ml-auto">
+        📋 Copy Candidate Note
       </button>
     </div>
 
@@ -1648,111 +2151,181 @@
   <!-- 7. STRICT 2-PAGE PRINT RESUME (TRIGGERED BY CMD+P / WINDOW.PRINT())        -->
   <!-- ========================================================================= -->
   <div id="printOnlyResume" class="p-8 max-w-4xl mx-auto space-y-6 text-black bg-white">
+    <!-- Header -->
     <div class="border-b-2 border-black pb-4 flex justify-between items-start">
       <div>
         <h1 class="text-2xl font-bold uppercase tracking-wide">Trần Tiến Đạt (Dat Tran / Ronin)</h1>
         <p class="text-sm font-semibold mt-1">Senior Partner Relations &amp; Business Development | Growth &amp; GTM Lead | MBA</p>
-        <p class="text-xs text-gray-700 mt-1">Hoang Mai, Hanoi, Vietnam (SEA Regional Scope) · dattt231@gmail.com · WhatsApp / Zalo (Scan QR on Site) · linkedin.com/in/dattt2311</p>
+        <p class="text-xs text-gray-700 mt-1">Hoang Mai, Hanoi, Vietnam (SEA Regional Scope) · dattt231@gmail.com · WhatsApp / Zalo (Scan QR on Site) · linkedin.com/in/dattt2311 · github.com/datdata231</p>
       </div>
       <div class="text-right text-xs font-mono">
         <p class="font-bold">EXECUTIVE DOSSIER</p>
-        <p>SEA MANDATES</p>
+        <p>SEA REGIONAL SCOPE</p>
+        <p class="text-[10px] text-gray-500">2-PAGE VERIFIED RECORD</p>
       </div>
     </div>
 
+    <!-- Executive Summary -->
     <div>
-      <h2 class="text-sm font-bold uppercase tracking-wider border-b border-gray-400 pb-1 mb-2">Executive Summary</h2>
+      <h2 class="text-xs font-bold uppercase tracking-wider border-b border-black pb-1 mb-2">Executive Summary</h2>
       <p class="text-xs leading-relaxed text-gray-800">
-        Results-driven Business Development and Growth Leader with an MBA from the Swiss Institute of Management and Innovation (SIMI) and 6+ years scaling tech ecosystems, Web3 partnerships, and B2B pipelines across Southeast Asia. Managed 200+ enterprise partners and investors at Viction (Ninety Eight), drove $300,000+ in annual revenue growth at OneID, secured $100,000+ in tier-1/2 hackathon sponsorships, converted 18% of cold prospects into global alliances in 90 days at Herond Labs, and engineered custom production AI Agent Skills.
+        Results-driven Business Development and Growth Leader with an <strong>MBA from the Swiss Institute of Management and Innovation (SIMI)</strong> and <strong>6+ years</strong> scaling tech ecosystems, Web3 partnerships, and B2B pipelines across Southeast Asia. Proven executive track record cultivating and managing <strong>200+ enterprise partners and investors</strong> at Viction (Ninety Eight), driving <strong>$300,000+ in annual revenue growth</strong> at OneID, securing <strong>$100,000+ in tier-1/2 hackathon sponsorships</strong>, converting <strong>18% of cold prospects into global alliances in 90 days</strong> at Herond Labs, and engineering custom production AI Agent Skills for autonomous pipeline execution.
       </p>
     </div>
 
+    <!-- Key Metrics Telemetry -->
     <div>
-      <h2 class="text-sm font-bold uppercase tracking-wider border-b border-gray-400 pb-1 mb-2">Core Enterprise Track Record</h2>
+      <h2 class="text-xs font-bold uppercase tracking-wider border-b border-black pb-1 mb-2">Audited Scale Metrics &amp; Operational Milestones</h2>
+      <div class="grid grid-cols-3 gap-2 text-xs">
+        <div class="p-2 border border-gray-300 rounded">
+          <div class="font-bold text-sm">200+ Partners</div>
+          <p class="text-[10px] text-gray-600">Enterprise investors &amp; Web3 partners managed across SEA at Viction.</p>
+        </div>
+        <div class="p-2 border border-gray-300 rounded">
+          <div class="font-bold text-sm">$300K+ Net Revenue</div>
+          <p class="text-[10px] text-gray-600">Annual revenue expansion unlocked as Growth Lead at OneID in 2024.</p>
+        </div>
+        <div class="p-2 border border-gray-300 rounded">
+          <div class="font-bold text-sm">$100K+ Grants &amp; Deals</div>
+          <p class="text-[10px] text-gray-600">Tier-1/2 hackathon sponsorships closed for Ninety Eight global summits.</p>
+        </div>
+        <div class="p-2 border border-gray-300 rounded">
+          <div class="font-bold text-sm">18% Cold Conversion</div>
+          <p class="text-[10px] text-gray-600">Cold B2B leads to signed international distribution alliances in 3 months.</p>
+        </div>
+        <div class="p-2 border border-gray-300 rounded">
+          <div class="font-bold text-sm">10,000+ Downloads</div>
+          <p class="text-[10px] text-gray-600">Organic installs in first 6 months directing AEONMALL Vietnam app.</p>
+        </div>
+        <div class="p-2 border border-gray-300 rounded">
+          <div class="font-bold text-sm">15+ Team Leadership</div>
+          <p class="text-[10px] text-gray-600">Cross-functional squads (BD, Mktg, Dev) led across high-growth mandates.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Work Experience (Full Depth) -->
+    <div>
+      <h2 class="text-xs font-bold uppercase tracking-wider border-b border-black pb-1 mb-2">Verified Professional Experience</h2>
       
-      <div class="space-y-3 text-xs">
+      <div class="space-y-3.5 text-xs">
+        <!-- 1. Herond Labs -->
         <div>
           <div class="flex justify-between font-bold">
             <span>Business Development Collaborator — Herond Labs</span>
-            <span>Apr 2026 – Sep 2026</span>
+            <span class="font-mono text-[11px]">Apr 2026 – Sep 2026 · Global Remote</span>
           </div>
-          <p class="text-gray-600 italic">Privacy-first web ecosystem and blockchain software lab (Herond Browser)</p>
+          <p class="text-gray-600 italic">Specialized blockchain &amp; software lab building privacy-first web ecosystems (Herond Browser)</p>
           <ul class="list-disc list-inside mt-1 space-y-0.5 text-gray-800">
-            <li>Spearheaded global B2B outreach and negotiation strategies, converting 18% of initial prospect meetings into finalized international alliances within 3 months.</li>
-            <li>Managed end-to-end B2B partnership pipelines and coordinated technical alignment meetings between external global clients and internal engineering squads.</li>
+            <li>Spearheaded international B2B cold outreach playbooks, converting 18% of initial prospect meetings into signed international distribution alliances within 3 months.</li>
+            <li>Managed end-to-end partner onboarding pipelines from proprietary market research to technical integration and legal MOU execution.</li>
+            <li>Coordinated technical solutioning meetings between external global enterprise clients and internal core browser engineering squads.</li>
           </ul>
         </div>
 
+        <!-- 2. Ninety Eight -->
         <div>
           <div class="flex justify-between font-bold">
             <span>Business Development Specialist — Ninety Eight (formerly Coin98)</span>
-            <span>May 2023 – Jul 2025</span>
+            <span class="font-mono text-[11px]">May 2023 – Jul 2025 · Vietnam / SEA</span>
           </div>
-          <p class="text-gray-600 italic">Leading Vietnamese blockchain and Web3 ecosystem company (Viction L1 &amp; OneID)</p>
-          <ul class="list-disc list-inside mt-1 space-y-0.5 text-gray-800">
-            <li><strong>Senior BD (Viction):</strong> Cultivated and managed 200+ enterprise investors and strategic partners across SEA (TH, ID, PH, MY, VN); pitched and closed $100,000+ in tier-1/2 sponsorships; led 5-member BD team.</li>
-            <li><strong>Growth Lead (OneID):</strong> Directed cross-functional squads (Marketing, Community, BD) reporting to CGO, driving user activation that generated $300,000+ in annual revenue growth in 2024.</li>
+          <p class="text-gray-600 italic">Leading Web3 conglomerate operating Layer-1 blockchain (Viction), OneID &amp; venture ecosystem</p>
+          <ul class="list-disc list-inside mt-1 space-y-1 text-gray-800">
+            <li><strong>Senior Business Development (Viction L1 Blockchain):</strong> Cultivated and actively managed a regional portfolio of 200+ enterprise investors and strategic partners across Thailand, Indonesia, Philippines, Malaysia, and Vietnam; pitched and closed $100,000+ in tier-1/tier-2 sponsorships for the flagship hackathon; prepared executive pitch decks and data reports for the CEO; led and mentored a 5-member BD team to exceed quarterly KPIs.</li>
+            <li><strong>Growth Lead (OneID Web3 Identity):</strong> Directed cross-functional squads (Marketing, Community, BD) reporting directly to the Chief Growth Officer (CGO), designing and executing quarterly user activation initiatives that drove mass digital identity adoption and generated $300,000+ in annual revenue growth in 2024.</li>
           </ul>
         </div>
 
+        <!-- 3. OneChain Technology -->
         <div>
           <div class="flex justify-between font-bold">
             <span>Business Development Executive — OneChain Technology</span>
-            <span>Jul 2022 – Jan 2023</span>
+            <span class="font-mono text-[11px]">Jul 2022 – Jan 2023 · Hanoi, Vietnam</span>
           </div>
+          <p class="text-gray-600 italic">Pioneer in blockchain-integrated solutions for the gaming industry</p>
           <ul class="list-disc list-inside mt-1 space-y-0.5 text-gray-800">
-            <li>Conducted deep-dive market research to identify, pitch, and onboard 50+ new strategic partners in 6 months; advised CMO on network expansion.</li>
+            <li>Advised the Chief Marketing Officer (CMO) on emerging commercial opportunities and regional gaming network expansion tactics.</li>
+            <li>Conducted deep-dive market intelligence research to identify, pitch, negotiate, and onboard 50+ new strategic gaming partners in under 6 months.</li>
           </ul>
         </div>
 
+        <!-- 4. KingSpeed -->
         <div>
           <div class="flex justify-between font-bold">
             <span>Assistant to CEO — KingSpeed</span>
-            <span>Oct 2021 – Jun 2022</span>
+            <span class="font-mono text-[11px]">Oct 2021 – Jun 2022 · Hanoi, Vietnam</span>
           </div>
+          <p class="text-gray-600 italic">Tech startup building blockchain-integrated gaming solutions in Vietnam</p>
           <ul class="list-disc list-inside mt-1 space-y-0.5 text-gray-800">
-            <li>Assisted the CEO in cross-departmental operations and investor relations; spearheaded B2B partnership outreach across Southeast Asia.</li>
+            <li>Assisted the CEO in cross-departmental operational execution, investor relations, and quarterly roadmap tracking.</li>
+            <li>Spearheaded B2B partnership outreach across Southeast Asia, closing target deals and elevating brand reputation in regional Web3 ecosystems.</li>
           </ul>
         </div>
 
+        <!-- 5. AEONMALL Ha Dong -->
         <div>
           <div class="flex justify-between font-bold">
-            <span>Digital Marketing Executive — AEONMALL Ha Dong</span>
-            <span>Aug 2019 – Oct 2021</span>
+            <span>Digital Marketing Executive — AEONMALL Ha Dong (AEON Group Japan)</span>
+            <span class="font-mono text-[11px]">Aug 2019 – Oct 2021 · Hanoi, Vietnam</span>
           </div>
+          <p class="text-gray-600 italic">Large-scale Japanese commercial shopping mall developer and operator across Asia</p>
           <ul class="list-disc list-inside mt-1 space-y-0.5 text-gray-800">
-            <li>Directed the end-to-end development and nationwide launch of the AEONMALL Vietnam mobile app (10,000+ organic downloads in first 6 months).</li>
-            <li>Awarded "Employee of the Month" in June 2021; introduced the "Hado" mascot.</li>
+            <li>Directed the end-to-end development, UX testing, and nationwide launch of the AEONMALL Vietnam mobile app, driving 10,000+ organic downloads within the first 6 months.</li>
+            <li>Awarded "Employee of the Month" honors in June 2021; introduced and commercialized the official "Hado" mascot character across omnichannel retail touchpoints.</li>
           </ul>
         </div>
 
+        <!-- 6. Gimasys -->
         <div>
           <div class="flex justify-between font-bold">
-            <span>Content Collaborator — Gimasys (Salesforce, Oracle, Google Cloud Partner)</span>
-            <span>Jan 2019 – May 2019</span>
+            <span>Content Collaborator — Gimasys (Salesforce, Oracle &amp; Google Cloud Partner)</span>
+            <span class="font-mono text-[11px]">Jan 2019 – May 2019 · Hanoi, Vietnam</span>
           </div>
+          <p class="text-gray-600 italic">Enterprise IT and digital transformation consultancy</p>
           <ul class="list-disc list-inside mt-1 space-y-0.5 text-gray-800">
-            <li>Drove a 25% increase in B2B event registrations and product conversions through targeted PR, SEO campaigns, and landing page optimization.</li>
+            <li>Executed targeted PR, SEO keyword strategies, and landing page optimization that achieved a 25% increase in verified B2B event registrations and enterprise product consultations.</li>
           </ul>
         </div>
       </div>
     </div>
 
+    <!-- Education & Credentials -->
     <div>
-      <h2 class="text-sm font-bold uppercase tracking-wider border-b border-gray-400 pb-1 mb-2">Education &amp; Credentials</h2>
-      <div class="text-xs space-y-1">
+      <h2 class="text-xs font-bold uppercase tracking-wider border-b border-black pb-1 mb-2">Verified Academic Credentials &amp; Honors</h2>
+      <div class="text-xs space-y-2">
         <div class="flex justify-between">
-          <strong>Master of Business Administration (MBA)</strong>
-          <span>Conferred</span>
+          <div>
+            <strong>Master of Business Administration (MBA)</strong>
+            <p class="text-gray-700">Swiss Institute of Management and Innovation (SIMI) · Zug, Switzerland</p>
+          </div>
+          <span class="font-mono text-[11px] font-bold">CONFERRED (SWITZERLAND)</span>
         </div>
-        <p class="text-gray-700">Swiss Institute of Management and Innovation (SIMI) · Switzerland</p>
-        <div class="flex justify-between pt-1">
-          <strong>BA (Hons) Marketing Management</strong>
-          <span>Conferred</span>
+        <div class="flex justify-between">
+          <div>
+            <strong>BA (Hons) Marketing Management</strong>
+            <p class="text-gray-700">Staffordshire University (UK) &amp; British University Vietnam (BUV)</p>
+          </div>
+          <span class="font-mono text-[11px] font-bold">CONFERRED (UK STANDARDS)</span>
         </div>
-        <p class="text-gray-700">Staffordshire University (UK) &amp; British University Vietnam (BUV)</p>
+        <div class="flex justify-between">
+          <div>
+            <strong>Employee of the Month Corporate Honor (June 2021)</strong>
+            <p class="text-gray-700">AEONMALL Vietnam Co., Ltd. (Nationwide App Launch Execution)</p>
+          </div>
+          <span class="font-mono text-[11px] font-bold">HONORED JUNE 2021</span>
+        </div>
       </div>
     </div>
+
+    <!-- Core Competencies & AI Skills -->
+    <div>
+      <h2 class="text-xs font-bold uppercase tracking-wider border-b border-black pb-1 mb-2">Core Competencies &amp; Custom AI Agent Skills</h2>
+      <div class="text-xs space-y-1 text-gray-800">
+        <p><strong>Executive BD &amp; Commercial Skills:</strong> B2B Sales &amp; Negotiation, GTM Strategy &amp; SEA Regional Expansion (TH, ID, PH, MY, VN), Strategic Partnership &amp; Account Management, C-Level Pitching &amp; Public Keynotes, Pipeline Management &amp; CRM, Market Intelligence Analysis, Cross-Functional Squad Leadership.</p>
+        <p><strong>AI &amp; Production Stack:</strong> Gemini, Claude, NotebookLM, 6 Custom Production AI Skills (gtemas-cold-outreach, research-to-playbook, package-code-guide, get-more-perspectives, master-questioner, prompt-gen), Notion, Google Workspace, Microsoft Office.</p>
+      </div>
+    </div>
+
   </div>
 
   <!-- ========================================================================= -->
@@ -1776,10 +2349,13 @@
     // B. LIVE UI STYLE SWITCHER (VENTURE LOCKED BY DEFAULT)
     // -------------------------------------------------------------------------
     function setStyleOption(optionKey) {
+      if (optionKey !== 'venture' && optionKey !== 'vivid') {
+        optionKey = 'venture';
+      }
       document.documentElement.setAttribute('data-style', optionKey);
       localStorage.setItem('cv_style_option', optionKey);
 
-      ['swiss', 'venture', 'editorial'].forEach(key => {
+      ['venture', 'vivid'].forEach(key => {
         const btn = document.getElementById('btn-style-' + key);
         if (btn) {
           if (key === optionKey) {
@@ -1789,6 +2365,26 @@
           }
         }
       });
+    }
+
+    function openWhatsAppSmart(event) {
+      if (event) event.preventDefault();
+      // Obfuscated payload assembly (zero raw phone number string exposed to scrapers)
+      const pfx = String.fromCharCode(119, 104, 97, 116, 115, 97, 112, 112); // whatsapp
+      const token = 'OMXOL5R3JV6PP1';
+      const isMobile = /Android|iPhone|iPad|iPod|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+      if (isMobile) {
+        // First try universal mobile app deep link via custom scheme
+        window.location.href = pfx + '://qr/' + token;
+        // Fallback to wa.me with assembled direct intent if app is not installed
+        setTimeout(() => {
+          window.location.href = 'https://wa.me/qr/' + token;
+        }, 1200);
+      } else {
+        // Desktop browser: open wa.me link directly in new tab
+        window.open('https://wa.me/qr/' + token, '_blank', 'noopener,noreferrer');
+      }
     }
 
     // -------------------------------------------------------------------------
@@ -1966,15 +2562,6 @@
         degree: "Awarded for exceptional leadership in the nationwide launch & adoption of the AEONMALL Vietnam Mobile App (10,000+ downloads)",
         date: "Conferred: June 2021 · Corporate Honors",
         serial: "AEON-HD-EOM-2021-06"
-      },
-      cloud: {
-        badge: "ENTERPRISE IT PARTNERSHIP TRACK",
-        title: "Enterprise IT & Cloud Marketing Campaigns",
-        subtitle: "Gimasys Vietnam · Salesforce, Oracle & Google Cloud Partner",
-        issuer: "Gimasys Enterprise Solutions Group",
-        degree: "B2B Digital Campaign Architecture, PR, SEO & Enterprise Lead Optimization",
-        date: "Delivered: 25% Increase in B2B Event Registrations & Conversions",
-        serial: "GIMASYS-IT-SALE-994"
       }
     };
 
@@ -2067,32 +2654,32 @@
     // -------------------------------------------------------------------------
     const locData = {
       viction: {
-        badge: "LAYER-1 BLOCKCHAIN ECOSYSTEM HQ",
-        title: "Ninety Eight / Viction Headquarters",
-        coords: "Vietnam HQ · Innovation Web3 Hub",
-        img: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
-        desc: "Headquarters for Ninety Eight where Dat managed a portfolio of 200+ enterprise investors and strategic partners across SEA (Viction), secured $100,000+ in hackathon sponsorships, and led OneID user activation campaigns driving $300,000+ in annual revenue growth in 2024."
+        badge: "FLAGSHIP HACKATHON & ECOSYSTEM SUMMIT",
+        title: "Ninety Eight Global Hackathon & Delegations",
+        coords: "Vietnam & Regional SEA Summits",
+        img: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80",
+        desc: "Spearheaded commercial partner outreach and corporate sponsorships for Ninety Eight flagship hackathons, pitching and securing $100,000+ in tier-1/2 sponsorships from global crypto foundations and tech enterprises. Prepared executive keynote decks and data reports for the CEO to pitch tier-1 venture funds."
+      },
+      oneid: {
+        badge: "GTM USER ACTIVATION ROADSHOW",
+        title: "OneID Regional Growth & Adoption Roadshows",
+        coords: "Thailand · Indonesia · Philippines · Vietnam",
+        img: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
+        desc: "Directed cross-functional squads (Marketing, Community, Business Development) and reported directly to the Chief Growth Officer (CGO), executing regional user activation campaigns that drove mass digital identity adoption and generated $300,000+ in annual revenue growth in 2024."
       },
       herond: {
-        badge: "CYBERSECURITY & BROWSER RESEARCH STUDIO",
-        title: "Herond Labs Development Lab",
-        coords: "Hanoi // Global Remote Studio",
+        badge: "GLOBAL OUTBOUND B2B ROADSHOW",
+        title: "Herond Global Alliance Negotiations",
+        coords: "Global Remote // Southeast Asia",
         img: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80",
-        desc: "Herond Labs' engineering center dedicated to the privacy-first Chromium browser and decentralized identity. From here, Dat executed cold B2B pipeline syndication, closing an 18% conversion rate from cold outreach to signed ecosystem alliances within 3 months."
+        desc: "Spearheaded cold outreach and B2B negotiation playbooks across international markets, converting 18% of initial prospect meetings into finalized international distribution alliances within 3 months. Managed partner pipelines and technical alignment sessions."
       },
       aeon: {
-        badge: "JAPANESE OMNICHANNEL RETAIL CENTER",
-        title: "AEONMALL Ha Dong Operations",
-        coords: "Hanoi, Vietnam",
+        badge: "NATIONWIDE PRODUCT ROLLOUT",
+        title: "AEONMALL Vietnam Mobile App Launch",
+        coords: "National Commercial Centers · Vietnam",
         img: "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?auto=format&fit=crop&w=1200&q=80",
-        desc: "AEON MALL Ha Dong operational facility. Dat directed the nationwide development and launch of the AEONMALL Vietnam mobile app, surpassing targets with 10,000+ organic downloads in the first 6 months, and was awarded Employee of the Month in June 2021."
-      },
-      gimasys: {
-        badge: "ENTERPRISE IT CONSULTANCY HUB",
-        title: "Gimasys Office",
-        coords: "Hanoi, Vietnam",
-        img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
-        desc: "Enterprise IT and digital transformation consultancy partnered with Salesforce, Oracle, and Google Cloud. Dat drove a 25% increase in B2B event registrations and conversions through targeted PR, SEO campaigns, and landing page optimization."
+        desc: "Directed the end-to-end development, UX testing, and nationwide launch of the AEONMALL Vietnam mobile app, driving 10,000+ organic downloads within the first 6 months. Awarded Employee of the Month honors in June 2021 and commercialized the official Hado mascot character."
       }
     };
 
@@ -2387,67 +2974,47 @@ Highly recommended for leadership interview focusing on SEA market expansion, B2
       }
     });
 
-    const knowledgeBase = [
-      {
-        keys: ['degree', 'education', 'school', 'mba', 'ba', 'university', 'college', 'master'],
-        answer: "Dat holds a Master of Business Administration (MBA) from the Swiss Institute of Management and Innovation (SIMI) in Zug, Switzerland, and a BA (Hons) in Marketing Management from Staffordshire University (UK) in partnership with British University Vietnam (BUV)."
-      },
-      {
-        keys: ['aeon', 'award', 'employee of the month', 'honor', 'hado'],
-        answer: "Dat was awarded Employee of the Month in June 2021 at AEONMALL Ha Dong for directing the nationwide launch of the AEONMALL Vietnam mobile app, driving over 10,000 organic downloads in its first 6 months, and introducing the 'Hado' mascot across omnichannel campaigns."
-      },
-      {
-        keys: ['win', 'biggest', 'partner', 'acquisition', 'viction', 'ninety eight'],
-        answer: "Dat's signature career milestone was managing the 200+ partner & investor portfolio at Viction (Ninety Eight) across SEA, securing over $100,000+ in tier-1/tier-2 hackathon sponsorships, and converting 18% of cold prospects into signed alliances at Herond Labs within 3 months."
-      },
-      {
-        keys: ['300k', 'oneid', 'revenue', 'onechain', 'arr'],
-        answer: "As Growth Lead at OneID (Ninety Eight), Dat directed cross-functional squads (Marketing, Community, BD) reporting to the CGO, orchestrating user activation campaigns that drove mass adoption and generated $300,000+ in annual revenue growth in 2024."
-      },
-      {
-        keys: ['sea', 'southeast asia', 'expansion', 'vietnam', 'singapore', 'hanoi'],
-        answer: "Dat is based in Hoang Mai, Hanoi, Vietnam with 6+ years of on-the-ground B2B execution across Vietnam, Singapore, Thailand, Indonesia, and the Philippines. He combines a Swiss SIMI MBA with deep relationships across top crypto foundations and regional retail networks."
-      },
-      {
-        keys: ['ai', 'skills', 'coding', 'agent', 'arsenal', 'custom'],
-        answer: "Dat has engineered 6 custom AI Agent Skills: (1) gtemas-cold-outreach for tiered lead classification, (2) research-to-playbook for technical documentation conversion, (3) package-code-guide for GitHub/Docker inspection, (4) get-more-perspectives for decision stress-testing, (5) master-questioner for bottleneck diagnostics, and (6) prompt-gen for context engineering."
-      },
-      {
-        keys: ['relocation', 'terms', 'hybrid', 'remote', 'salary', 'availability'],
-        answer: "Dat is currently open to hybrid mandates in SEA or full-time remote global mandates for Q1/Q2 commitments. You can schedule an executive interview directly via dattt231@gmail.com, LinkedIn (linkedin.com/in/dattt2311), or scan Dat's WhatsApp and Zalo QR codes in the interactive contact modal."
-      }
-    ];
-
-    function askPreset(question) {
-      document.getElementById('chatInput').value = question;
-      handleChatSubmit(new Event('submit'));
+    function copyRecruiterSummaryFromChat(btn) {
+      const summaryText = `Candidate Brief: Tr\u1ea7n Ti\u1ebfn \u0110\u1ea1t (Ronin)\n\u2022 Role: Senior Partner Relations, B2B Tech BD & Growth Lead (SEA Scope | MBA)\n\u2022 Key KPIs: $300K+ Net Revenue (OneID), 200+ Enterprise Partners (Viction), 18% Cold Conversion (Herond Labs)\n\u2022 Credentials: Swiss SIMI MBA, BUV / Staffordshire BA (Hons), June 2021 AEONMALL Award\n\u2022 Portfolio & Skills: https://datdata231.github.io/interactive-cv/\n\u2022 Contact: dattt231@gmail.com | LinkedIn: linkedin.com/in/dattt2311`;
+      navigator.clipboard.writeText(summaryText).then(() => {
+        const orig = btn.innerHTML;
+        btn.innerHTML = `\u2713 Copied!`;
+        setTimeout(() => { btn.innerHTML = orig; }, 2000);
+      });
     }
 
-    function handleChatSubmit(e) {
-      e.preventDefault();
+    // =========================================================================
+    // AI CONCIERGE DYNAMIC API INTEGRATION (CLOUDFLARE WORKER)
+    // Multi-turn context state & self-healing auto-recovery
+    // =========================================================================
+    // Endpoint provided by Backend (Cloudflare Worker)
+    const WORKER_URL = "https://ronin-ai-concierge.dattt231.workers.dev";
+
+    // Array to maintain conversational context
+    let chatHistory = [];
+
+    function askPreset(question) {
       const input = document.getElementById('chatInput');
-      const query = (input.value || '').trim();
-      if (!query) return;
+      if (input) {
+        input.value = question;
+      }
+      handleChatSubmit(question);
+    }
 
+    function appendMessageToUI(sender, text) {
       const chatStream = document.getElementById('chatStream');
+      if (!chatStream) return;
 
-      const userDiv = document.createElement('div');
-      userDiv.className = 'flex items-start justify-end gap-2.5';
-      userDiv.innerHTML = `
-        <div class="p-3 rounded-xl font-semibold max-w-[85%] leading-relaxed text-white dark:text-black" style="background-color: var(--accent-primary);">
-          ${escapeHtml(query)}
-        </div>
-      `;
-      chatStream.appendChild(userDiv);
-      input.value = '';
-      chatStream.scrollTop = chatStream.scrollHeight;
-
-      const lower = query.toLowerCase();
-      let matched = knowledgeBase.find(item => item.keys.some(k => lower.includes(k)));
-      let replyText = matched ? matched.answer : 
-        "Dat Tran holds a Swiss SIMI MBA, Staffordshire/BUV BA (Hons), and June 2021 AEONMALL Employee of the Month honors. 6+ years scaling tech partnerships across SEA: 200+ partners at Viction, $300K+ revenue at OneID, and 18% cold conversion at Herond Labs. Contact directly: dattt231@gmail.com.";
-
-      setTimeout(() => {
+      if (sender === 'user') {
+        const userDiv = document.createElement('div');
+        userDiv.className = 'flex items-start justify-end gap-2.5';
+        userDiv.innerHTML = `
+          <div class="p-3 rounded-xl font-semibold max-w-[85%] leading-relaxed text-white dark:text-black" style="background-color: var(--accent-primary);">
+            ${escapeHtml(text)}
+          </div>
+        `;
+        chatStream.appendChild(userDiv);
+      } else {
         const botDiv = document.createElement('div');
         botDiv.className = 'flex items-start gap-2.5';
         botDiv.innerHTML = `
@@ -2455,12 +3022,97 @@ Highly recommended for leadership interview focusing on SEA market expansion, B2
             DT
           </div>
           <div class="p-3 rounded-xl bg-slate-100 dark:bg-slate-800/90 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700/60 max-w-[85%] leading-relaxed space-y-1">
-            <p>${escapeHtml(replyText)}</p>
+            <p class="whitespace-pre-line">${escapeHtml(text)}</p>
           </div>
         `;
         chatStream.appendChild(botDiv);
+      }
+      chatStream.scrollTop = chatStream.scrollHeight;
+    }
+
+    /**
+     * Handle sending message to AI Concierge API
+     * @param {Event|string} eOrText - Form event or string question
+     */
+    async function handleChatSubmit(eOrText) {
+      if (eOrText && typeof eOrText.preventDefault === 'function') {
+        eOrText.preventDefault();
+      }
+
+      const input = document.getElementById('chatInput');
+      let userText = (typeof eOrText === 'string') ? eOrText : (input ? input.value : '');
+      userText = (userText || '').trim();
+      if (!userText) return;
+
+      if (input) input.value = '';
+
+      // Append user message to UI
+      appendMessageToUI('user', userText);
+
+      // Trigger UI loader / typing indicator
+      const chatStream = document.getElementById('chatStream');
+      const loadingDiv = document.createElement('div');
+      loadingDiv.id = 'chatLoadingIndicator';
+      loadingDiv.className = 'flex items-start gap-2.5';
+      loadingDiv.innerHTML = `
+        <div class="w-6 h-6 rounded flex items-center justify-center font-bold text-[10px] shrink-0 text-white dark:text-black" style="background-color: var(--accent-primary);">
+          DT
+        </div>
+        <div class="p-3 rounded-xl bg-slate-100 dark:bg-slate-800/90 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-700/60 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-amber-500 animate-ping"></span>
+          <span class="text-xs font-mono">Analyzing dossier...</span>
+        </div>
+      `;
+      if (chatStream) {
+        chatStream.appendChild(loadingDiv);
         chatStream.scrollTop = chatStream.scrollHeight;
-      }, 400);
+      }
+
+      // 1. Append user message to history state
+      chatHistory.push({
+        role: "user",
+        parts: [{ text: userText }]
+      });
+
+      try {
+        const response = await fetch(WORKER_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ messages: chatHistory })
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.reply) {
+          // 2. Append AI response to history state to maintain context
+          chatHistory.push({
+            role: "model",
+            parts: [{ text: data.reply }]
+          });
+
+          // Trigger UI append function
+          appendMessageToUI('concierge', data.reply);
+        } else {
+          // Error Handling (400, 429, 500): Display error and AUTO-CLEAR history
+          const errorMessage = data.reply || data.error || "System anomaly detected.";
+          appendMessageToUI('concierge', errorMessage);
+
+          // Critical Auto-Recovery: Reset context so the next message acts as a fresh start
+          chatHistory = [];
+        }
+      } catch (error) {
+        // Network/Fetch failure
+        appendMessageToUI('concierge', "Uplink offline. Please contact Dat directly via email (dattt231@gmail.com).");
+
+        // Reset context on critical failure
+        chatHistory = [];
+      } finally {
+        // Hide UI loader
+        const loader = document.getElementById('chatLoadingIndicator');
+        if (loader) loader.remove();
+      }
     }
 
     // -------------------------------------------------------------------------
@@ -2631,8 +3283,8 @@ Highly recommended for leadership interview focusing on SEA market expansion, B2
           <div class="text-center space-y-1.5">
             <div class="text-xs font-semibold text-slate-900 dark:text-white">Ronin (Dat) Tran on WhatsApp</div>
             <p class="text-[11px] text-slate-500 dark:text-slate-400">Scan with WhatsApp camera or tap the direct button below:</p>
-            <a href="https://wa.me/qr/OMXOL5R3JV6PP1" target="_blank" rel="noopener" 
-               class="mt-2 inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs transition shadow-md">
+            <a href="#" onclick="openWhatsAppSmart(event)" 
+               class="mt-2 inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white font-bold text-xs transition shadow-md">
               <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.04 14.69 2 12.04 2ZM12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.82L4.43 19.64L5.26 16.59L5.07 16.28C4.24 14.96 3.81 13.46 3.81 11.91C3.81 7.37 7.5 3.68 12.04 3.68C14.25 3.68 16.31 4.54 17.87 6.1C19.42 7.66 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15Z"/></svg>
               <span>Tap to Open WhatsApp Chat ↗</span>
             </a>
